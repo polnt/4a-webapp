@@ -1,0 +1,43 @@
+import React from "react";
+
+const InternalManagement = () => {
+  return (
+    <div>
+      <h1>GESTION INTERNE</h1>« Apporter un soutien à votre collaborateur en
+      charge de la gestion du personnel »
+      <h2>Accompagnement de votre personnel :</h2>
+      <p>
+        Dans une PME, la gestion du personnel et de la paie est très souvent
+        assumée par la même personne. Ce métier est complexe et en perpétuel
+        changement. Souvent, la personne en charge de la paie et du RH manque de
+        temps pour se former en externe mais peut souhaiter développer ou
+        approfondir certains points spécifiques de la paie en fonction de votre
+        convention collective applicable. Nous pouvons accompagner votre salarié
+        sur une thématique précise selon le temps nécessaire et acceptable sans
+        gêner l’organisation interne, nous nous déplaçons sur site. Nous pouvons
+        être à ses côtés en cas de besoin, de conseils afin de sécuriser une
+        procédure ou une période de bulletins ou de charges sociales.
+      </p>
+      <h2>Formation de votre personnel :</h2>
+      <p>
+        Besoin d’une montée en compétence en interne ? Nous assurons la
+        formation de vos collaborateurs. Nous venons dans votre entreprise, à
+        leurs côtés pour travailler sur des dossiers en cours, sur une
+        thématique particulière, cela peut être 2h, une demi-journée voire une
+        journée en fonction de leurs besoins (congés payés, maladie, heures
+        supplémentaires et complémentaires…)
+      </p>
+      <h2>Vérification et contrôle périodique :</h2>
+      <p>
+        Vous avez des interrogations concernant vos bulletins ou charges
+        sociales, nous pouvons vous aider à comprendre et à vérifier
+        l’exactitude des éléments transmis. Vous avez eu des difficultés à
+        recruter le profil recherché en matière sociale, vous souhaitez garantir
+        la justesse des données, nous venons périodiquement ou ponctuellement
+        selon votre souhait vérifier la conformité des déclarations.
+      </p>
+    </div>
+  );
+};
+
+export default InternalManagement;

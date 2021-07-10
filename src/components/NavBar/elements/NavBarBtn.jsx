@@ -15,7 +15,7 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
       <button
         type="button"
         onClick={handleClick}
-        style={{ position: "relative" }}
+        style={{ position: "relative", display: "flex", alignItems: "center" }}
       >
         {item.title}
         {toggle[item.id] ? <DownArrowIcon /> : <RightArrowIcon />}

@@ -1,24 +1,27 @@
 export const navData = [
   {
-    id: "paie",
+    id: "pay",
     title: "PAIE",
     children: [
       { title: "Externalisation", path: "/paie/externalisation" },
       { title: "Gestion interne", path: "/paie/gestion-interne" },
-      { title: "Audit", path: "/paie/audit" },
+      { title: "Audit de paie", path: "/paie/audit" },
     ],
   },
   {
-    id: "rh",
+    id: "hr",
     title: "RH",
     children: [
-      { title: "Entrée du salairié", path: "" },
-      { title: "Vie dans l'entreprise", path: "" },
-      { title: "Sortie", path: "" },
+      {
+        title: "Entrées et sorties des salariés",
+        path: "/rh/vie-du-contrat",
+      },
+      { title: "Les procédures", path: "/rh/procedures" },
+      { title: "Audit RH", path: "/rh/audit" },
     ],
   },
   {
-    id: "conseil",
+    id: "advice",
     title: "CONSEILS et ACCOMPAGNEMENT",
     children: [
       { title: "Audit", path: "" },
@@ -39,12 +42,13 @@ export const navData = [
     id: "about",
     title: "QUI SOMMES-NOUS ?",
     children: [
-      { title: "Présentation de l'équipe", path: "" },
-      { title: "Nos engagements", path: "" },
+      { title: "Présentation de l'équipe", path: "/qui-sommes-nous" },
+      { title: "Nos engagements", path: "/qui-sommes-nous" },
     ],
   },
   {
     id: "FAQ",
     title: "LES QUESTIONS FRÉQUENTES",
+    children: [{ title: "FAQs", path: "" }],
   },
 ];

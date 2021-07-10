@@ -2,7 +2,9 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import { navData } from "./NavBar/data";
+import YouAre from "./elements/YouAre";
+
+import { navData } from "../NavBar/data";
 
 const Home = () => {
   return (
@@ -16,7 +18,7 @@ const Home = () => {
             border: "1px solid black",
           }}
         >
-          <h3>PAIE</h3>
+          <h2>PAIE</h2>
           {navData[0].children?.map((item) => (
             <NavLink to={item.path}>{item.title}</NavLink>
           ))}
@@ -28,7 +30,7 @@ const Home = () => {
             border: "1px solid black",
           }}
         >
-          <h3>RH</h3>
+          <h2>RH</h2>
           {navData[1].children?.map((item) => (
             <NavLink to={item.path}>{item.title}</NavLink>
           ))}
@@ -40,19 +42,20 @@ const Home = () => {
             border: "1px solid black",
           }}
         >
-          <h3>CONSEILS et ACCOMPAGNEMENT</h3>
+          <h2>CONSEILS et ACCOMPAGNEMENT</h2>
           {navData[2].children?.map((item) => (
             <NavLink to={item.path}>{item.title}</NavLink>
           ))}
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>
-          <h3>Vous êtes ?</h3>
-          <button>TPE</button>
-          <button>PME</button>
-          <button>Cabinet comptable</button>
-        </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          // alignItems: "center",
+        }}
+      >
+        <YouAre />
       </div>
     </div>
   );

@@ -36,9 +36,7 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
         {item.children?.map((subItem) => (
           <NavLink
             to={subItem.path}
-            onClick={() =>
-              setToggle({ paie: false, rh: false, conseil: false })
-            }
+            onClick={() => setToggle({ pay: false, hr: false, advice: false })}
           >
             {subItem.title}
           </NavLink>

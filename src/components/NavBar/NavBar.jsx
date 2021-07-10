@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <div style={{ display: "block" }}>
       <NavLink to="/">
-        <img src={Logo4A} />
+        <img src={Logo4A} alt="logo entreprise" />
       </NavLink>
       <div
         style={{

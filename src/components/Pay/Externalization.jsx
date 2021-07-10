@@ -55,12 +55,12 @@ const Externalization = () => {
           en vous libérant des contraintes liées à la réglementation. Vous vous
           assurez de la fiabilité des bulletins de salaire et des charges
           sociales. Vous économisez !
-          <li>
-            <ul>- Sur le recrutement d’un collaborateur</ul>
-            <ul>- Sur un investissement informatique complémentaire</ul>
-            <ul>- Sur la veille juridique</ul>
-            <ul>- Vous récupérez la TVA sur nos prestations de services.</ul>
-          </li>{" "}
+          <ul>
+            <li> Sur le recrutement d’un collaborateur</li>
+            <li> Sur un investissement informatique complémentaire</li>
+            <li> Sur la veille juridique</li>
+            <li> Vous récupérez la TVA sur nos prestations de services.</li>
+          </ul>
         </p>
       </p>
     </div>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useNav = () => {
   const [toggle, setToggle] = useState({
-    paie: false,
-    rh: false,
-    conseil: false,
+    pay: false,
+    hr: false,
+    advice: false,
   });
 
   return { toggle, setToggle };

@@ -17,6 +17,9 @@ import HrAudit from "./HR/Audit";
 // ABOUT
 import About from "./About/About";
 
+// CONTACT
+import Contact from "./Contact/Contact";
+
 const Router = () => {
   return (
     <Switch>
@@ -28,6 +31,7 @@ const Router = () => {
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
       <Route path="/qui-sommes-nous" component={About} />
+      <Route path="/contact" component={Contact} />
     </Switch>
   );
 };

@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { NavLink } from "react-router-dom";
-
-import { useNav } from "../../hooks";
 
 import NavBarBtn from "./elements/NavBarBtn";
 
@@ -11,7 +9,11 @@ import { navData } from "./data";
 import Logo4A from "../../assets/Logo4A_150x150.png";
 
 const NavBar = () => {
-  const { toggle, setToggle } = useNav();
+  const [toggle, setToggle] = useState({
+    pay: false,
+    hr: false,
+    advice: false,
+  });
 
   return (
     <div style={{ display: "block" }}>

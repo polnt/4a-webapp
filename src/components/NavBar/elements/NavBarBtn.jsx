@@ -29,6 +29,7 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
                 position: "absolute",
                 marginTop: "30px",
                 backgroundColor: "white",
+                zIndex: "100",
               }
             : { display: "none" }
         }

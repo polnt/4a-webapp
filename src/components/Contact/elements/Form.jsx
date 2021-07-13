@@ -1,80 +1,122 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    lastname: "",
-    firstname: "",
-    email: "",
-    phone: "",
-    description: "",
-  });
+import { Formik } from "formik";
+import * as yup from "yup";
 
-  const labelStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-  };
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
+const schema = yup.object().shape({
+  firstName: yup.string(),
+  lastName: yup.string(),
+  email: yup.string().email().required(),
+  phone: yup.string(),
+  description: yup.string().required(),
+});
 
-  return (
-    <form
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        // alignItems: "center",
+const ContactForm = () => (
+  <div>
+    <h3>Nous contacter</h3>
+    <Formik
+      initialValues={{
+        lastname: "",
+        firstname: "",
+        email: "",
+        phone: "",
+        description: "",
       }}
+      validationSchema={schema}
+      // onSubmit={() => console.log("ok")}
     >
-      <h3>Nous contacter</h3>
-      <label htmlFor="lastname" style={labelStyle}>
-        Nom
-        <input
-          type="text"
-          name="lastname"
-          value={formData.lastname}
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="firstname" style={labelStyle}>
-        Prénom
-        <input
-          type="text"
-          name="firstname"
-          value={formData.firstname}
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="email" style={labelStyle}>
-        Email
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="phone" style={labelStyle}>
-        Téléphone
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="description" style={labelStyle}>
-        Votre message
-        <textarea
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          style={{ width: "500px", height: "200px", resize: "none" }}
-        />
-      </label>
-    </form>
-  );
-};
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        /* and other goodies */
+      }) => (
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            !errors.email ? console.log("Envoyé") : console.log("Erreur");
+          }}
+        >
+          <Form.Group>
+            <Form.Label>Prénom</Form.Label>
+            <Form.Control
+              type="text"
+              name="firstname"
+              value={values.firstname}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Nom</Form.Label>
+            <Form.Control
+              type="text"
+              name="lastname"
+              value={values.lastname}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="text"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isValid={touched.email && !errors.email}
+              isInvalid={touched.email && !!errors.email}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              L'email doit être valide
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Téléphone</Form.Label>
+            <Form.Control
+              type="text"
+              name="phone"
+              value={values.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label style={{ display: "flex", flexDirection: "column" }}>
+              Votre message
+            </Form.Label>
+            <textarea
+              name="description"
+              value={values.description}
+              style={{
+                padding: ".375rem .75rem",
+                width: "100%",
+                minHeight: "200px",
+                color: "#495057",
+                backgroundColor: "#fff",
+                backgroundClip: "padding-box",
+                border: "1px solid #ced4da",
+                borderRadius: ".25rem",
+                transition:
+                  "border-color .15s ease-in-out,box-shadow .15s ease-in-out",
+              }}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+            />
+          </Form.Group>
+          <Button type="submit">Envoyer</Button>
+        </Form>
+      )}
+    </Formik>
+  </div>
+);
 
-export default Form;
+export default ContactForm;

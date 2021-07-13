@@ -3,11 +3,26 @@ import React, { useState } from "react";
 const YouAre = () => {
   const [selection, setSelection] = useState("");
 
+  const contentStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    width: "100%",
+  };
+
   const handleClick = (event) => {
     setSelection(event.target.value);
   };
   return (
-    <>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gridColumnStart: 2,
+      }}
+    >
       <div>
         <h2>Vous êtes ?</h2>
         <button type="button" value="tpe" onClick={handleClick}>
@@ -21,7 +36,7 @@ const YouAre = () => {
         </button>
       </div>
       {selection === "tpe" && (
-        <div>
+        <div style={contentStyle}>
           <h3>
             Libérez-vous des activités chronophages, centrez-vous sur votre cœur
             de métier
@@ -43,7 +58,7 @@ const YouAre = () => {
         </div>
       )}
       {selection === "pme" && (
-        <div>
+        <div style={contentStyle}>
           <h3>Assurez-vous l’expertise au sein de l’entreprise</h3>
           <p>
             Vous êtes une PME (définition), votre entreprise encore à taille
@@ -61,7 +76,7 @@ const YouAre = () => {
         </div>
       )}
       {selection === "office" && (
-        <>
+        <div style={contentStyle}>
           <div>
             <h3>Expert comptable</h3>
             <p>
@@ -93,9 +108,9 @@ const YouAre = () => {
               offrant la gestion de leur paie
             </p>
           </div>
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

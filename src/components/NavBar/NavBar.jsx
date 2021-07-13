@@ -16,7 +16,15 @@ const NavBar = () => {
   });
 
   return (
-    <div style={{ display: "block" }}>
+    <div
+      style={{
+        display: "flex",
+        position: "fixed",
+        backgroundColor: "white",
+        border: "1px solid black",
+        width: "100%",
+      }}
+    >
       <NavLink to="/">
         <img src={Logo4A} alt="logo entreprise" />
       </NavLink>

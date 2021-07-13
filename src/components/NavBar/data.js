@@ -1,5 +1,15 @@
 export const navData = [
   {
+    id: "solutions",
+    title: "NOS SOLUTIONS",
+    children: [
+      { title: "TPE", path: "/nos-solutions/tpe" },
+      { title: "PME", path: "/nos-solutions/pme" },
+      { title: "Cabinet comptable", path: "/nos-solutions/expert-comptable" },
+      { title: "Cabinet juridique", path: "/nos-solutions/cabinet-juridique" },
+    ],
+  },
+  {
     id: "pay",
     title: "PAIE",
     children: [
@@ -22,12 +32,12 @@ export const navData = [
   },
   {
     id: "advice",
-    title: "CONSEILS et ACCOMPAGNEMENT",
+    title: "CONSEIL",
     children: [
       { title: "Audit", path: "" },
       { title: "Formation", path: "" },
       { title: "Contrôle URSSAF", path: "" },
-      { title: "Gestion entreprise", path: "" },
+      // { title: "Gestion entreprise", path: "" },
     ],
   },
   {

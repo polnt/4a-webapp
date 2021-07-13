@@ -11,9 +11,10 @@ const App = () => {
       <main
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 12fr 1fr",
+          gridTemplateColumns: "1fr 4fr 1fr",
           width: "100%",
           minHeight: "100vh",
+          paddingTop: "150px",
         }}
       >
         <Router />

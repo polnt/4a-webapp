@@ -1,6 +1,6 @@
 import React from "react";
 
-import YouAre from "./elements/YouAre";
+import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
 const Home = () => {
@@ -15,10 +15,10 @@ const Home = () => {
     >
       <h1>HOME</h1>
       <div style={{ width: "100%" }}>
-        <CTA />
+        <Solutions />
       </div>
       <div style={{ width: "100%" }}>
-        <YouAre />
+        <CTA />
       </div>
     </div>
   );

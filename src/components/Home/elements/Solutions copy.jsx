@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const YouAre = () => {
+const Solutions = () => {
   const [selection, setSelection] = useState("");
 
   const contentStyle = {
@@ -23,7 +23,7 @@ const YouAre = () => {
       }}
     >
       <div>
-        <h2>Vous êtes ?</h2>
+        <h2>Nos solutions pour vous</h2>
         <button type="button" value="tpe" onClick={handleClick}>
           TPE
         </button>
@@ -32,6 +32,9 @@ const YouAre = () => {
         </button>
         <button type="button" value="office" onClick={handleClick}>
           Cabinet comptable
+        </button>
+        <button type="button" value="lawyer" onClick={handleClick}>
+          Avocat
         </button>
       </div>
       {selection === "tpe" && (
@@ -98,19 +101,21 @@ const YouAre = () => {
               </ul>
             </p>
           </div>
-          <div>
-            <h3>Avocat spécialisé en droit social</h3>
-            <p>
-              Vous êtes spécialiste du droit social et vous maitrisez les
-              différents aspects de la gestion du personnel. On vous propose la
-              possibilité d’accroitre vos services auprès de vos clients en leur
-              offrant la gestion de leur paie
-            </p>
-          </div>
+        </div>
+      )}
+      {selection === "lawyer" && (
+        <div style={contentStyle}>
+          <h3>Avocat spécialisé en droit social</h3>
+          <p>
+            Vous êtes spécialiste du droit social et vous maitrisez les
+            différents aspects de la gestion du personnel. On vous propose la
+            possibilité d’accroitre vos services auprès de vos clients en leur
+            offrant la gestion de leur paie
+          </p>
         </div>
       )}
     </div>
   );
 };
 
-export default YouAre;
+export default Solutions;

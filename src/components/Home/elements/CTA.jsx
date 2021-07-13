@@ -11,7 +11,7 @@ const CTA = () => {
   });
   const [containerStyle, setContainerStyle] = useState({
     display: "grid",
-    gridTemplateColumns: "1fr repeat(3, 4fr) 1fr",
+    gridTemplateColumns: "repeat(3, 1fr)",
     gridTemplateRow: "1fr",
   });
 
@@ -55,25 +55,25 @@ const CTA = () => {
       case toggle.pay:
         setContainerStyle({
           ...containerStyle,
-          gridTemplateColumns: "1fr 6fr 3fr 3fr 1fr",
+          gridTemplateColumns: "2fr 1fr 1fr",
         });
         break;
       case toggle.hr:
         setContainerStyle({
           ...containerStyle,
-          gridTemplateColumns: "1fr 3fr 6fr 3fr 1fr",
+          gridTemplateColumns: "1fr 2fr 1fr",
         });
         break;
       case toggle.advice:
         setContainerStyle({
           ...containerStyle,
-          gridTemplateColumns: "1fr 3fr 3fr 6fr 1fr",
+          gridTemplateColumns: "1fr 1fr 2fr",
         });
         break;
       default:
         setContainerStyle({
           display: "grid",
-          gridTemplateColumns: "1fr repeat(3, 4fr) 1fr",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRow: "1fr",
         });
         break;
@@ -92,7 +92,7 @@ const CTA = () => {
       }
     >
       <div
-        style={{ ...cardStyle, gridColumnStart: "2" }}
+        style={cardStyle}
         onMouseEnter={() =>
           setToggle({
             pay: true,

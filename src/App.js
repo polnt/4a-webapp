@@ -8,7 +8,14 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <main>
+      <main
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 12fr 1fr",
+          width: "100%",
+          minHeight: "100vh",
+        }}
+      >
         <Router />
       </main>
       <Footer />

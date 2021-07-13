@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
+    <div style={{ gridColumnStart: 2 }}>
       <h1>QUI SOMMES-NOUS ?</h1>
       <p>
         4A Paie & Conseils RH c’est la rencontre de 2 professionnelles de la

@@ -2,7 +2,7 @@ import React from "react";
 
 const Externalization = () => {
   return (
-    <div>
+    <div style={{ gridColumnStart: 2 }}>
       <h1>EXTERNALISATION</h1>
       <p>
         « Retrouvez votre cœur de métier, libérez-vous des risques »

@@ -9,14 +9,16 @@ const Contact = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        width: "100%",
+        gridColumnStart: 2,
       }}
     >
       <h2>CONTACT</h2>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr repeat(2, 6fr) 1fr",
-          gridTemplateRow: "2fr",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gridTemplateRow: "1fr",
           width: "100%",
         }}
       >
@@ -25,7 +27,6 @@ const Contact = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gridColumnStart: 2,
           }}
         >
           <h3>Coordonnées</h3>

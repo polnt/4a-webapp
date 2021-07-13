@@ -20,7 +20,6 @@ const YouAre = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gridColumnStart: 2,
       }}
     >
       <div>

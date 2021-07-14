@@ -20,14 +20,19 @@ const Procedure = () => {
       <h2>Le licenciement</h2>
       <p>
         Vous souhaitez vous séparer d’un de vos salariés, nous vous accompagnons
-        dans les démarches pour sécuriser la procédure. Quel que soit le motif
-        engagé, nous étudions avec vous les faits afin d’assurer le fondement du
-        licenciement et affirmer les causes réelles et sérieuses de la
-        procédure. Le calendrier pour mener à bien cette formalité est
-        inflexible, un seul délai erroné est toute la procédure devient instable
-        et peut conduire à un litige avec le salarié. Aussi, nous nous engageons
-        à réagir efficacement à vos côtés pour vous garantir le bon déroulement
-        du licenciement.
+        dans les démarches pour sécuriser la procédure.
+      </p>
+      <p>
+        Quel que soit le motif engagé, nous étudions avec vous les faits afin
+        d’assurer le fondement du licenciement et affirmer les causes réelles et
+        sérieuses de la procédure.
+      </p>
+      <p>
+        Le calendrier pour mener à bien cette formalité est inflexible, un seul
+        délai erroné est toute la procédure devient instable et peut conduire à
+        un litige avec le salarié. Aussi, nous nous engageons à réagir
+        efficacement à vos côtés pour vous garantir le bon déroulement du
+        licenciement.
       </p>
     </div>
   );

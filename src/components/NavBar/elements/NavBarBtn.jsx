@@ -11,11 +11,18 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{ position: "relative", display: "flex", flexDirection: "column" }}
+    >
       <button
         type="button"
         onClick={handleClick}
-        style={{ position: "relative", display: "flex", alignItems: "center" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          border: "none",
+          backgroundColor: "transparent",
+        }}
       >
         {item.title}
         {toggle[item.id] ? <DownArrowIcon /> : <RightArrowIcon />}
@@ -27,19 +34,22 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
                 display: "flex",
                 flexDirection: "column",
                 position: "absolute",
-                marginTop: "30px",
+                top: 26,
+                // marginTop: "30px",
                 backgroundColor: "white",
-                zIndex: "100",
+                border: "1px solid black",
+                padding: "0 15px 5px 0",
               }
             : { display: "none" }
         }
       >
         {item.children?.map((subItem) => (
           <NavLink
+            style={{ textDecoration: "none", marginLeft: "10px" }}
             to={subItem.path}
             onClick={() => setToggle({ pay: false, hr: false, advice: false })}
           >
-            {subItem.title}
+            <span style={{ whiteSpace: "nowrap" }}>{subItem.title}</span>
           </NavLink>
         ))}
       </div>

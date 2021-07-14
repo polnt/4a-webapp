@@ -2,6 +2,8 @@ import React from "react";
 
 import ContactForm from "./elements/Form";
 
+import "../../css/Contact/Contact.css";
+
 const Contact = () => {
   return (
     <div
@@ -14,14 +16,7 @@ const Contact = () => {
       }}
     >
       <h2>CONTACT</h2>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gridTemplateRow: "1fr",
-          width: "100%",
-        }}
-      >
+      <div className="contact_content_container">
         <div
           style={{
             display: "flex",

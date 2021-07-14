@@ -1,0 +1,7 @@
+@media screen and (min-device-width: 1440px) {
+  .contact_content_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}

@@ -14,7 +14,7 @@ const App = () => {
           gridTemplateColumns: "1fr 4fr 1fr",
           width: "100%",
           minHeight: "100vh",
-          paddingTop: "150px",
+          paddingTop: "200px",
         }}
       >
         <Router />

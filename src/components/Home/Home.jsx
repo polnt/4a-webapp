@@ -14,7 +14,7 @@ const Home = () => {
       }}
     >
       <h1>HOME</h1>
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%", marginBottom: "40px" }}>
         <Solutions />
       </div>
       <div style={{ width: "100%" }}>

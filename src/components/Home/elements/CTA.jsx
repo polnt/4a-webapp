@@ -1,7 +1,9 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { navData } from "../../NavBar/data";
+
+import "../../../css/Home/CTA.css";
 
 const CTA = () => {
   const [toggle, setToggle] = useState({
@@ -9,17 +11,7 @@ const CTA = () => {
     hr: false,
     advice: false,
   });
-  const [containerStyle, setContainerStyle] = useState({
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gridTemplateRow: "1fr",
-  });
-
-  const cardStyle = {
-    border: "1px solid black",
-    height: "200px",
-    position: "relative",
-  };
+  const [containerStyle, setContainerStyle] = useState("cta_container");
 
   const hidedMenuStyle = {
     position: "absolute",
@@ -53,36 +45,23 @@ const CTA = () => {
   useLayoutEffect(() => {
     switch (true) {
       case toggle.pay:
-        setContainerStyle({
-          ...containerStyle,
-          gridTemplateColumns: "2fr 1fr 1fr",
-        });
+        setContainerStyle("cta_container_focus_first");
         break;
       case toggle.hr:
-        setContainerStyle({
-          ...containerStyle,
-          gridTemplateColumns: "1fr 2fr 1fr",
-        });
+        setContainerStyle("cta_container_focus_second");
         break;
       case toggle.advice:
-        setContainerStyle({
-          ...containerStyle,
-          gridTemplateColumns: "1fr 1fr 2fr",
-        });
+        setContainerStyle("cta_container_focus_third");
         break;
       default:
-        setContainerStyle({
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gridTemplateRow: "1fr",
-        });
+        setContainerStyle("cta_container");
         break;
     }
   }, [toggle]);
 
   return (
     <div
-      style={containerStyle}
+      className={containerStyle}
       onMouseLeave={() =>
         setToggle({
           pay: false,
@@ -91,99 +70,37 @@ const CTA = () => {
         })
       }
     >
-      <div
-        style={cardStyle}
-        onMouseEnter={() =>
-          setToggle({
-            pay: true,
-            hr: false,
-            advice: false,
-          })
-        }
-      >
+      {[1, 2, 3].map((index) => (
         <div
-          style={
-            toggle.pay
-              ? {
-                  ...hidedMenuStyle,
-                  ...showMenuStyle,
-                }
-              : hidedMenuStyle
+          className="cta_card"
+          onMouseEnter={() =>
+            setToggle({
+              [navData[index].id]: true,
+            })
           }
         >
-          <h2>PAIE</h2>
-          <div style={navLinkMenuStyle}>
-            {toggle.pay &&
-              navData[0].children?.map((item) => (
-                <NavLink to={item.path} style={navLinkStyle}>
-                  {item.title}
-                </NavLink>
-              ))}
+          <div
+            style={
+              toggle[navData[index].id]
+                ? {
+                    ...hidedMenuStyle,
+                    ...showMenuStyle,
+                  }
+                : hidedMenuStyle
+            }
+          >
+            <h2>{navData[index].title}</h2>
+            <div style={navLinkMenuStyle}>
+              {toggle[navData[index].id] &&
+                navData[index].children?.map((item) => (
+                  <NavLink to={item.path} style={navLinkStyle}>
+                    {item.title}
+                  </NavLink>
+                ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        style={cardStyle}
-        onMouseEnter={() =>
-          setToggle({
-            pay: false,
-            hr: true,
-            advice: false,
-          })
-        }
-      >
-        <div
-          style={
-            toggle.hr
-              ? {
-                  ...hidedMenuStyle,
-                  ...showMenuStyle,
-                }
-              : hidedMenuStyle
-          }
-        >
-          <h2>RH</h2>
-          <div style={navLinkMenuStyle}>
-            {toggle.hr &&
-              navData[1].children?.map((item) => (
-                <NavLink to={item.path} style={navLinkStyle}>
-                  {item.title}
-                </NavLink>
-              ))}
-          </div>
-        </div>
-      </div>
-      <div
-        style={cardStyle}
-        onMouseEnter={() =>
-          setToggle({
-            pay: false,
-            hr: false,
-            advice: true,
-          })
-        }
-      >
-        <div
-          style={
-            toggle.advice
-              ? {
-                  ...hidedMenuStyle,
-                  ...showMenuStyle,
-                }
-              : hidedMenuStyle
-          }
-        >
-          <h2>CONSEIL</h2>
-          <div style={navLinkMenuStyle}>
-            {toggle.advice &&
-              navData[2].children?.map((item) => (
-                <NavLink to={item.path} style={navLinkStyle}>
-                  {item.title}
-                </NavLink>
-              ))}
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

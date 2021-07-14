@@ -1,0 +1,30 @@
+.solutions_hidden_content {
+  display: none;
+}
+
+.solutions_show_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px 32px 64px 32px;
+  color: black;
+  background-color: #e9ecef;
+}
+
+@media screen and (min-device-width: 1440px) {
+  .solutions_hidden_content {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 900px;
+    bottom: 0;
+    color: transparent;
+  }
+
+  .solutions_show_content {
+    transition: left 0.25s ease;
+  }
+}

@@ -5,6 +5,7 @@ import * as yup from "yup";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
 
 const schema = yup.object().shape({
   firstName: yup.string(),
@@ -43,7 +44,7 @@ const ContactForm = () => (
           }}
         >
           <Form.Row>
-            <Form.Group style={{ marginRight: "20px" }}>
+            <Form.Group as={Col} style={{ marginRight: "20px" }}>
               <Form.Label>Nom</Form.Label>
               <Form.Control
                 type="text"
@@ -53,7 +54,7 @@ const ContactForm = () => (
                 onBlur={handleBlur}
               />
             </Form.Group>
-            <Form.Group>
+            <Form.Group as={Col}>
               <Form.Label>Prénom</Form.Label>
               <Form.Control
                 type="text"
@@ -65,7 +66,7 @@ const ContactForm = () => (
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group style={{ marginRight: "20px" }}>
+            <Form.Group as={Col} style={{ marginRight: "20px" }}>
               <Form.Label>
                 Email<span style={{ color: "red" }}>*</span>
               </Form.Label>
@@ -83,7 +84,7 @@ const ContactForm = () => (
                 L'email doit être valide
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group>
+            <Form.Group as={Col}>
               <Form.Label>Téléphone</Form.Label>
               <Form.Control
                 type="text"

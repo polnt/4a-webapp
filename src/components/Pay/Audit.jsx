@@ -2,7 +2,7 @@ import React from "react";
 
 const Audit = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>AUDIT DE PAIE</h1>
       <p>
         Appelé également audit de conformité, 4A Paie & RH Conseils vous propose

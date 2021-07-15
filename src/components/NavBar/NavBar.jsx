@@ -8,6 +8,7 @@ import NavBarBtn from "./elements/NavBarBtn";
 import ProfileBtn from "./elements/ProfileBtn";
 import ContactBtn from "./elements/ContactBtn";
 import MenuBtn from "./elements/MenuBtn";
+import MobileNavMenu from "./MobileNavMenu";
 
 import { navData } from "./data";
 
@@ -23,6 +24,7 @@ const NavBar = () => {
     <div className="navbar_container">
       <NavLink to="/">
         <img
+          // src={LittleLogo4A}
           src={scrollY === 0 ? Logo4A : LittleLogo4A}
           alt="logo entreprise"
         />
@@ -33,7 +35,7 @@ const NavBar = () => {
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "flex-start",
-            width: "100%",
+            // width: "100%",
             flexWrap: "nowrap",
           }}
         >

@@ -10,14 +10,23 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gridColumnStart: 2,
+        // minHeight: "100vh",
       }}
     >
       <h1>HOME</h1>
-      <div style={{ width: "100%", marginBottom: "40px" }}>
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "40px",
+        }}
+      >
         <Solutions />
       </div>
-      <div style={{ width: "100%" }}>
+      <div
+        style={{
+          width: "100%",
+        }}
+      >
         <CTA />
       </div>
     </div>

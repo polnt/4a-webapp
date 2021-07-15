@@ -2,7 +2,7 @@ import React from "react";
 
 const Lifetime = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>LES RESSOURCES HUMAINES</h1>
       <p>
         De l’offre d’emploi à la sortie du salarié, les tâches incombant aux

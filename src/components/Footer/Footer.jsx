@@ -8,9 +8,12 @@ const Footer = () => {
   return (
     <div
       style={{
+        // position: "fixed",
+        // bottom: 0,
         display: "flex",
         justifyContent: "center",
-        width: "100%",
+        paddingTop: "200px",
+        // width: "100%",
       }}
     >
       {footerData.map((item) => (

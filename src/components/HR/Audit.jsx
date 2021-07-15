@@ -2,7 +2,7 @@ import React from "react";
 
 const Procedure = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>AUDIT RH</h1>
       <p>
         Votre budget en matière sociale augmente chaque année, vous souhaitez

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Pme = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>PME</h1>
       <h2>Assurez-vous l’expertise au sein de l’entreprise</h2>
       <p>

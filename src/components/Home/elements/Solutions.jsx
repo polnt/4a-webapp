@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { NavLink } from "react-router-dom";
+
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
@@ -18,9 +20,9 @@ const Solutions = () => {
     <Jumbotron
       style={{
         position: "relative",
-        width: "100%",
         height: "100%",
         display: "flex",
+        overflow: "hidden",
       }}
     >
       <Container>
@@ -40,16 +42,18 @@ const Solutions = () => {
               >
                 <h3>{solution.title}</h3>
                 <p>{solution.text}</p>
-                <button
-                  type="button"
-                  style={
-                    selection === solution.id
-                      ? { display: "block" }
-                      : { display: "none" }
-                  }
-                >
-                  En savoir plus
-                </button>
+                <NavLink style={{ textDecoration: "none" }} to={solution.path}>
+                  <button
+                    type="button"
+                    style={
+                      selection === solution.id
+                        ? { display: "block" }
+                        : { display: "none" }
+                    }
+                  >
+                    En savoir plus
+                  </button>
+                </NavLink>
               </div>
             </div>
           ))}

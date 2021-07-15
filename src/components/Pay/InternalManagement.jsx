@@ -2,7 +2,7 @@ import React from "react";
 
 const InternalManagement = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>GESTION INTERNE</h1>
       <p>
         « Apporter un soutien à votre collaborateur en charge de la gestion du

@@ -47,7 +47,7 @@ const NavBarBtn = ({ item, toggle, setToggle }) => {
           <NavLink
             style={{ textDecoration: "none", marginLeft: "10px" }}
             to={subItem.path}
-            onClick={() => setToggle({ pay: false, hr: false, advice: false })}
+            onClick={() => setToggle({})}
           >
             <span style={{ whiteSpace: "nowrap" }}>{subItem.title}</span>
           </NavLink>

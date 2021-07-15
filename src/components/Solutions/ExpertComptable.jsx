@@ -2,7 +2,7 @@ import React from "react";
 
 const ExpertComptable = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>EXPERT COMPTABLE</h1>
       <h2>Gérer simplement votre pôle social</h2>
       <p>

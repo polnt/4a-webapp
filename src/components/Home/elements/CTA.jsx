@@ -73,6 +73,11 @@ const CTA = () => {
       {[1, 2, 3].map((index) => (
         <div
           className="cta_card"
+          onTouchStart={() => {
+            setToggle({
+              [navData[index].id]: true,
+            });
+          }}
           onMouseEnter={() =>
             setToggle({
               [navData[index].id]: true,

@@ -11,8 +11,6 @@ const Contact = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100%",
-        gridColumnStart: 2,
       }}
     >
       <h2>CONTACT</h2>

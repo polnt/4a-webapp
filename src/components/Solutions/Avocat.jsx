@@ -2,7 +2,7 @@ import React from "react";
 
 const Avocat = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>AVOCAT spécialisé en droit social</h1>
       <h2>Augmenter votre expertise en technique de paie</h2>
       <p>

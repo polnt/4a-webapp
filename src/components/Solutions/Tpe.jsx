@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Tpe = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>TPE</h1>
       <h2>
         Libérez-vous des activités chronophages, centrez-vous sur votre cœur de
@@ -41,7 +41,6 @@ const Tpe = () => {
           <NavLink to="/paie/gestion-interne">Gestion Interne</NavLink>
         </li>
         <li>
-          {" "}
           <NavLink to="/paie/audit">Audit de paie</NavLink>
         </li>
       </ul>

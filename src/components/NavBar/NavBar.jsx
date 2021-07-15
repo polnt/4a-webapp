@@ -22,7 +22,7 @@ const NavBar = () => {
 
   return (
     <div className="navbar_container">
-      <NavLink style={{ zIndex: 100 }} to="/">
+      <NavLink to="/">
         <img
           // src={LittleLogo4A}
           src={scrollY === 0 ? Logo4A : LittleLogo4A}

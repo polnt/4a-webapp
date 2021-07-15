@@ -2,6 +2,8 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
+import ContactCTA from "../../components/_reusable/ContactCTA";
+
 const Pme = () => {
   return (
     <div>
@@ -47,7 +49,7 @@ const Pme = () => {
           http://corporate.europages.fr/actualites/3-pme-europeennes-top-6-des-difficultes-rencontrees/
         </a>
       </p>
-      <button type="button">Demander un devis</button>
+      <ContactCTA />
     </div>
   );
 };

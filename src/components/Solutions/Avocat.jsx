@@ -1,5 +1,7 @@
 import React from "react";
 
+import ContactCTA from "../../components/_reusable/ContactCTA";
+
 const Avocat = () => {
   return (
     <div>
@@ -14,7 +16,7 @@ const Avocat = () => {
         équipements nécessaires pour la réalisation des bulletins. Nous vous
         assurons une totale confidentialité.
       </p>
-      <button type="button">Demander un devis</button>
+      <ContactCTA />
     </div>
   );
 };

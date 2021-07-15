@@ -2,6 +2,8 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
+import ContactCTA from "../../components/_reusable/ContactCTA";
+
 const Tpe = () => {
   return (
     <div>
@@ -44,7 +46,7 @@ const Tpe = () => {
           <NavLink to="/paie/audit">Audit de paie</NavLink>
         </li>
       </ul>
-      <button type="button">Demander un devis</button>
+      <ContactCTA />
     </div>
   );
 };

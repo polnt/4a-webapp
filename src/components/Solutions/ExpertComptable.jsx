@@ -1,5 +1,7 @@
 import React from "react";
 
+import ContactCTA from "../../components/_reusable/ContactCTA";
+
 const ExpertComptable = () => {
   return (
     <div>
@@ -28,7 +30,7 @@ const ExpertComptable = () => {
         la main sur votre logiciel de paie en SAAS. Nous vous assurons une
         totale confidentialité.
       </p>
-      <button type="button">Demander un devis</button>
+      <ContactCTA />
     </div>
   );
 };

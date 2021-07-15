@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-
-import { useNav } from "../../../hooks";
+import React from "react";
 
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 
-const MenuBtn = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
-
+const MenuBtn = ({ mobileMenu, setMobileMenu }) => {
   return (
     <div className="navbar_menu">
       <button
@@ -20,7 +16,7 @@ const MenuBtn = () => {
       >
         <MenuIcon
           className="navbar_icon"
-          style={mobileMenu ? { color: "white" } : { color: "black" }}
+          // style={mobileMenu ? { color: "white" } : { color: "black" }}
         />
       </button>
     </div>

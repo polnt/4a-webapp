@@ -107,7 +107,7 @@ const ContactForm = () => (
               value={values.description}
               style={{
                 padding: ".375rem .75rem",
-                // width: "100%",
+                width: "100%",
                 minHeight: "200px",
                 color: "#495057",
                 backgroundColor: "#fff",

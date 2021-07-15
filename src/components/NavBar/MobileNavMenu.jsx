@@ -6,75 +6,74 @@ import { useNav } from "../../hooks";
 
 import { navData } from "./data";
 
-const MobileNavMenu = () => {
+const MobileNavMenu = ({ mobileMenu, setMobileMenu }) => {
   const { toggle, setToggle } = useNav();
-  const mobileMenu = false;
 
   return (
     <div
-      className="navbar_menu_links"
-      style={
+      className={
         mobileMenu
-          ? {
-              display: "block",
-              position: "absolute",
-              // width: "100%",
-              top: 0,
-              bottom: -700,
-              left: 0,
-              right: 0,
-              backgroundColor: "black",
-              transition: "bottom 2s ease",
-              zIndex: 1000,
-            }
-          : {
-              position: "absolute",
-              bottom: 0,
-              top: 0,
-              left: 0,
-              right: 0,
-              zIndex: 1000,
-            }
+          ? "mobile_nav_menu_container_show"
+          : "mobile_nav_menu_container_hidden"
       }
     >
-      <div
-        style={{
-          display: "flex",
-          height: "100%",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {navData.map((item) => (
-          <div>
-            <button
-              type="button"
-              onClick={() => setToggle({ [item.id]: !toggle[item.id] })}
-            >
-              {item.title}
-            </button>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            height: "100%",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+          }}
+        >
+          {navData.map((item) => (
             <div
-              style={
-                toggle[item.id]
-                  ? {
-                      display: "flex",
-                      flexDirection: "column",
-                      // top: 26,
-                      // marginTop: "30px",
-                      backgroundColor: "white",
-                      border: "1px solid black",
-                      padding: "0 15px 5px 0",
-                    }
-                  : { display: "none" }
+              className={
+                mobileMenu
+                  ? "mobile_nav_menu_links_show"
+                  : "mobile_nav_menu_links_hidden"
               }
             >
-              {item.children?.map((subItem) => (
-                <NavLink to={subItem.path}>{subItem.title}</NavLink>
-              ))}
+              <button
+                style={{
+                  backgroundColor: "transparent",
+                  border: "none",
+                  whiteSpace: "nowrap",
+                }}
+                type="button"
+                onClick={() => setToggle({ [item.id]: !toggle[item.id] })}
+              >
+                {item.title}
+              </button>
+              <div
+                style={
+                  toggle[item.id]
+                    ? {
+                        display: "flex",
+                        flexDirection: "column",
+                        backgroundColor: "white",
+                        border: "1px solid black",
+                        padding: "0 15px 5px 0",
+                      }
+                    : { display: "none" }
+                }
+              >
+                {item.children?.map((subItem) => (
+                  <NavLink
+                    to={subItem.path}
+                    onClick={() => {
+                      setMobileMenu(!mobileMenu);
+                      setToggle({});
+                    }}
+                  >
+                    {subItem.title}
+                  </NavLink>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

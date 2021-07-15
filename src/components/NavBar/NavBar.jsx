@@ -18,11 +18,11 @@ import LittleLogo4A from "../../assets/Logo4A_70x70.png";
 import "../../css/NavBar/NavBar.css";
 
 const NavBar = () => {
-  const { toggle, setToggle, scrollY } = useNav();
+  const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
     <div className="navbar_container">
-      <NavLink to="/">
+      <NavLink style={{ zIndex: 100 }} to="/">
         <img
           // src={LittleLogo4A}
           src={scrollY === 0 ? Logo4A : LittleLogo4A}
@@ -35,13 +35,12 @@ const NavBar = () => {
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "flex-start",
-            // width: "100%",
             flexWrap: "nowrap",
           }}
         >
           <ContactBtn />
           <ProfileBtn />
-          <MenuBtn />
+          <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
         <div className="navbar_links_container">
           {navData.map((item) => (
@@ -49,6 +48,7 @@ const NavBar = () => {
           ))}
         </div>
       </div>
+      <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
     </div>
   );
 };

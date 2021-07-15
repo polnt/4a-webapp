@@ -18,14 +18,35 @@
 }
 
 .navbar_menu {
-  /* position: relative; */
+  position: relative;
   display: flex;
   justify-content: flex-end;
   margin-top: 5px;
   margin-right: 5px;
 }
 
+.mobile_nav_menu_container_hidden {
+  position: absolute;
+  top: 0;
+  left: 900px;
+  right: 0;
+  z-index: 3;
+  background-color: white;
+  transition: left 1s ease;
+}
+
+.mobile_nav_menu_container_show {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  right: 0;
+  z-index: 3;
+  background-color: white;
+  transition: left 1s ease;
+}
+
 .navbar_icon {
+  z-index: 4;
   margin-right: 5px;
   font-size: 40px;
 }
@@ -63,6 +84,14 @@
   }
 
   .navbar_menu {
+    display: none;
+  }
+
+  .mobile_nav_menu_links_hidden > button {
+    display: none;
+  }
+
+  .mobile_nav_menu_links_show > button {
     display: none;
   }
 

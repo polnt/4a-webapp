@@ -8,6 +8,8 @@ const useNav = () => {
     advice: false,
   });
 
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   const [scrollY, setScrollY] = useState(document.scrollY);
 
   const handleScroll = () => {
@@ -19,7 +21,7 @@ const useNav = () => {
     return () => window.removeEventListener("scroll", () => handleScroll());
   }, [document.scrollY]);
 
-  return { toggle, setToggle, scrollY };
+  return { toggle, setToggle, scrollY, mobileMenu, setMobileMenu };
 };
 
 export default useNav;

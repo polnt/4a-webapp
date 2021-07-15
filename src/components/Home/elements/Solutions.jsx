@@ -20,14 +20,12 @@ const Solutions = () => {
     <Jumbotron
       style={{
         position: "relative",
-        height: "100%",
-        display: "flex",
-        overflow: "hidden",
+        overflowX: "hidden",
       }}
     >
       <Container>
         <h2>Nos solutions pour vous</h2>
-        <div style={{ display: "flex", height: "100%" }}>
+        <div style={{ display: "flex" }}>
           {solutionsData.map((solution) => (
             <div>
               <button type="button" value={solution.id} onClick={handleClick}>

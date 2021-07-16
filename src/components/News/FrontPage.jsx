@@ -11,7 +11,11 @@ const FrontPage = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchedNews = await db().collection("news").limit(5).get();
+      const fetchedNews = await db()
+        .collection("news")
+        .where("visibility", "==", "public")
+        .limit(5)
+        .get();
       let carouselNews = [];
       fetchedNews.forEach((doc) => {
         carouselNews.push(doc.data());

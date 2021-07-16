@@ -7,8 +7,6 @@ import { openModal, closeModal } from "../../../redux/slices/actions";
 
 import { useAuth } from "../../../hooks";
 
-import Login from "../../Login/Login";
-
 const ProfileBtn = () => {
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
@@ -18,7 +16,7 @@ const ProfileBtn = () => {
     if (modal) {
       dispatch(closeModal());
     } else {
-      dispatch(openModal(<Login />));
+      dispatch(openModal("login"));
     }
   };
 

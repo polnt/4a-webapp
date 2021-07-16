@@ -7,7 +7,7 @@ import Login from "../../Login/Login";
 const PleaseSignIn = () => {
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(openModal(<Login />));
+    dispatch(openModal("login"));
   };
 
   return (

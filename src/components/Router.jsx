@@ -20,6 +20,9 @@ import Lifetime from "./HR/Lifetime";
 import Procedure from "./HR/Procedure";
 import HrAudit from "./HR/Audit";
 
+//NEWS
+import FrontPage from "./News/FrontPage";
+
 // ABOUT
 import About from "./About/About";
 
@@ -49,6 +52,7 @@ const Router = () => {
       <Route path="/rh/vie-du-contrat" component={Lifetime} />
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
+      <Route path="/actualités/à-la-une" component={FrontPage} />
       <Route path="/qui-sommes-nous" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/espace-client" component={ClientArea} />

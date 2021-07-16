@@ -5,11 +5,14 @@ import { CgProfile as ProfileIcon } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal, closeModal } from "../../../redux/slices/actions";
 
+import { useAuth } from "../../../hooks";
+
 import Login from "../../Login/Login";
 
 const ProfileBtn = () => {
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
+  const { userData } = useAuth();
 
   const handleClick = () => {
     if (modal) {
@@ -32,7 +35,15 @@ const ProfileBtn = () => {
         position: "relative",
       }}
     >
-      <ProfileIcon className="navbar_icon" />
+      {userData ? (
+        <img
+          src={userData.photoURL}
+          alt="user profile picture"
+          style={{ width: "20px" }}
+        />
+      ) : (
+        <ProfileIcon className="navbar_icon" />
+      )}
       <span>Espace client</span>
     </button>
   );

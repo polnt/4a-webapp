@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const modalSlice = createSlice({
+const authSlice = createSlice({
   name: "user",
   initialState: { isPending: true },
   reducers: {
@@ -19,7 +19,7 @@ const modalSlice = createSlice({
   },
 });
 
-const { actions, reducer } = modalSlice;
+const { actions, reducer } = authSlice;
 
 export const { trySignIn, signIn, signOut, logout } = actions;
 

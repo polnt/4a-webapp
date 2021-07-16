@@ -6,10 +6,12 @@ import { trySignIn } from "./redux/slices/actions";
 
 import Router from "./components/Router";
 import NavBar from "./components/NavBar/NavBar";
-// import MobileNavMenu from "./components/NavBar/MobileNavMenu";
 import Footer from "./components/Footer/Footer";
 import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
+
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const dispatch = useDispatch();

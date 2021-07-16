@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 const LocationPath = () => {
   const location = useLocation().pathname;
@@ -10,7 +10,8 @@ const LocationPath = () => {
       <span
         style={location.length < 2 ? { display: "none" } : { display: "block" }}
       >
-        Accueil{location}
+        <NavLink to="/">Accueil</NavLink>
+        {location}
       </span>
     </div>
   );

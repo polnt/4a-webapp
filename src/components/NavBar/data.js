@@ -44,7 +44,7 @@ export const navData = [
     id: "news",
     title: "ACTUALITÉS",
     children: [
-      { title: "À la une", path: "" },
+      { title: "À la une", path: "/actualités/à-la-une" },
       { title: "Toute l'actualité", path: "" },
     ],
   },

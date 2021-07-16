@@ -3,20 +3,17 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
-import firebase from "firebase/app";
-import { firebaseConfig } from "./firebase/config";
+import { initFirebaseApp } from "./firebase";
 
 import { Provider } from "react-redux";
 import { configureAppStore } from "./redux";
 
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import reportWebVitals from "./reportWebVitals";
 
+initFirebaseApp();
 const store = configureAppStore();
-
-firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <BrowserRouter>

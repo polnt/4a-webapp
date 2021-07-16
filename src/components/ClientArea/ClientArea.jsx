@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Redirect } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useAuth } from "../../hooks";
 
 const ClientArea = () => {
-  const { user } = useSelector((state) => state);
-  const [redirect, setRedirect] = useState(false);
-
-  useEffect(() => {
-    if (!user.isSignedIn && !user.isPending) {
-      setRedirect(true);
-    }
-  }, [user]);
+  const { redirect } = useAuth();
 
   return (
     <div>

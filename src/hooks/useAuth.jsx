@@ -1,26 +1,18 @@
 import { useEffect, useState } from "react";
-import firebase from "firebase";
-import { useDispatch } from "react-redux";
-import { signIn } from "../redux/slices/actions";
+import { useSelector } from "react-redux";
 
 const useAuth = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
-  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state);
+
+  const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    const unregisterAuthObserver = firebase
-      .auth()
-      .onAuthStateChanged((user) => {
-        dispatch(signIn(!!user));
-      });
-    return () => unregisterAuthObserver();
-  }, []);
+    if (!user.isSignedIn && !user.isPending) {
+      setRedirect(true);
+    }
+  }, [user]);
 
-  useEffect(() => {
-    isSignedIn ? console.log("Connecté") : console.log("Déconnecté");
-  }, [isSignedIn]);
-
-  return { isSignedIn, setIsSignedIn };
+  return { redirect };
 };
 
 export default useAuth;

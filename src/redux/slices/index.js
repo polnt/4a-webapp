@@ -1,3 +1,4 @@
 import modal from "./modalSlice";
+import user from "./authSlice";
 
-export { modal };
+export { modal, user };

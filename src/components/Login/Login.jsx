@@ -2,22 +2,23 @@ import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 
-import { logout } from "../../redux/slices/actions";
+import { logout, signOut } from "../../redux/slices/actions";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
   const dispatch = useDispatch();
   const uiConfig = {
     signInFlow: "popup",
-    signInSuccessUrl: "/signedIn",
+    signInSuccessUrl: "/espace-client",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
   };
 
-  const useLogout = () => {
+  const userLogout = () => {
     dispatch(logout());
+    dispatch(signOut());
     firebase.auth().signOut();
   };
 
@@ -27,7 +28,7 @@ const Login = () => {
     >
       <h3>Connexion</h3>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-      <a onClick={useLogout}>Sign out</a>
+      <a onClick={userLogout}>Sign out</a>
     </div>
   );
 };

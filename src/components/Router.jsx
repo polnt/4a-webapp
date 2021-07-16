@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Home from "./Home/Home";
 
-// Solutions
+// SOLUTIONS
 import Tpe from "./Solutions/Tpe";
 import Pme from "./Solutions/Pme";
 import ExpertComptable from "./Solutions/ExpertComptable";
@@ -26,6 +26,12 @@ import About from "./About/About";
 // CONTACT
 import Contact from "./Contact/Contact";
 
+// CLIENT AREA
+import ClientArea from "./ClientArea/ClientArea";
+
+// ALERTS
+import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
+
 const Router = () => {
   return (
     <Switch>
@@ -45,6 +51,8 @@ const Router = () => {
       <Route path="/rh/audit" component={HrAudit} />
       <Route path="/qui-sommes-nous" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/espace-client" component={ClientArea} />
+      <Route path="/espace-non-authorisé" component={PleaseSignIn} />
     </Switch>
   );
 };

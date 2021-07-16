@@ -1,4 +1,4 @@
 import useNav from "./useNav";
-import useAuth from "./useAuth";
+// import useAuth from "./useAuth";
 
-export { useNav, useAuth };
+export { useNav };

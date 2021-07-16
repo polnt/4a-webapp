@@ -28,7 +28,7 @@
 .mobile_nav_menu_container_hidden {
   position: absolute;
   top: 0;
-  left: 900px;
+  left: 1500px;
   right: 0;
   z-index: 3;
   background-color: white;
@@ -43,6 +43,10 @@
   z-index: 3;
   background-color: white;
   transition: left 1s ease;
+}
+
+.mobile_nav_menu_links_hidden > button {
+  display: none;
 }
 
 .navbar_icon {

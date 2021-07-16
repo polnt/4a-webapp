@@ -1,0 +1,31 @@
+import React from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { closeModal } from "../../redux/slices/actions";
+
+import "../../css/_reusable/Modal.css";
+
+const Modal = () => {
+  const dispatch = useDispatch();
+  const { modal } = useSelector((state) => state);
+  return (
+    <div
+      className="popup_container"
+      id="popup_container"
+      // onMouseDown={handleClosePopup}
+    >
+      <div className="popup">
+        <button
+          type="button"
+          className="close_popup"
+          onClick={() => dispatch(closeModal())}
+        >
+          X
+        </button>
+        {modal}
+      </div>
+    </div>
+  );
+};
+
+export default Modal;

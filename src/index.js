@@ -1,14 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+
+import firebase from "firebase/app";
+import { firebaseConfig } from "./firebase/config";
+
+import { Provider } from "react-redux";
+import { configureAppStore } from "./redux";
+
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./App";
+
 import reportWebVitals from "./reportWebVitals";
+
+const store = configureAppStore();
+
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>,
   document.getElementById("root")
 );

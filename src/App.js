@@ -5,8 +5,12 @@ import NavBar from "./components/NavBar/NavBar";
 // import MobileNavMenu from "./components/NavBar/MobileNavMenu";
 import Footer from "./components/Footer/Footer";
 import LocationPath from "./components/_reusable/LocationPath";
+import Modal from "./components/_reusable/Modal";
+
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const { modal } = useSelector((state) => state);
   return (
     <div className="App">
       <NavBar />
@@ -25,6 +29,7 @@ const App = () => {
         </main>
       </div>
       <Footer />
+      {modal && <Modal />}
     </div>
   );
 };

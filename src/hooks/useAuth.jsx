@@ -1,14 +1,27 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import firebase from "firebase";
 
+import firebase from "firebase";
 import { db } from "../firebase";
 
+import { useDispatch } from "react-redux";
+import { trySignIn } from "../redux/slices/actions";
+
 const useAuth = () => {
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state);
 
   const [redirect, setRedirect] = useState(false);
   const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const unregisterAuthObserver = firebase
+      .auth()
+      .onAuthStateChanged((user) => {
+        dispatch(trySignIn(!!user));
+      });
+    return () => unregisterAuthObserver();
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -26,12 +39,10 @@ const useAuth = () => {
         });
         const storedUser = await db().collection("users").doc(uid).get();
         if (!storedUser.exists) {
-          console.log("check");
           await db().collection("users").doc(uid).set({});
         }
       }
     })();
-    console.log("times");
   }, [user.isSignedIn]);
 
   return { redirect, userData };

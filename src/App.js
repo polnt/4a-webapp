@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-import firebase from "firebase";
+import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { trySignIn } from "./redux/slices/actions";
+import { useSelector } from "react-redux";
 
 import Router from "./components/Router";
 import NavBar from "./components/NavBar/NavBar";
@@ -14,17 +12,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
-
-  useEffect(() => {
-    const unregisterAuthObserver = firebase
-      .auth()
-      .onAuthStateChanged((user) => {
-        dispatch(trySignIn(!!user));
-      });
-    return () => unregisterAuthObserver();
-  }, []);
 
   return (
     <div className="App">

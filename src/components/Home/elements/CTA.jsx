@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { navData } from "../../NavBar/data";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const useNav = () => {
   const document = window;
@@ -12,14 +12,14 @@ const useNav = () => {
 
   const [scrollY, setScrollY] = useState(document.scrollY);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setScrollY(document.scrollY);
-  };
+  }, [document.scrollY]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => handleScroll());
     return () => window.removeEventListener("scroll", () => handleScroll());
-  }, [document.scrollY]);
+  }, [document.scrollY, handleScroll]);
 
   return { toggle, setToggle, scrollY, mobileMenu, setMobileMenu };
 };

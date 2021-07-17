@@ -20,7 +20,7 @@ const Tpe = () => {
         changent tout le temps, en particulier en matière sociale.
       </p>
       <p>
-        Si nul n’est sensé ignoré la loi, elle reste d’accès difficile à la
+        Si nul n’est censé ignorer la loi, elle reste d’accès difficile à la
         grande majorité d’entre nous
       </p>
       <p>

@@ -7,6 +7,8 @@ import { db } from "../firebase";
 import { useDispatch } from "react-redux";
 import { trySignIn } from "../redux/slices/actions";
 
+import { reader } from "./roles";
+
 const useAuth = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state);
@@ -21,7 +23,7 @@ const useAuth = () => {
         dispatch(trySignIn(!!user));
       });
     return () => unregisterAuthObserver();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     (async () => {
@@ -39,11 +41,16 @@ const useAuth = () => {
         });
         const storedUser = await db().collection("users").doc(uid).get();
         if (!storedUser.exists) {
-          await db().collection("users").doc(uid).set({});
+          await db()
+            .collection("users")
+            .doc(uid)
+            .set({
+              role: db().collection("roles").doc(reader),
+            });
         }
       }
     })();
-  }, [user.isSignedIn]);
+  }, [user.isSignedIn, user.isPending]);
 
   return { redirect, userData };
 };

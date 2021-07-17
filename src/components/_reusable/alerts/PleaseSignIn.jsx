@@ -2,7 +2,6 @@ import React from "react";
 
 import { useDispatch } from "react-redux";
 import { openModal } from "../../../redux/slices/actions";
-import Login from "../../Login/Login";
 
 const PleaseSignIn = () => {
   const dispatch = useDispatch();

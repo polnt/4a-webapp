@@ -28,7 +28,9 @@ const Login = () => {
     >
       <h3>Connexion</h3>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-      <a onClick={userLogout}>Sign out</a>
+      <button type="button" onClick={userLogout}>
+        Sign out
+      </button>
     </div>
   );
 };

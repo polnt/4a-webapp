@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 
 import { NavLink } from "react-router-dom";
 
@@ -7,6 +7,7 @@ import { useNav } from "../../hooks";
 import NavBarBtn from "./elements/NavBarBtn";
 import ProfileBtn from "./elements/ProfileBtn";
 import ContactBtn from "./elements/ContactBtn";
+import ClientAreaBtn from "./elements/ClientAreaBtn";
 import MenuBtn from "./elements/MenuBtn";
 import MobileNavMenu from "./MobileNavMenu";
 
@@ -17,7 +18,7 @@ import LittleLogo4A from "../../assets/Logo4A_70x70.png";
 
 import "../../css/NavBar/NavBar.css";
 
-const NavBar = () => {
+const NavBar = memo(() => {
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
@@ -25,7 +26,7 @@ const NavBar = () => {
       <NavLink to="/">
         <img
           // src={LittleLogo4A}
-          src={scrollY === 0 ? Logo4A : LittleLogo4A}
+          src={scrollY < 40 ? Logo4A : LittleLogo4A}
           alt="logo entreprise"
         />
       </NavLink>
@@ -39,6 +40,7 @@ const NavBar = () => {
           }}
         >
           <ContactBtn />
+          <ClientAreaBtn />
           <ProfileBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
@@ -51,6 +53,6 @@ const NavBar = () => {
       <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
     </div>
   );
-};
+});
 
 export default NavBar;

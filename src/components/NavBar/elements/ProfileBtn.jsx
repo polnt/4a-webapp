@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { CgProfile as ProfileIcon } from "react-icons/cg";
 
@@ -7,7 +7,7 @@ import { openModal, closeModal } from "../../../redux/slices/actions";
 
 import { useAuth } from "../../../hooks";
 
-const ProfileBtn = () => {
+const ProfileBtnMemo = memo(() => {
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
   const { userData } = useAuth();
@@ -33,18 +33,17 @@ const ProfileBtn = () => {
         position: "relative",
       }}
     >
-      {userData ? (
+      {userData?.photoURL ? (
         <img
           src={userData.photoURL}
-          alt="user profile picture"
+          alt="user profile"
           style={{ width: "20px" }}
         />
       ) : (
         <ProfileIcon className="navbar_icon" />
       )}
-      <span>Espace client</span>
     </button>
   );
-};
+});
 
-export default ProfileBtn;
+export default ProfileBtnMemo;

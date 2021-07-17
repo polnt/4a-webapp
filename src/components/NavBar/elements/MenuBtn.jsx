@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 
-const MenuBtn = ({ mobileMenu, setMobileMenu }) => {
+const MenuBtn = memo(({ mobileMenu, setMobileMenu }) => {
   return (
     <div className="navbar_menu">
       <button
@@ -21,6 +21,6 @@ const MenuBtn = ({ mobileMenu, setMobileMenu }) => {
       </button>
     </div>
   );
-};
+});
 
 export default MenuBtn;

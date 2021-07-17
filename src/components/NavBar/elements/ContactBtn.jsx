@@ -1,22 +1,22 @@
-import React from "react";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
 
 import { SiMinutemailer as ContactIcon } from "react-icons/si";
 
-const ContactBtn = () => {
+const ContactBtn = memo(() => {
   return (
-    <div
+    <NavLink
+      className="navbar_main_link"
+      to="/contact"
       style={{
-        marginRight: "10px",
-        marginTop: "7px",
+        marginRight: "5px",
+        marginTop: "5px",
       }}
     >
-      <NavLink className="navbar_main_link" to="/contact">
-        <ContactIcon className="navbar_icon" />
-        <span>Contact</span>
-      </NavLink>
-    </div>
+      <ContactIcon className="navbar_icon" />
+      <span>Contact</span>
+    </NavLink>
   );
-};
+});
 
 export default ContactBtn;

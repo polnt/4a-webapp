@@ -45,8 +45,8 @@ const useLoad = () => {
       case "admin":
         setRedirect({ admin: true });
         break;
-      case "client":
-        setRedirect({ client: true });
+      case "customer":
+        setRedirect({ customer: true });
         break;
       case "reader":
         setRedirect({ reader: true });

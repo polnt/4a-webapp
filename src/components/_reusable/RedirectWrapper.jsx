@@ -25,7 +25,7 @@ const RedirectWrapper = ({ children, except }) => {
           {except !== "reader" && redirect?.reader && (
             <Redirect to="/espace-reservé-aux-clients" />
           )}
-          {except !== "client" && redirect?.client && (
+          {except !== "customer" && redirect?.customer && (
             <Redirect to="/espace-client" />
           )}
         </>

@@ -8,7 +8,7 @@ const ClientArea = () => {
   const { userData } = useAuth();
 
   return (
-    <RedirectWrapper except="client">
+    <RedirectWrapper except="customer">
       <div>
         <div>
           <h1>Espace client</h1>

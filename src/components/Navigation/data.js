@@ -52,8 +52,8 @@ export const navData = [
     id: "about",
     title: "QUI SOMMES-NOUS ?",
     children: [
-      { title: "Présentation de l'équipe", path: "/qui-sommes-nous" },
-      { title: "Nos engagements", path: "/qui-sommes-nous" },
+      { title: "Présentation de l'équipe", path: "/l'équipe-4A" },
+      { title: "Nos engagements", path: "/l'équipe-4A" },
     ],
   },
   {

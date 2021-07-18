@@ -4,7 +4,7 @@ import { useAuth } from "../../hooks";
 
 import RedirectWrapper from "../_reusable/RedirectWrapper";
 
-const ClientArea = () => {
+const CustomerArea = () => {
   const { userData } = useAuth();
 
   return (
@@ -19,4 +19,4 @@ const ClientArea = () => {
   );
 };
 
-export default ClientArea;
+export default CustomerArea;

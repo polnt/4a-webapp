@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";

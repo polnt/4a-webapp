@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 import { db } from "../firebase";
 
 import { useSelector } from "react-redux";
@@ -27,10 +28,10 @@ const useLoad = () => {
             setUserRole(
               userRoleRef.data()?.label ? userRoleRef.data().label : "reader"
             );
-            setUserData({ displayName, email, photoURL });
           } else {
             setUserRole("reader");
           }
+          setUserData({ uid, displayName, email, photoURL });
         } catch (error) {
           console.log(error);
         }
@@ -44,9 +45,6 @@ const useLoad = () => {
     switch (userRole) {
       case "admin":
         setRedirect({ admin: true });
-        break;
-      case "customer":
-        setRedirect({ customer: true });
         break;
       case "reader":
         setRedirect({ reader: true });

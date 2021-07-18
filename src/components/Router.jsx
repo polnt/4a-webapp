@@ -29,15 +29,16 @@ import About from "./About/About";
 // CONTACT
 import Contact from "./Contact/Contact";
 
-// CLIENT AREA
-import ClientArea from "./ClientArea/ClientArea";
+// CUSTOMER AREA
+import CustomerArea from "./CustomerArea/CustomerArea";
+import CustomerInscription from "./CustomerInscription/CustomerInscription";
 
 // ADMIN
 import Admin from "./Admin/Admin";
 
 // ALERTS
 import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
-import ClientReservedArea from "./_reusable/alerts/ClientReservedArea";
+import CustomerReservedArea from "./_reusable/alerts/CustomerReservedArea";
 
 // NAVIGATION
 import NavigationPage from "./Navigation/NavigationPage";
@@ -69,17 +70,18 @@ const Router = () => {
       <Route path="/paie" render={() => <NavigationPage index={1} />} />
       <Route path="/rh" render={() => <NavigationPage index={2} />} />
 
-      <Route path="/espace-client" component={ClientArea} />
+      <Route path="/espace-client" component={CustomerArea} />
       <Route path="/admin" component={Admin} />
+      <Route path="/inscription-client" component={CustomerInscription} />
 
       <Route path="/actualités/à-la-une" component={FrontPage} />
-      <Route path="/qui-sommes-nous" component={About} />
+      <Route path="/l'équipe-4A" component={About} />
       <Route path="/contact" component={Contact} />
 
       <Route path="/espace-non-authorisé" component={PleaseSignIn} />
       <Route
         path="/espace-reservé-aux-clients"
-        component={ClientReservedArea}
+        component={CustomerReservedArea}
       />
     </Switch>
   );

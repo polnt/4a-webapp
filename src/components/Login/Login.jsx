@@ -1,9 +1,12 @@
 import React from "react";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "firebase";
 
-import { logout, signOut } from "../../redux/slices/actions";
+import firebase from "firebase/app";
+import "firebase/auth";
+
 import { useDispatch } from "react-redux";
+import { logout, signOut } from "../../redux/slices/actions";
+
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 const Login = () => {
   const dispatch = useDispatch();

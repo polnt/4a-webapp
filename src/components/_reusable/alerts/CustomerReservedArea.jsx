@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 import ContactCTA from "../ContactCTA";
 
-const ClientReservedArea = () => {
+const CustomerReservedArea = () => {
   const { authStatus } = useSelector((state) => state);
   return (
     <div>
@@ -21,4 +21,4 @@ const ClientReservedArea = () => {
   );
 };
 
-export default ClientReservedArea;
+export default CustomerReservedArea;

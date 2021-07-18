@@ -39,19 +39,21 @@ const useAuth = () => {
           email: email,
           photoURL: photoURL,
         });
-        console.log("ok");
+        // const storedUser = await db().collection("users").doc(uid).get();
 
-        const storedUser = await db().collection("users").doc(uid).get();
-        const userRoleID = storedUser.data().role.id;
-        const userRole = await db().collection("roles").doc(userRoleID).get();
-        console.log("hmm", userRole.data().label);
+        // console.log("hmm", userRole.data().label);
         // if (!storedUser.exists) {
-        //   await db()
-        //     .collection("users")
-        //     .doc(uid)
-        //     .set({
-        //       role: db().collection("roles").doc(reader),
-        //     });
+
+        //   // await db()
+        //   //   .collection("users")
+        //   //   .doc(uid)
+        //   //   .set({
+        //   //     role: db().collection("roles").doc(reader),
+        //   //   });
+        // } else {
+        //   const userRoleID = storedUser.data().role.id;
+        //   const userRole = await db().collection("roles").doc(userRoleID).get();
+        //   if (userRole.data().label === "client") {}
         // }
       }
     })();

@@ -57,6 +57,7 @@
 
 .navbar_main_link {
   display: flex;
+  align-items: center;
 }
 
 .navbar_main_link > span {

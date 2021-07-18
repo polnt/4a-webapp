@@ -4,12 +4,12 @@ const authSlice = createSlice({
   name: "user",
   initialState: { isPending: true },
   reducers: {
-    trySignIn(_, action) {
+    signIn(_, action) {
       return { isSignedIn: action.payload };
     },
-    signIn() {
-      return { isSignedIn: true };
-    },
+    // signIn() {
+    //   return { isSignedIn: true };
+    // },
     signOut() {
       return { isSignedIn: false };
     },

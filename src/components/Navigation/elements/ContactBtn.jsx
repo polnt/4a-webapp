@@ -14,7 +14,7 @@ const ContactBtn = memo(() => {
       }}
     >
       <ContactIcon className="navbar_icon" />
-      <span>Contact</span>
+      <span>CONTACT</span>
     </NavLink>
   );
 });

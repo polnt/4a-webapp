@@ -35,6 +35,9 @@ import ClientArea from "./ClientArea/ClientArea";
 // ALERTS
 import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
 
+// NAVIGATION
+import NavigationPage from "./Navigation/NavigationPage";
+
 const Router = () => {
   return (
     <Switch>
@@ -46,12 +49,22 @@ const Router = () => {
         component={ExpertComptable}
       />
       <Route path="/nos-solutions/cabinet-juridique" component={Avocat} />
+
       <Route path="/paie/externalisation" component={Externalization} />
       <Route path="/paie/gestion-interne" component={InternalManagement} />
       <Route path="/paie/audit" component={PayAudit} />
+
       <Route path="/rh/vie-du-contrat" component={Lifetime} />
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
+
+      <Route
+        path="/nos-solutions"
+        render={() => <NavigationPage index={0} />}
+      />
+      <Route path="/paie" render={() => <NavigationPage index={1} />} />
+      <Route path="/rh" render={() => <NavigationPage index={2} />} />
+
       <Route path="/actualités/à-la-une" component={FrontPage} />
       <Route path="/qui-sommes-nous" component={About} />
       <Route path="/contact" component={Contact} />

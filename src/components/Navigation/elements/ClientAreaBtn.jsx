@@ -1,5 +1,7 @@
 import React, { memo } from "react";
 
+import { CgProfile as ProfileIcon } from "react-icons/cg";
+
 import { NavLink } from "react-router-dom";
 
 const ClientAreaBtn = memo(() => {
@@ -12,7 +14,8 @@ const ClientAreaBtn = memo(() => {
         marginTop: "5px",
       }}
     >
-      <span>Espace client</span>
+      <ProfileIcon className="navbar_icon" />
+      <span>ESPACE CLIENT</span>
     </NavLink>
   );
 });

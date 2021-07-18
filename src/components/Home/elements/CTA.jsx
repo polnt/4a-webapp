@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import { navData } from "../../NavBar/data";
+import { navData } from "../../Navigation/data";
 
 import "../../../css/Home/CTA.css";
 

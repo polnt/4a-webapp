@@ -5,9 +5,9 @@ import firebase from "firebase";
 import { db } from "../firebase";
 
 import { useDispatch } from "react-redux";
-import { trySignIn } from "../redux/slices/actions";
+import { signIn } from "../redux/slices/actions";
 
-import { reader } from "./roles";
+// import { reader } from "./roles";
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const useAuth = () => {
     const unregisterAuthObserver = firebase
       .auth()
       .onAuthStateChanged((user) => {
-        dispatch(trySignIn(!!user));
+        dispatch(signIn(!!user));
       });
     return () => unregisterAuthObserver();
   }, [dispatch]);
@@ -39,15 +39,20 @@ const useAuth = () => {
           email: email,
           photoURL: photoURL,
         });
+        console.log("ok");
+
         const storedUser = await db().collection("users").doc(uid).get();
-        if (!storedUser.exists) {
-          await db()
-            .collection("users")
-            .doc(uid)
-            .set({
-              role: db().collection("roles").doc(reader),
-            });
-        }
+        const userRoleID = storedUser.data().role.id;
+        const userRole = await db().collection("roles").doc(userRoleID).get();
+        console.log("hmm", userRole.data().label);
+        // if (!storedUser.exists) {
+        //   await db()
+        //     .collection("users")
+        //     .doc(uid)
+        //     .set({
+        //       role: db().collection("roles").doc(reader),
+        //     });
+        // }
       }
     })();
   }, [user.isSignedIn, user.isPending]);

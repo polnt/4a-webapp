@@ -2,14 +2,16 @@ import React, { memo } from "react";
 
 import { NavLink } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import { useNav } from "../../hooks";
 
 import NavBarBtn from "./elements/NavBarBtn";
-import ProfileBtn from "./elements/ProfileBtn";
 import ContactBtn from "./elements/ContactBtn";
 import ClientAreaBtn from "./elements/ClientAreaBtn";
 import MenuBtn from "./elements/MenuBtn";
 import MobileNavMenu from "./MobileNavMenu";
+import SignOutBtn from "./elements/SignOutBtn";
 
 import { navData } from "./data";
 
@@ -20,6 +22,7 @@ import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
+  const { user } = useSelector((state) => state);
 
   return (
     <div className="navbar_container">
@@ -41,7 +44,7 @@ const NavBar = memo(() => {
         >
           <ContactBtn />
           <ClientAreaBtn />
-          <ProfileBtn />
+          {user?.isSignedIn && <SignOutBtn />}
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
         <div className="navbar_links_container">

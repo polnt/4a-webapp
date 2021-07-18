@@ -32,8 +32,12 @@ import Contact from "./Contact/Contact";
 // CLIENT AREA
 import ClientArea from "./ClientArea/ClientArea";
 
+// ADMIN
+import Admin from "./Admin/Admin";
+
 // ALERTS
 import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
+import ClientReservedArea from "./_reusable/alerts/ClientReservedArea";
 
 // NAVIGATION
 import NavigationPage from "./Navigation/NavigationPage";
@@ -65,11 +69,18 @@ const Router = () => {
       <Route path="/paie" render={() => <NavigationPage index={1} />} />
       <Route path="/rh" render={() => <NavigationPage index={2} />} />
 
+      <Route path="/espace-client" component={ClientArea} />
+      <Route path="/admin" component={Admin} />
+
       <Route path="/actualités/à-la-une" component={FrontPage} />
       <Route path="/qui-sommes-nous" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/espace-client" component={ClientArea} />
+
       <Route path="/espace-non-authorisé" component={PleaseSignIn} />
+      <Route
+        path="/espace-reservé-aux-clients"
+        component={ClientReservedArea}
+      />
     </Switch>
   );
 };

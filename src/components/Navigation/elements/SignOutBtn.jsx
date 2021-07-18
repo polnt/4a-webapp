@@ -1,16 +1,23 @@
 import React from "react";
 import firebase from "firebase";
-import { logout, signOut } from "../../../redux/slices/actions";
-import { useDispatch } from "react-redux";
+
+import { useSelector, useDispatch } from "react-redux";
+import { logout, signOut, openModal } from "../../../redux/slices/actions";
 
 import { AiOutlinePoweroff as SignOutIcon } from "react-icons/ai";
 
 const SignOutBtn = () => {
   const dispatch = useDispatch();
+  const { authStatus } = useSelector((state) => state);
+
   const handleSignOut = () => {
-    dispatch(logout());
-    dispatch(signOut());
-    firebase.auth().signOut();
+    if (authStatus.isSignedIn) {
+      dispatch(logout());
+      dispatch(signOut());
+      firebase.auth().signOut();
+    } else {
+      dispatch(openModal("login"));
+    }
   };
 
   return (

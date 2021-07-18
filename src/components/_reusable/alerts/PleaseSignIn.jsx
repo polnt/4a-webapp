@@ -1,10 +1,13 @@
 import React from "react";
 
-import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../../redux/slices/actions";
 
 const PleaseSignIn = () => {
   const dispatch = useDispatch();
+  const { authStatus } = useSelector((state) => state);
   const handleClick = () => {
     dispatch(openModal("login"));
   };
@@ -17,6 +20,7 @@ const PleaseSignIn = () => {
         l'application.
       </p>
       <button onClick={handleClick}>Se connecter</button>
+      {authStatus.isSignedIn && <Redirect to="/espace-client" />}
     </div>
   );
 };

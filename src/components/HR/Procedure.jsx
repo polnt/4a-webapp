@@ -2,7 +2,7 @@ import React from "react";
 
 const Procedure = () => {
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div>
       <h1>LES PROCÉDURES</h1>
       <h2>Disciplinaires</h2>
       <p>

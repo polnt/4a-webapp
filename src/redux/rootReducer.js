@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-import { modal, user } from "./slices";
+import { modal, authStatus } from "./slices";
 
 const rootReducer = combineReducers({
   modal,
-  user,
+  authStatus,
 });
 
 export default rootReducer;

@@ -3,7 +3,7 @@ import React from "react";
 const Externalization = () => {
   return (
     <div>
-      <h1>Gestion de la paie externe</h1>
+      <h1>GESTION DE LA PAIE EXTERNE</h1>
       <p>
         « Retrouvez votre cœur de métier, libérez-vous des risques »
         <h2>Pourquoi choisir l’externalisation :</h2>

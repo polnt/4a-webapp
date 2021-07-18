@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { configureAppStore } from "./redux";
 
 import "./index.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 import reportWebVitals from "./reportWebVitals";
 

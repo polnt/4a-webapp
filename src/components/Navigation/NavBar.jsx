@@ -2,8 +2,6 @@ import React, { memo } from "react";
 
 import { NavLink } from "react-router-dom";
 
-import { useSelector } from "react-redux";
-
 import { useNav } from "../../hooks";
 
 import NavBarBtn from "./elements/NavBarBtn";
@@ -22,7 +20,6 @@ import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
-  const { user } = useSelector((state) => state);
 
   return (
     <div className="navbar_container">
@@ -44,7 +41,7 @@ const NavBar = memo(() => {
         >
           <ContactBtn />
           <ClientAreaBtn />
-          {user?.isSignedIn && <SignOutBtn />}
+          <SignOutBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
         <div className="navbar_links_container">

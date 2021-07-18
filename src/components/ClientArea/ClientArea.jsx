@@ -1,17 +1,21 @@
 import React from "react";
 
-import { Redirect } from "react-router-dom";
-
 import { useAuth } from "../../hooks";
 
+import RedirectWrapper from "../_reusable/RedirectWrapper";
+
 const ClientArea = () => {
-  const { redirect } = useAuth();
+  const { userData } = useAuth();
 
   return (
-    <div>
-      <h1>Espace client</h1>
-      {redirect && <Redirect to="/espace-non-authorisé" />}
-    </div>
+    <RedirectWrapper except="client">
+      <div>
+        <div>
+          <h1>Espace client</h1>
+          <p>Bonjour, {userData?.displayName}</p>
+        </div>
+      </div>
+    </RedirectWrapper>
   );
 };
 

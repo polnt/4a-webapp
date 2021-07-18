@@ -5,6 +5,8 @@ import { closeModal } from "../../redux/slices/actions";
 
 import Login from "../Login/Login";
 
+import { VscChromeClose as CloseWindowIcon } from "react-icons/vsc";
+
 import "../../css/_reusable/Modal.css";
 
 const Modal = () => {
@@ -32,7 +34,7 @@ const Modal = () => {
           className="close_popup"
           onClick={() => dispatch(closeModal())}
         >
-          X
+          <CloseWindowIcon />
         </button>
         {switchModal()}
       </div>

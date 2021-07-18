@@ -20,7 +20,7 @@ const useLoad = () => {
             firebase.auth().currentUser;
           const storedUser = await db().collection("users").doc(uid).get();
           if (storedUser.exists) {
-            const userRoleID = await storedUser.data().role?.id;
+            const userRoleID = await storedUser.data().role;
             const userRoleRef = await db()
               .collection("roles")
               .doc(userRoleID)

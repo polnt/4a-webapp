@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -11,7 +11,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 import { CgPocket as VerifiedIcon } from "react-icons/cg";
 
-const CustomerAuth = () => {
+const CustomerAuth = memo(() => {
   const { authStatus } = useSelector((state) => state);
 
   const location = useLocation().pathname;
@@ -39,6 +39,6 @@ const CustomerAuth = () => {
       )}
     </div>
   );
-};
+});
 
 export default CustomerAuth;

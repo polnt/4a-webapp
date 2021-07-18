@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 
 import { db } from "../../../firebase";
 
@@ -21,7 +21,7 @@ const schema = yup.object().shape({
   phone: yup.string(),
 });
 
-const CustomerSignUp = () => {
+const CustomerSignUp = memo(() => {
   const { authStatus } = useSelector((state) => state);
   const { userData } = useAuth();
   const [initialValues, setInitialValues] = useState({
@@ -145,6 +145,6 @@ const CustomerSignUp = () => {
       )}
     </>
   );
-};
+});
 
 export default CustomerSignUp;

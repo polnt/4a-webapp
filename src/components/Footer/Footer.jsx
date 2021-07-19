@@ -12,7 +12,10 @@ const Footer = () => {
         // bottom: 0,
         display: "flex",
         justifyContent: "center",
-        paddingTop: "200px",
+        marginTop: "100px",
+        // paddingTop: "200px",
+        gridColumnStart: 2,
+        gridRowStart: 3,
         // width: "100%",
       }}
     >

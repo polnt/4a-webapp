@@ -34,17 +34,25 @@ const App = () => {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 4fr 1fr",
-          gridTemplateRows: "40px 1fr",
+          gridTemplateRows: "40px 1fr 40px",
           minHeight: "100vh",
-          paddingTop: "200px",
+          paddingTop: "170px",
         }}
       >
+        {/* <div
+          style={{
+            gridColumnStart: 1,
+            backgroundColor: "yellow",
+            width: "100%",
+            height: "100vh",
+          }}
+        /> */}
         <LocationPath />
         <main style={{ gridColumnStart: 2 }}>
           <Router />
         </main>
+        <Footer />
       </div>
-      <Footer />
       {modal && <Modal />}
     </div>
   );

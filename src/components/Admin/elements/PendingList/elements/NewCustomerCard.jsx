@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AddFolderIcon } from "./icons";
+import { AddFolderIcon } from "../../icons";
 
 const NewCustomerCard = ({ customer }) => {
   return (

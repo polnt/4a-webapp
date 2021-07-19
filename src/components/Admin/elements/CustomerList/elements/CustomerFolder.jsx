@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, memo } from "react";
 
-import { OpenedFolderIcon, ClosedFolderIcon } from "./icons";
+import { OpenedFolderIcon, ClosedFolderIcon } from "../../icons";
 
-// import { RiFolderUserFill as ClosedFolderIcon } from "react-icons/ri";
-
-const CustomerFolder = () => {
+const CustomerFolder = memo(({ customer }) => {
   const [folderIsOpen, setFolderIsOpen] = useState(false);
   const [displayContent, setDisplayContent] = useState(false);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setFolderIsOpen(folderIsOpen);
     setDisplayContent(folderIsOpen);
-  };
+  }, [folderIsOpen, setFolderIsOpen]);
 
   return (
     <>
@@ -32,9 +30,13 @@ const CustomerFolder = () => {
           <ClosedFolderIcon style={{ fontSize: 60, color: "#ffc107" }} />
         )}
       </button>
-      <div>{`${displayContent}`}</div>
+      <div>
+        <span>
+          {customer.lastname?.toUpperCase()} {customer.firstname}
+        </span>
+      </div>
     </>
   );
-};
+});
 
 export default CustomerFolder;

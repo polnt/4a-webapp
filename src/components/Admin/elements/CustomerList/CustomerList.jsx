@@ -1,0 +1,44 @@
+import React, { useEffect, useState } from "react";
+
+import { db } from "../../../../firebase";
+
+import CustomerFolder from "./elements/CustomerFolder";
+import RedirectWrapper from "../../../_reusable/RedirectWrapper";
+
+const CustomerList = () => {
+  const [customerList, setCustomerList] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const tempCustomers = [];
+      const customers = await db()
+        .collection("users")
+        .where("customer", "==", true)
+        .get();
+      customers.forEach((elem) =>
+        tempCustomers.push({ uid: elem.id, ...elem.data() })
+      );
+      setCustomerList(tempCustomers);
+    })();
+  }, []);
+
+  return (
+    <RedirectWrapper except="admin">
+      <div>
+        {customerList.map((customer) => (
+          <CustomerFolder
+            customer={{
+              uid: customer.uid,
+              email: customer.email,
+              lastname: customer.lastname,
+              firstname: customer.firstname,
+              phone: customer.phone,
+            }}
+          />
+        ))}
+      </div>
+    </RedirectWrapper>
+  );
+};
+
+export default CustomerList;

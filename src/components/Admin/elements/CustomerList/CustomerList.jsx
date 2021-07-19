@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { db } from "../../../../firebase";
+import { users } from "../../../../utils/requests";
 
 import CustomerFolder from "./elements/CustomerFolder";
 import RedirectWrapper from "../../../_reusable/RedirectWrapper";
@@ -11,10 +11,8 @@ const CustomerList = () => {
   useEffect(() => {
     (async () => {
       const tempCustomers = [];
-      const customers = await db()
-        .collection("users")
-        .where("customer", "==", true)
-        .get();
+
+      const customers = await users.getAllCustomers();
       customers.forEach((elem) =>
         tempCustomers.push({ uid: elem.id, ...elem.data() })
       );

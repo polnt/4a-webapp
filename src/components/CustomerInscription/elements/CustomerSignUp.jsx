@@ -1,6 +1,6 @@
 import React, { useEffect, useState, memo } from "react";
 
-import { db } from "../../../firebase";
+import { users } from "../../../utils/requests";
 
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -12,7 +12,6 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import { useAuth } from "../../../hooks";
-import { reader } from "../../../utils/roles";
 
 const schema = yup.object().shape({
   firstName: yup.string(),
@@ -34,14 +33,7 @@ const CustomerSignUp = memo(() => {
   const handleSubmit = async (values) => {
     if (authStatus.isSignedIn) {
       try {
-        await db()
-          .collection("users")
-          .doc(userData.uid)
-          .set({
-            ...values,
-            status: "pending",
-            role: reader,
-          });
+        await users.signUpCustomer(userData.uid, values);
       } catch (error) {
         console.log(error);
       }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { db } from "../../../../firebase";
+import { users } from "../../../../utils/requests";
 
 import NewCustomerCard from "./elements/NewCustomerCard";
 import RedirectWrapper from "../../../_reusable/RedirectWrapper";
@@ -11,10 +11,7 @@ const PendingList = () => {
   useEffect(() => {
     (async () => {
       const tempPending = [];
-      const pendingCustomers = await db()
-        .collection("users")
-        .where("status", "==", "pending")
-        .get();
+      const pendingCustomers = await users.getAllPending();
       pendingCustomers.forEach((elem) =>
         tempPending.push({ uid: elem.id, ...elem.data() })
       );

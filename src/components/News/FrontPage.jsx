@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { db } from "../../firebase";
+import { news } from "../../utils/requests";
 
 import Carousel from "react-bootstrap/Carousel";
 import { IoIosArrowForward as NextIcon } from "react-icons/io";
@@ -11,11 +11,7 @@ const FrontPage = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchedNews = await db()
-        .collection("news")
-        .where("visibility", "==", "public")
-        .limit(5)
-        .get();
+      const fetchedNews = await news.getCarouselNews();
       let carouselNews = [];
       fetchedNews.forEach((doc) => {
         carouselNews.push(doc.data());

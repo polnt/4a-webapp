@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-import firebase from "firebase/app";
-import "firebase/auth";
-import { db } from "../firebase";
+import { users, roles } from "../utils/requests";
 
 import { useSelector } from "react-redux";
 
@@ -16,17 +14,14 @@ const useLoad = () => {
     (async () => {
       if (authStatus.isSignedIn) {
         try {
-          const { uid, displayName, email, photoURL } =
-            firebase.auth().currentUser;
-          const storedUser = await db().collection("users").doc(uid).get();
+          const { uid, displayName, email, photoURL } = users.getCurrent();
+          const storedUser = await users.fetchCustomer(uid);
+
           if (storedUser.exists) {
             const userRoleID = await storedUser.data().role;
             const isCustomer = await storedUser.data().customer;
             const status = await storedUser.data().status;
-            const userRoleRef = await db()
-              .collection("roles")
-              .doc(userRoleID)
-              .get();
+            const userRoleRef = await roles.fetchByID(userRoleID);
 
             if (
               isCustomer &&

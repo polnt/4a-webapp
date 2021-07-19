@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { db } from "../../../firebase";
+import { users } from "../../../utils/requests";
 
 import { useAuth } from "../../../hooks";
 
@@ -15,12 +15,7 @@ const DocumentList = () => {
       (async () => {
         try {
           const tempArr = [];
-          const fetchedList = await db()
-            .collection("users")
-            .doc(userData?.uid)
-            .collection("documents")
-            .where("uid", "==", userData?.uid.toString())
-            .get();
+          const fetchedList = await users.getCustomerDocs(userData.uid);
           fetchedList.forEach((doc) => tempArr.push(doc.data()));
           setDocumentList(tempArr);
         } catch (error) {

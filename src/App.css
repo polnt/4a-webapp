@@ -1,3 +1,7 @@
+:root {
+  --purple: rgba(79, 38, 91, 1);
+}
+
 .custom_carousel > div > ol > li {
   background-color: black;
 }

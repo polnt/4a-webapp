@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 
+import { useLocation } from "react-router-dom";
+
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";
 
@@ -15,6 +17,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
+  const location = useLocation().pathname;
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
 
@@ -33,17 +36,24 @@ const App = () => {
       <div
         style={{
           display: "grid",
-          // gridTemplateColumns: "1fr 4fr 1fr",
           gridTemplateRows: "40px 1fr 40px",
           minHeight: "100vh",
-          paddingTop: "170px",
-          // backgroundColor: "red",
+          paddingTop: "150px",
         }}
       >
-        <div className="container_page">
-          <LocationPath />
-        </div>
-        <main style={{ gridRowStart: 2 }}>
+        {/* <div
+          style={
+            location === "/"
+              ? { backgroundImage: `url(${a})`, backgroundColor: "white" }
+              : { backgroundColor: "var(--purple)", gridRowStart: 1 }
+          }
+        /> */}
+        <LocationPath />
+        <main
+          style={{
+            gridRowStart: 2,
+          }}
+        >
           <Router />
         </main>
         <Footer />

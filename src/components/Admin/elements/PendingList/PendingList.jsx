@@ -21,18 +21,20 @@ const PendingList = () => {
 
   return (
     <RedirectWrapper except="admin">
-      <div style={{ display: "flex" }}>
-        {pendingList.map((customer) => (
-          <NewCustomerCard
-            customer={{
-              uid: customer.uid,
-              email: customer.email,
-              lastname: customer.lastname,
-              firstname: customer.firstname,
-              phone: customer.phone,
-            }}
-          />
-        ))}
+      <div className="container_page">
+        <div className="content_page" style={{ display: "flex" }}>
+          {pendingList.map((customer) => (
+            <NewCustomerCard
+              customer={{
+                uid: customer.uid,
+                email: customer.email,
+                lastname: customer.lastname,
+                firstname: customer.firstname,
+                phone: customer.phone,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </RedirectWrapper>
   );

@@ -7,6 +7,8 @@ import Container from "react-bootstrap/Container";
 
 import solutionsData from "./solutionsData";
 
+import { VscChromeClose as CloseWindowIcon } from "react-icons/vsc";
+
 import "../../../css/Home/Solutions.css";
 
 const Solutions = () => {
@@ -18,10 +20,11 @@ const Solutions = () => {
 
   return (
     <Jumbotron
-      className="content_page"
       style={{
         position: "relative",
         overflowX: "hidden",
+        backgroundColor: "white",
+        boxShadow: "1px 1px 1px 1px",
       }}
     >
       <Container>
@@ -61,9 +64,15 @@ const Solutions = () => {
           <button
             type="button"
             onClick={() => setSelection("")}
-            style={{ position: "absolute", top: 5, right: 5, border: "none" }}
+            style={{
+              position: "absolute",
+              top: 5,
+              right: 5,
+              border: "none",
+              backgroundColor: "transparent",
+            }}
           >
-            X
+            <CloseWindowIcon />
           </button>
         )}
       </Container>

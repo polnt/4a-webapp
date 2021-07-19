@@ -25,12 +25,16 @@ const LocationPath = memo(() => {
   }, [location]);
 
   return (
-    <div className="content_page">
-      <span
-        style={location.length < 2 ? { display: "none" } : { display: "block" }}
-      >
-        {handlePath()}
-      </span>
+    <div className="container_page">
+      <div className="content_page" style={{ gridRowStart: 1 }}>
+        <span
+          style={
+            location.length < 2 ? { display: "none" } : { display: "block" }
+          }
+        >
+          {handlePath()}
+        </span>
+      </div>
     </div>
   );
 });

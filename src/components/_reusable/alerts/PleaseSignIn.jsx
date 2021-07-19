@@ -13,14 +13,16 @@ const PleaseSignIn = () => {
   };
 
   return (
-    <div>
-      <h1>Vous n'êtes pas connecté</h1>
-      <p>
-        Pour accéder à cette page, vous devez d'abord vous connecter à
-        l'application.
-      </p>
-      <button onClick={handleClick}>Se connecter</button>
-      {authStatus.isSignedIn && <Redirect to="/espace-client" />}
+    <div className="container_page">
+      <div className="content_page">
+        <h1>Vous n'êtes pas connecté</h1>
+        <p>
+          Pour accéder à cette page, vous devez d'abord vous connecter à
+          l'application.
+        </p>
+        <button onClick={handleClick}>Se connecter</button>
+        {authStatus.isSignedIn && <Redirect to="/espace-client" />}
+      </div>
     </div>
   );
 };

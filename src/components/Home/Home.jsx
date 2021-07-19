@@ -10,8 +10,6 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-
-        // minHeight: "100vh",
       }}
     >
       <h1>HOME</h1>
@@ -19,10 +17,18 @@ const Home = () => {
         className="container_page"
         style={{
           width: "100%",
-          marginBottom: "40px",
         }}
       >
-        <Solutions />
+        <div
+          className="content_page"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Solutions />
+        </div>
       </div>
       <div
         className="container_page"
@@ -30,7 +36,16 @@ const Home = () => {
           width: "100%",
         }}
       >
-        <CTA />
+        <div
+          className="content_page"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <CTA />
+        </div>
       </div>
     </div>
   );

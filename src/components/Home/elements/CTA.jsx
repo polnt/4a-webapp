@@ -60,54 +60,55 @@ const CTA = () => {
   }, [toggle]);
 
   return (
-    <div className="content_page">
-      <div
-        className={containerStyle}
-        onMouseLeave={() =>
-          setToggle({
-            pay: false,
-            hr: false,
-            advice: false,
-          })
-        }
-      >
-        {[1, 2, 3].map((index) => (
+    <div
+      className={containerStyle}
+      onMouseLeave={() =>
+        setToggle({
+          pay: false,
+          hr: false,
+          advice: false,
+        })
+      }
+    >
+      {[1, 2, 3].map((index) => (
+        <div
+          className="cta_card"
+          style={{
+            boxShadow: "1px 1px 1px",
+          }}
+          onTouchStart={() => {
+            setToggle({
+              [navData[index].id]: true,
+            });
+          }}
+          onMouseEnter={() =>
+            setToggle({
+              [navData[index].id]: true,
+            })
+          }
+        >
           <div
-            className="cta_card"
-            onTouchStart={() => {
-              setToggle({
-                [navData[index].id]: true,
-              });
-            }}
-            onMouseEnter={() =>
-              setToggle({
-                [navData[index].id]: true,
-              })
+            style={
+              toggle[navData[index].id]
+                ? {
+                    ...hidedMenuStyle,
+                    ...showMenuStyle,
+                  }
+                : hidedMenuStyle
             }
           >
-            <div
-              style={
-                toggle[navData[index].id]
-                  ? {
-                      ...hidedMenuStyle,
-                      ...showMenuStyle,
-                    }
-                  : hidedMenuStyle
-              }
-            >
-              <h2>{navData[index].title}</h2>
-              <div style={navLinkMenuStyle}>
-                {toggle[navData[index].id] &&
-                  navData[index].children?.map((item) => (
-                    <NavLink to={item.path} style={navLinkStyle}>
-                      {item.title}
-                    </NavLink>
-                  ))}
-              </div>
+            <h2>{navData[index].title}</h2>
+            <div style={navLinkMenuStyle}>
+              {toggle[navData[index].id] &&
+                navData[index].children?.map((item) => (
+                  <NavLink to={item.path} style={navLinkStyle}>
+                    {item.title}
+                  </NavLink>
+                ))}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -22,18 +22,20 @@ const CustomerList = () => {
 
   return (
     <RedirectWrapper except="admin">
-      <div>
-        {customerList.map((customer) => (
-          <CustomerFolder
-            customer={{
-              uid: customer.uid,
-              email: customer.email,
-              lastname: customer.lastname,
-              firstname: customer.firstname,
-              phone: customer.phone,
-            }}
-          />
-        ))}
+      <div className="container_page">
+        <div className="content_page">
+          {customerList.map((customer) => (
+            <CustomerFolder
+              customer={{
+                uid: customer.uid,
+                email: customer.email,
+                lastname: customer.lastname,
+                firstname: customer.firstname,
+                phone: customer.phone,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </RedirectWrapper>
   );

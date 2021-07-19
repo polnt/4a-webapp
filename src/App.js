@@ -37,6 +37,7 @@ const App = () => {
           gridTemplateRows: "40px 1fr 40px",
           minHeight: "100vh",
           paddingTop: "170px",
+          // backgroundColor: "red",
         }}
       >
         <div className="container_page">

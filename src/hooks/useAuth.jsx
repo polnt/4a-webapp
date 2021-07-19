@@ -21,13 +21,24 @@ const useLoad = () => {
           const storedUser = await db().collection("users").doc(uid).get();
           if (storedUser.exists) {
             const userRoleID = await storedUser.data().role;
+            const isCustomer = await storedUser.data().customer;
+            const status = await storedUser.data().status;
             const userRoleRef = await db()
               .collection("roles")
               .doc(userRoleID)
               .get();
-            setUserRole(
-              userRoleRef.data()?.label ? userRoleRef.data().label : "reader"
-            );
+
+            if (
+              isCustomer &&
+              status === "verified" &&
+              userRoleRef.data().label === "reader"
+            ) {
+              setUserRole("customer");
+            } else if (userRoleRef.data()?.label) {
+              setUserRole(userRoleRef.data().label);
+            } else {
+              setUserRole("reader");
+            }
           } else {
             setUserRole("reader");
           }
@@ -43,6 +54,9 @@ const useLoad = () => {
 
   useEffect(() => {
     switch (userRole) {
+      case "customer":
+        setRedirect({ customer: true });
+        break;
       case "admin":
         setRedirect({ admin: true });
         break;

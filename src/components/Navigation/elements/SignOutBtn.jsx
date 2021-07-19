@@ -33,7 +33,10 @@ const SignOutBtn = () => {
       type="button"
       onClick={handleSignOut}
     >
-      <SignOutIcon className="navbar_icon" />
+      <SignOutIcon
+        className="navbar_icon"
+        style={authStatus.isSignedIn ? { color: "green" } : { color: "red" }}
+      />
     </button>
   );
 };

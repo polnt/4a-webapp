@@ -2,6 +2,7 @@ import React from "react";
 
 import { useAuth } from "../../hooks";
 
+import DocumentList from "./elements/DocumentList";
 import RedirectWrapper from "../_reusable/RedirectWrapper";
 
 const CustomerArea = () => {
@@ -13,6 +14,7 @@ const CustomerArea = () => {
         <div>
           <h1>Espace client</h1>
           <p>Bonjour, {userData?.displayName}</p>
+          <DocumentList />
         </div>
       </div>
     </RedirectWrapper>

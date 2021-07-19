@@ -14,8 +14,8 @@ const Footer = () => {
         justifyContent: "center",
         marginTop: "100px",
         // paddingTop: "200px",
-        gridColumnStart: 2,
-        gridRowStart: 3,
+        // gridColumnStart: 2,
+        // gridRowStart: 3,
         // width: "100%",
       }}
     >

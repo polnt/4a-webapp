@@ -10,8 +10,8 @@ const CustomerArea = () => {
 
   return (
     <RedirectWrapper except="customer">
-      <div>
-        <div>
+      <div className="container_page">
+        <div className="content_page">
           <h1>Espace client</h1>
           <p>Bonjour, {userData?.displayName}</p>
           <DocumentList />

@@ -1,3 +1,12 @@
 .custom_carousel > div > ol > li {
   background-color: black;
 }
+
+.container_page {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.content_page {
+  grid-column-start: 2;
+}

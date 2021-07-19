@@ -18,6 +18,7 @@ const Solutions = () => {
 
   return (
     <Jumbotron
+      className="content_page"
       style={{
         position: "relative",
         overflowX: "hidden",

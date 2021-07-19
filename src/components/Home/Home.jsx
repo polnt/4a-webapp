@@ -10,11 +10,13 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+
         // minHeight: "100vh",
       }}
     >
       <h1>HOME</h1>
       <div
+        className="container_page"
         style={{
           width: "100%",
           marginBottom: "40px",
@@ -23,6 +25,7 @@ const Home = () => {
         <Solutions />
       </div>
       <div
+        className="container_page"
         style={{
           width: "100%",
         }}

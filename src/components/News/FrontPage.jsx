@@ -21,29 +21,35 @@ const FrontPage = () => {
   }, []);
 
   return (
-    <div className="custom_carousel">
-      <Carousel
-        prevIcon={<PrevIcon style={{ fontSize: "30px", color: "black" }} />}
-        nextIcon={<NextIcon style={{ fontSize: "30px", color: "black" }} />}
-      >
-        {items.map((item) => (
-          <Carousel.Item
-            style={{
-              width: "100%",
-              border: "1px solid red",
-              height: "300px",
-              color: "red",
-            }}
+    <div className="container_page">
+      <div className="content_page">
+        <div className="custom_carousel">
+          <Carousel
+            prevIcon={<PrevIcon style={{ fontSize: "30px", color: "black" }} />}
+            nextIcon={<NextIcon style={{ fontSize: "30px", color: "black" }} />}
           >
-            <Carousel.Caption
-              style={{ border: "1px solid green", color: "green" }}
-            >
-              <h3>{item.title}</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+            {items.map((item) => (
+              <Carousel.Item
+                style={{
+                  width: "100%",
+                  border: "1px solid red",
+                  height: "300px",
+                  color: "red",
+                }}
+              >
+                <Carousel.Caption
+                  style={{ border: "1px solid green", color: "green" }}
+                >
+                  <h3>{item.title}</h3>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+      </div>
     </div>
   );
 };

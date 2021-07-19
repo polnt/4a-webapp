@@ -5,9 +5,11 @@ import CustomerAuth from "./elements/CustomerAuth";
 
 const CustomerInscription = () => {
   return (
-    <div>
-      <CustomerAuth />
-      <CustomerSignUp />
+    <div className="container_page">
+      <div className="content_page">
+        <CustomerAuth />
+        <CustomerSignUp />
+      </div>
     </div>
   );
 };

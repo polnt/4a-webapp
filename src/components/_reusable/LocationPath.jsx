@@ -25,7 +25,7 @@ const LocationPath = memo(() => {
   }, [location]);
 
   return (
-    <div style={{ gridColumnStart: 2 }}>
+    <div className="content_page">
       <span
         style={location.length < 2 ? { display: "none" } : { display: "block" }}
       >

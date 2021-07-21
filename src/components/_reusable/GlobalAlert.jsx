@@ -19,80 +19,80 @@ const GlobalAlert = () => {
   useEffect(() => {
     switch (globalAlert) {
       case 200:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           // backgroundColor: " #00B8AB",
           backgroundColor: "rgb(0, 255, 0, 0.5)",
           color: "green",
           message: "Création réussie !",
           icon: <ValidIcon size={40} />,
-        });
+        }));
         break;
       case 201:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           // backgroundColor: " #00B8AB",
           backgroundColor: "rgb(0, 255, 0, 0.5)",
           color: "green",
           message: "Mise à jour réussie !",
           icon: <ValidIcon size={40} />,
-        });
+        }));
         break;
       case 204:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           // backgroundColor: " #00B8AB",
           backgroundColor: "rgb(0, 255, 0, 0.5)",
           color: "green",
           message: "E-mail correctement envoyé !",
           icon: <ValidIcon size={40} />,
-        });
+        }));
         break;
       case 401:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           backgroundColor: "rgb(255, 0, 0, 0.5)",
           color: "red",
           message: "Identifiants incorrects !",
           icon: <FailIcon size={40} />,
-        });
+        }));
         break;
       case 404:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           backgroundColor: "rgb(255, 0, 0, 0.5)",
           color: "red",
           message: "Elément introuvable !",
           icon: <FailIcon size={40} />,
-        });
+        }));
         break;
       case 409:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           backgroundColor: "rgb(255, 0, 0, 0.5)",
           color: "red",
           message: "Utilisateur déjà existant !",
           icon: <FailIcon size={40} />,
-        });
+        }));
         break;
       case 410:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           // backgroundColor: " #00B8AB",
           backgroundColor: "rgb(0, 255, 0, 0.5)",
           color: "green",
           message: "Element supprimé !",
           icon: <ValidIcon size={40} />,
-        });
+        }));
         break;
       case 500:
-        setAlert({
-          ...alert,
+        setAlert((prevState) => ({
+          ...prevState,
           backgroundColor: "rgb(255, 0, 0, 0.5)",
           color: "red",
           message: "Une erreur est survenue !",
           icon: <FailIcon size={40} />,
-        });
+        }));
         break;
 
       default:
@@ -100,10 +100,11 @@ const GlobalAlert = () => {
     }
   }, [globalAlert]);
 
-  useEffect(() => {
-    // setTimeout(() => setOpacity("0"), 2000);
-    setTimeout(() => setGlobalAlert(dispatch)(), 3000);
-  }, [setGlobalAlert(dispatch)]);
+  // useEffect(() => {
+  //   const delay = setTimeout(() => dispatch(setGlobalAlert(null)), 3000);
+
+  //   return () => clearTimeout(delay);
+  // }, [dispatch]);
 
   return (
     <div
@@ -120,9 +121,9 @@ const GlobalAlert = () => {
         type="button"
         className="custom_btn"
         style={{ backgroundColor: alert.color }}
-        onClick={() => setGlobalAlert(dispatch)()}
+        onClick={() => dispatch(setGlobalAlert(null))}
       >
-        Continuer
+        OK
       </button>
     </div>
   );

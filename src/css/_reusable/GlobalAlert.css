@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(100% - 252px);
+  width: 100%;
   box-shadow: 5px 5px 10px 1px rgb(0, 0, 0);
   background-color: rgb(0 255 0 /0.5);
 }
@@ -18,10 +18,4 @@
 .global_alert > button {
   margin: 8px;
   background-color: var(--lightBlue);
-}
-
-@media screen and (max-width: 768px) {
-  .global_alert {
-    width: 100%;
-  }
 }

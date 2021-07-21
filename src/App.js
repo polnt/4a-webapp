@@ -12,6 +12,7 @@ import NavBar from "./components/Navigation/NavBar";
 import Footer from "./components/Footer/Footer";
 import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
+import GlobalAlert from "./components/_reusable/GlobalAlert";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   // const location = useLocation().pathname;
   const dispatch = useDispatch();
-  const { modal } = useSelector((state) => state);
+  const { modal, globalAlert } = useSelector((state) => state);
 
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -58,6 +59,7 @@ const App = () => {
         </main>
         <Footer />
       </div>
+      {globalAlert && <GlobalAlert />}
       {modal && <Modal />}
     </div>
   );

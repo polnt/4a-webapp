@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-import { db } from "../firebase";
+import { db, storage as docStorage } from "../firebase";
 
 import { reader } from "./roles";
 
@@ -63,4 +63,15 @@ const news = {
   },
 };
 
-export { users, roles, news };
+const storage = {
+  uploadDoc: (uid, doc) => {
+    return docStorage().ref(`${uid}/documents/${doc.name}`).put(doc);
+  },
+  getDocUrl: (uid, doc) => {
+    return docStorage()
+      .ref(`${uid}/documents`)
+      .child(doc.name)
+      .getDownloadURL();
+  },
+};
+export { users, roles, news, storage };

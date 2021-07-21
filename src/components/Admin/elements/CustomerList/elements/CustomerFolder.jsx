@@ -2,6 +2,8 @@ import React, { useState, useCallback, memo } from "react";
 
 import { OpenedFolderIcon, ClosedFolderIcon } from "../../icons";
 
+import OpenedFolder from "../../OpenedFolder/OpenedFolder";
+
 const CustomerFolder = memo(({ customer }) => {
   const [folderIsOpen, setFolderIsOpen] = useState(false);
   const [displayContent, setDisplayContent] = useState(false);
@@ -35,6 +37,7 @@ const CustomerFolder = memo(({ customer }) => {
           {customer.lastname?.toUpperCase()} {customer.firstname}
         </span>
       </div>
+      <OpenedFolder />
     </>
   );
 });

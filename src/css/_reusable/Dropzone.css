@@ -1,0 +1,46 @@
+.my_drop_zone_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 8rem;
+  height: 6rem;
+  cursor: pointer;
+}
+
+.my_drop_zone_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #bbb;
+  border-radius: 20px;
+  text-align: center;
+  padding: 16px;
+  font-size: 16px;
+  color: #bbb;
+  width: 6rem;
+  height: 4rem;
+}
+
+.my_drop_zone_area:hover {
+  color: white;
+  transition: transform 0.2s;
+}
+
+.my_drop_zone_upload_file {
+  width: auto;
+}
+
+.my_drop_zone_file_buttons {
+  display: flex;
+}
+
+.my_drop_zone_upload_file_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

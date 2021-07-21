@@ -1,5 +1,6 @@
 :root {
   --purple: rgba(79, 38, 91, 1);
+  --lightBlue: rgb(102, 212, 205);
 }
 
 .custom_carousel > div > ol > li {
@@ -13,4 +14,19 @@
 
 .content_page {
   grid-column-start: 2;
+}
+
+.custom_btn {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 75px;
+  /* height: 40px; */
+  background: #ff888c;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  /* font-size: 16px; */
+  padding: 8px;
 }

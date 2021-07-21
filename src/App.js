@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";
@@ -17,7 +17,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const location = useLocation().pathname;
+  // const location = useLocation().pathname;
   const dispatch = useDispatch();
   const { modal } = useSelector((state) => state);
 

@@ -1,0 +1,131 @@
+import React, { useState, useEffect } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setGlobalAlert } from "../../redux/slices/actions";
+
+import { AiOutlineCheckCircle as ValidIcon } from "react-icons/ai";
+import { VscError as FailIcon } from "react-icons/vsc";
+
+import "../../css/_reusable/GlobalAlert.css";
+
+const GlobalAlert = () => {
+  const dispatch = useDispatch();
+  const { globalAlert } = useSelector((state) => state);
+  const [alert, setAlert] = useState({
+    message: globalAlert.message,
+    color: "",
+  });
+
+  useEffect(() => {
+    switch (globalAlert) {
+      case 200:
+        setAlert({
+          ...alert,
+          // backgroundColor: " #00B8AB",
+          backgroundColor: "rgb(0, 255, 0, 0.5)",
+          color: "green",
+          message: "Création réussie !",
+          icon: <ValidIcon size={40} />,
+        });
+        break;
+      case 201:
+        setAlert({
+          ...alert,
+          // backgroundColor: " #00B8AB",
+          backgroundColor: "rgb(0, 255, 0, 0.5)",
+          color: "green",
+          message: "Mise à jour réussie !",
+          icon: <ValidIcon size={40} />,
+        });
+        break;
+      case 204:
+        setAlert({
+          ...alert,
+          // backgroundColor: " #00B8AB",
+          backgroundColor: "rgb(0, 255, 0, 0.5)",
+          color: "green",
+          message: "E-mail correctement envoyé !",
+          icon: <ValidIcon size={40} />,
+        });
+        break;
+      case 401:
+        setAlert({
+          ...alert,
+          backgroundColor: "rgb(255, 0, 0, 0.5)",
+          color: "red",
+          message: "Identifiants incorrects !",
+          icon: <FailIcon size={40} />,
+        });
+        break;
+      case 404:
+        setAlert({
+          ...alert,
+          backgroundColor: "rgb(255, 0, 0, 0.5)",
+          color: "red",
+          message: "Elément introuvable !",
+          icon: <FailIcon size={40} />,
+        });
+        break;
+      case 409:
+        setAlert({
+          ...alert,
+          backgroundColor: "rgb(255, 0, 0, 0.5)",
+          color: "red",
+          message: "Utilisateur déjà existant !",
+          icon: <FailIcon size={40} />,
+        });
+        break;
+      case 410:
+        setAlert({
+          ...alert,
+          // backgroundColor: " #00B8AB",
+          backgroundColor: "rgb(0, 255, 0, 0.5)",
+          color: "green",
+          message: "Element supprimé !",
+          icon: <ValidIcon size={40} />,
+        });
+        break;
+      case 500:
+        setAlert({
+          ...alert,
+          backgroundColor: "rgb(255, 0, 0, 0.5)",
+          color: "red",
+          message: "Une erreur est survenue !",
+          icon: <FailIcon size={40} />,
+        });
+        break;
+
+      default:
+        return;
+    }
+  }, [globalAlert]);
+
+  useEffect(() => {
+    // setTimeout(() => setOpacity("0"), 2000);
+    setTimeout(() => setGlobalAlert(dispatch)(), 3000);
+  }, [setGlobalAlert(dispatch)]);
+
+  return (
+    <div
+      className="global_alert"
+      style={{
+        border: `2px solid ${alert.color}`,
+        backgroundColor: alert.backgroundColor,
+        color: alert.color,
+      }}
+    >
+      {alert.icon}
+      <span className="message_alert">{alert.message}</span>
+      <button
+        type="button"
+        className="custom_btn"
+        style={{ backgroundColor: alert.color }}
+        onClick={() => setGlobalAlert(dispatch)()}
+      >
+        Continuer
+      </button>
+    </div>
+  );
+};
+
+export default GlobalAlert;

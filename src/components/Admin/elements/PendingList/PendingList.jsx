@@ -2,11 +2,20 @@ import React, { useEffect, useState } from "react";
 
 import { users } from "../../../../utils/requests";
 
+import { useSearchBar } from "../../../../hooks";
+
 import NewCustomerCard from "./elements/NewCustomerCard";
 import RedirectWrapper from "../../../_reusable/RedirectWrapper";
+import SearchBar from "../../../_reusable/searchBar/SearchBar";
 
 const PendingList = () => {
   const [pendingList, setPendingList] = useState([]);
+  const { filteredList, searchQuery, setSearchQuery, setFieldValue } =
+    useSearchBar(pendingList, "lastname");
+  const listData = {
+    header: ["Nom", "Prénom"],
+    fields: ["lastname", "firstname"],
+  };
 
   useEffect(() => {
     (async () => {
@@ -23,7 +32,13 @@ const PendingList = () => {
     <RedirectWrapper except="admin">
       <div className="container_page">
         <div className="content_page" style={{ display: "flex" }}>
-          {pendingList.map((customer) => (
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setFieldValue={setFieldValue}
+            selectValues={listData}
+          />
+          {filteredList.map((customer) => (
             <NewCustomerCard
               customer={{
                 uid: customer.uid,

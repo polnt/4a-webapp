@@ -2,11 +2,20 @@ import React, { useEffect, useState } from "react";
 
 import { users } from "../../../../utils/requests";
 
+import { useSearchBar } from "../../../../hooks";
+
 import CustomerFolder from "./elements/CustomerFolder";
 import RedirectWrapper from "../../../_reusable/RedirectWrapper";
+import SearchBar from "../../../_reusable/searchBar/SearchBar";
 
 const CustomerList = () => {
   const [customerList, setCustomerList] = useState([]);
+  const { filteredList, searchQuery, setSearchQuery, setFieldValue } =
+    useSearchBar(customerList, "lastname");
+  const listData = {
+    header: ["Nom", "Prénom"],
+    fields: ["lastname", "firstname"],
+  };
 
   useEffect(() => {
     (async () => {
@@ -24,7 +33,13 @@ const CustomerList = () => {
     <RedirectWrapper except="admin">
       <div className="container_page">
         <div className="content_page">
-          {customerList.map((customer) => (
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setFieldValue={setFieldValue}
+            selectValues={listData}
+          />
+          {filteredList.map((customer) => (
             <CustomerFolder
               customer={{
                 uid: customer.uid,

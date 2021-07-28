@@ -9,18 +9,18 @@ const LocationPath = memo(() => {
     let currentPath = "";
 
     return location.split("/").map((element, index) => {
-      currentPath += `${element}/`;
-      return (
-        <NavLink to={currentPath}>
-          {index > 0
-            ? `>${element
-                .split("")
-                .map((e, i) => (i > 0 ? e : e.toUpperCase()))
-                .join("")
-                .replaceAll("-", " ")}`
-            : "Accueil"}
-        </NavLink>
-      );
+      if (index === 0) {
+        return <NavLink to="/">Accueil</NavLink>;
+      } else {
+        currentPath += `/${element}`;
+        return (
+          <NavLink to={currentPath}>{` >${element
+            .split("")
+            .map((e, i) => (i > 0 ? e : e.toUpperCase()))
+            .join("")
+            .replaceAll("-", " ")}`}</NavLink>
+        );
+      }
     });
   }, [location]);
 

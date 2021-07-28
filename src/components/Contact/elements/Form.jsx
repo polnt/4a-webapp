@@ -69,56 +69,64 @@ const ContactForm = () => {
             }}
           >
             <Form.Row>
-              <Form.Group as={Col} style={{ marginRight: "20px" }}>
-                <Form.Label>Nom</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="lastname"
-                  value={values.lastname}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </Form.Group>
-              <Form.Group as={Col}>
-                <Form.Label>Prénom</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="firstname"
-                  value={values.firstname}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </Form.Group>
+              <Col sm="6">
+                <Form.Group>
+                  <Form.Label>Nom</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="lastname"
+                    value={values.lastname}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </Form.Group>
+              </Col>
+              <Col sm="6">
+                <Form.Group>
+                  <Form.Label>Prénom</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="firstname"
+                    value={values.firstname}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </Form.Group>
+              </Col>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} style={{ marginRight: "20px" }}>
-                <Form.Label>
-                  Email<span style={{ color: "red" }}>*</span>
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  isValid={touched.email && !errors.email}
-                  isInvalid={touched.email && !!errors.email}
-                  required
-                />
-                <Form.Control.Feedback type="invalid">
-                  L'email doit être valide
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col}>
-                <Form.Label>Téléphone</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="phone"
-                  value={values.phone}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </Form.Group>
+              <Col sm="6">
+                <Form.Group>
+                  <Form.Label>
+                    Email<span style={{ color: "red" }}>*</span>
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    isValid={touched.email && !errors.email}
+                    isInvalid={touched.email && !!errors.email}
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    L'email doit être valide
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </Col>
+              <Col sm="6">
+                <Form.Group>
+                  <Form.Label>Téléphone</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="phone"
+                    value={values.phone}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </Form.Group>
+              </Col>
             </Form.Row>
 
             <Form.Group>

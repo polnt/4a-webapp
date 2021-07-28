@@ -6,6 +6,9 @@ import * as yup from "yup";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
 
+import { useDispatch } from "react-redux";
+import { setGlobalAlert } from "../../../redux/slices/actions";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -21,19 +24,21 @@ const schema = yup.object().shape({
 init(process.env.REACT_APP_EMAILJS_USER_ID);
 
 const ContactForm = () => {
+  const dispatch = useDispatch();
+
   const sendEmail = async (e) => {
     e.preventDefault();
 
     try {
-      const sendEmailResult = await emailjs.sendForm(
+      await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         e.target,
         process.env.REACT_APP_EMAILJS_USER_ID
       );
-      console.log(sendEmailResult.text);
+      dispatch(setGlobalAlert(204));
     } catch (error) {
-      console.log(error.text);
+      dispatch(setGlobalAlert(500));
     }
   };
 

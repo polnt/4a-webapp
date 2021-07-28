@@ -37,7 +37,6 @@ const CustomerFolder = memo(({ customer }) => {
           {customer.lastname?.toUpperCase()} {customer.firstname}
         </span>
       </div>
-      <OpenedFolder />
     </>
   );
 });

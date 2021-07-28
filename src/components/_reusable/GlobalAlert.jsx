@@ -100,11 +100,11 @@ const GlobalAlert = () => {
     }
   }, [globalAlert]);
 
-  // useEffect(() => {
-  //   const delay = setTimeout(() => dispatch(setGlobalAlert(null)), 3000);
+  useEffect(() => {
+    const delay = setTimeout(() => dispatch(setGlobalAlert(null)), 3000);
 
-  //   return () => clearTimeout(delay);
-  // }, [dispatch]);
+    return () => clearTimeout(delay);
+  }, [dispatch]);
 
   return (
     <div

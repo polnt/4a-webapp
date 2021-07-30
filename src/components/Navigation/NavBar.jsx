@@ -29,7 +29,7 @@ const NavBar = memo(() => {
               : { maxWidth: "70px", transition: "max-width 0.5s ease" }
           }
         >
-          <LogoWithPolice />
+          {scrollY < 40 ? <LogoWithPolice /> : <LogoNoPolice />}
         </div>
       </NavLink>
       <div className="navbar_buttons_container">

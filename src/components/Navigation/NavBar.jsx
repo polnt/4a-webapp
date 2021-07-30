@@ -11,8 +11,7 @@ import MobileNavMenu from "./MobileNavMenu";
 
 import { navData } from "./data";
 
-import Logo4A from "../../assets/Logo4A_150x150.png";
-import LittleLogo4A from "../../assets/Logo4A_70x70.png";
+import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
 
 import "../../css/NavBar/NavBar.css";
 
@@ -22,11 +21,16 @@ const NavBar = memo(() => {
   return (
     <div className="navbar_container">
       <NavLink to="/">
-        <img
-          // src={LittleLogo4A}
-          src={scrollY < 40 ? Logo4A : LittleLogo4A}
-          alt="logo entreprise"
-        />
+        <div
+          className="navbar_logo_container"
+          style={
+            scrollY < 40
+              ? { maxWidth: "150px", transition: "max-width 0.5s ease" }
+              : { maxWidth: "70px", transition: "max-width 0.5s ease" }
+          }
+        >
+          <LogoWithPolice />
+        </div>
       </NavLink>
       <div className="navbar_buttons_container">
         <div

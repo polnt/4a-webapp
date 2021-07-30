@@ -7,6 +7,8 @@ import { useNav } from "../../hooks";
 import NavBarBtn from "./elements/NavBarBtn";
 import ContactBtn from "./elements/ContactBtn";
 import MenuBtn from "./elements/MenuBtn";
+import ClientAreaBtn from "./elements/ClientAreaBtn";
+import SignOutBtn from "./elements/SignOutBtn";
 import MobileNavMenu from "./MobileNavMenu";
 
 import { navData } from "./data";
@@ -42,6 +44,8 @@ const NavBar = memo(() => {
           }}
         >
           <ContactBtn />
+          <ClientAreaBtn />
+          <SignOutBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
         <div className="navbar_links_container">

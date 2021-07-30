@@ -20,11 +20,23 @@ import Lifetime from "./HR/Lifetime";
 import Procedure from "./HR/Procedure";
 import HrAudit from "./HR/Audit";
 
+//NEWS
+import FrontPage from "./News/FrontPage";
+
 // ABOUT
 import About from "./About/About";
 
 // CONTACT
 import Contact from "./Contact/Contact";
+
+// CUSTOMER AREA
+import CustomerArea from "./CustomerArea/CustomerArea";
+import CustomerInscription from "./CustomerInscription/CustomerInscription";
+
+// ADMIN
+import Admin from "./Admin/Admin";
+import CustomerList from "./Admin/elements/CustomerList/CustomerList";
+import PendingList from "./Admin/elements/PendingList/PendingList";
 
 // ALERTS
 import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
@@ -59,6 +71,14 @@ const Router = () => {
       <Route path="/rh/audit" component={HrAudit} />
       <Route path="/rh" render={() => <NavigationPage index={2} />} />
 
+      <Route path="/admin/dossiers-client" component={CustomerList} />
+      <Route path="/admin/inscriptions-en-attente" component={PendingList} />
+      <Route path="/admin" component={Admin} />
+
+      <Route path="/espace-client" component={CustomerArea} />
+      <Route path="/inscription-client" component={CustomerInscription} />
+
+      <Route path="/actualités/à-la-une" component={FrontPage} />
       <Route path="/l'équipe-4A" component={About} />
       <Route path="/contact" component={Contact} />
 

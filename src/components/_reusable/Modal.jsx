@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../redux/slices/actions";
 
-// import Login from "../Login/Login";
+import Login from "../Login/Login";
 
 import { VscChromeClose as CloseWindowIcon } from "react-icons/vsc";
 
@@ -14,9 +14,9 @@ const Modal = () => {
   const { modal } = useSelector((state) => state);
 
   const switchModal = () => {
-    switch (modal) {
-      // case "login":
-      //   return <Login />;
+    switch (true) {
+      case modal === "login":
+        return <Login />;
       default:
         break;
     }

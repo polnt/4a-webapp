@@ -6,12 +6,15 @@ import { useNav } from "../../hooks";
 
 import NavBarBtn from "./elements/NavBarBtn";
 import ContactBtn from "./elements/ContactBtn";
+import ClientAreaBtn from "./elements/ClientAreaBtn";
 import MenuBtn from "./elements/MenuBtn";
 import MobileNavMenu from "./MobileNavMenu";
+import SignOutBtn from "./elements/SignOutBtn";
 
 import { navData } from "./data";
 
-import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
+import Logo4A from "../../assets/Logo4A_150x150.png";
+import LittleLogo4A from "../../assets/Logo4A_70x70.png";
 
 import "../../css/NavBar/NavBar.css";
 
@@ -21,16 +24,11 @@ const NavBar = memo(() => {
   return (
     <div className="navbar_container">
       <NavLink to="/">
-        <div
-          className="navbar_logo_container"
-          style={
-            scrollY < 40
-              ? { maxWidth: "150px", transition: "max-width 0.5s ease" }
-              : { maxWidth: "70px", transition: "max-width 0.5s ease" }
-          }
-        >
-          {scrollY < 40 ? <LogoWithPolice /> : <LogoNoPolice />}
-        </div>
+        <img
+          // src={LittleLogo4A}
+          src={scrollY < 40 ? Logo4A : LittleLogo4A}
+          alt="logo entreprise"
+        />
       </NavLink>
       <div className="navbar_buttons_container">
         <div
@@ -42,6 +40,8 @@ const NavBar = memo(() => {
           }}
         >
           <ContactBtn />
+          <ClientAreaBtn />
+          <SignOutBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
         <div className="navbar_links_container">

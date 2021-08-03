@@ -77,9 +77,6 @@
   }
 
   .navbar_links_container {
-    display: none;
-  }
-  .navbar_links_container {
     grid-row: 2;
     display: flex;
     justify-content: space-around;

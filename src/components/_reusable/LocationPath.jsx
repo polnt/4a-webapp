@@ -25,7 +25,14 @@ const LocationPath = memo(() => {
   }, [location]);
 
   return (
-    <div className="container_page">
+    <div
+      className="container_page"
+      style={
+        location.length < 2
+          ? { backgroundColor: "var(--mainOrange)"}
+          : { backgroundColor: "white", paddingTop: "10px" }
+      }
+    >
       <div className="content_page" style={{ gridRowStart: 1 }}>
         <span
           style={

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";
@@ -18,7 +18,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  // const location = useLocation().pathname;
+  const location = useLocation().pathname;
   const dispatch = useDispatch();
   const { modal, globalAlert } = useSelector((state) => state);
 
@@ -32,27 +32,35 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={
+        location === "/"
+          ? { backgroundColor: "var(--mainOrange)" }
+          : { backgroundColor: "var(--mainPurple)" }
+      }
+    >
       <NavBar />
       <div
         style={{
           display: "grid",
-          gridTemplateRows: "40px 1fr 40px",
+          gridTemplateRows: "40px 40px 1fr 40px",
           minHeight: "100vh",
-          paddingTop: "150px",
+          paddingTop: "100px",
         }}
       >
-        {/* <div
+        <div
           style={
             location === "/"
-              ? { backgroundImage: `url(${a})`, backgroundColor: "white" }
-              : { backgroundColor: "var(--purple)", gridRowStart: 1 }
+              ? { backgroundColor: "var(--mainOrange)" }
+              : { backgroundColor: "var(--mainPurple)", gridRowStart: 1 }
           }
-        /> */}
+        />
         <LocationPath />
         <main
           style={{
-            gridRowStart: 2,
+            gridRowStart: 3,
+            backgroundColor: "white",
           }}
         >
           <Router />

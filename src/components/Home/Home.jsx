@@ -12,7 +12,34 @@ const Home = () => {
         alignItems: "center",
       }}
     >
-      <h1>HOME</h1>
+      <div
+        className="container_page"
+        style={{
+          backgroundColor: "var(--mainOrange)",
+          width: "100%",
+          height: "300px",
+        }}
+      >
+        <div
+          className="content_page"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h1>HOME</h1>
+        </div>
+      </div>
+      <div
+        className="container_page divider"
+        style={{
+          backgroundColor: "var(--mainOrange)",
+          width: "100%",
+          height: "200px",
+        }}
+      />
+
       <div
         className="container_page"
         style={{

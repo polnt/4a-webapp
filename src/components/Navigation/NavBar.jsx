@@ -25,7 +25,7 @@ const NavBar = memo(() => {
           className="navbar_logo_container"
           style={
             scrollY < 40
-              ? { maxWidth: "150px", transition: "max-width 0.5s ease" }
+              ? { maxWidth: "130px", transition: "max-width 0.5s ease" }
               : { maxWidth: "70px", transition: "max-width 0.5s ease" }
           }
         >

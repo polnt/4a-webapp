@@ -11,18 +11,19 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
 
   return (
     <div
+      className="navigation_button"
       style={{
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        marginLeft: "25px",
+        marginRight: "25px",
       }}
       onMouseLeave={() => setToggle({})}
     >
       <OutsideClickWrapper toggle={() => toggle[item.id] && setToggle({})}>
-        <NavLink to={item.path}>
+        <NavLink to={item.path} style={{ textDecoration: "none" }}>
           <div
-            className="navigation_button"
+            className="navigation_button_text"
             // type="button"
             // onClick={handleClick}
             onMouseEnter={handleClick}

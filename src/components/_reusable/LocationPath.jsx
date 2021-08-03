@@ -2,6 +2,8 @@ import React, { memo, useCallback } from "react";
 
 import { useLocation, NavLink } from "react-router-dom";
 
+import { BlackLinen } from "../../assets/textures";
+
 const LocationPath = memo(() => {
   const location = useLocation().pathname;
 
@@ -29,7 +31,10 @@ const LocationPath = memo(() => {
       className="container_page"
       style={
         location.length < 2
-          ? { backgroundColor: "var(--mainOrange)"}
+          ? {
+              backgroundColor: "var(--mainGrey)",
+              backgroundImage: `url(${BlackLinen})`,
+            }
           : { backgroundColor: "white", paddingTop: "10px" }
       }
     >

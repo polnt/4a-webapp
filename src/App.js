@@ -14,6 +14,8 @@ import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
 import GlobalAlert from "./components/_reusable/GlobalAlert";
 
+import { BlackLinen } from "./assets/textures";
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -36,7 +38,10 @@ const App = () => {
       className="App"
       style={
         location === "/"
-          ? { backgroundColor: "var(--mainOrange)" }
+          ? {
+              backgroundColor: "var(--mainGrey)",
+              backgroundImage: `url(${BlackLinen})`,
+            }
           : { backgroundColor: "var(--mainPurple)" }
       }
     >
@@ -52,7 +57,10 @@ const App = () => {
         <div
           style={
             location === "/"
-              ? { backgroundColor: "var(--mainOrange)" }
+              ? {
+                  backgroundColor: "var(--mainGrey)",
+                  backgroundImage: `url(${BlackLinen})`,
+                }
               : { backgroundColor: "var(--mainPurple)", gridRowStart: 1 }
           }
         />

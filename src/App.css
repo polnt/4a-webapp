@@ -2,6 +2,9 @@
   --mainPurple: rgba(166, 83, 157, 1);
   --mainPurple80: rgba(166, 83, 157, 0.8);
   --mainOrange: rgba(255, 190, 113, 1);
+  --mainRed: ;
+  --mainGrey: rgba(50, 50, 50, 1);
+  --mainCream: #fff7eb;
   --mainFontThin: {
     font-family: RobotoThin;
     src: url("./assets/fonts/Roboto-Thin.ttf");

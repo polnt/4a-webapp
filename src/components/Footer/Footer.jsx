@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { footerData } from "./data";
 import { SiLinkedin as LinkedInLogo } from "react-icons/si";
+import { BlackLinen } from "../../assets/textures";
 
 const Footer = () => {
   return (
@@ -14,14 +15,25 @@ const Footer = () => {
           backgroundColor: "white",
           width: "100%",
           height: "200px",
+          zIndex: 1,
         }}
       />
+      <div
+        style={{
+          backgroundColor: "var(--mainPurple80)",
+          backgroundImage: `url(${BlackLinen})`,
+          width: "100%",
+          height: "100px",
+        }}
+      />
+
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           gridRowStart: 3,
           backgroundColor: "var(--mainPurple80)",
+          backgroundImage: `url(${BlackLinen})`,
         }}
       >
         {footerData.map((item) => (

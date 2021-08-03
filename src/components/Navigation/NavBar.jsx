@@ -13,6 +13,8 @@ import { navData } from "./data";
 
 import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
 
+import { BlackLinen } from "../../assets/textures";
+
 import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
@@ -25,7 +27,8 @@ const NavBar = memo(() => {
       style={
         scrollY === 0 && location === "/"
           ? {
-              backgroundColor: "var(--mainOrange)",
+              backgroundColor: "var(--mainGrey)",
+              backgroundImage: `url(${BlackLinen})`,
               boxShadow: "none",
               transition: "background-color 1s ease",
             }
@@ -48,10 +51,15 @@ const NavBar = memo(() => {
           style={
             scrollY === 0
               ? {
+                  minWidth: "70px",
                   maxWidth: "130px",
                   transition: "max-width 0.5s ease",
                 }
-              : { maxWidth: "70px", transition: "max-width 0.5s ease" }
+              : {
+                  minWidth: "70px",
+                  maxWidth: "70px",
+                  transition: "max-width 0.5s ease",
+                }
           }
         >
           {scrollY < 1 ? <LogoWithPolice /> : <LogoNoPolice />}
@@ -59,7 +67,7 @@ const NavBar = memo(() => {
       </NavLink>
       {/* )} */}
       <div className="navbar_main_container">
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "flex-end",
@@ -69,16 +77,20 @@ const NavBar = memo(() => {
         >
           <ContactBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        </div>
-        <div className="navbar_links_container">
-          {navData.map((item) => (
-            <NavBarBtn
-              item={item}
-              toggle={toggle}
-              setToggle={setToggle}
-              homeStyle={scrollY === 0 && location === "/"}
-            />
-          ))}
+        </div> */}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div className="navbar_links_container">
+            {navData.map((item) => (
+              <NavBarBtn
+                item={item}
+                toggle={toggle}
+                setToggle={setToggle}
+                homeStyle={scrollY === 0 && location === "/"}
+              />
+            ))}
+          </div>
+          <ContactBtn />
+          <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
       </div>
       <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />

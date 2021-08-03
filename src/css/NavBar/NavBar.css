@@ -3,11 +3,12 @@
   display: flex;
   width: 100%;
   background-color: white;
+  transition: background-color 1s ease;
   border: none;
   z-index: 100;
 }
 
-.navbar_buttons_container {
+.navbar_main_container {
   display: grid;
   grid-template-rows: 1fr;
   width: 100%;
@@ -66,12 +67,14 @@
 
 @media screen and (min-device-width: 1440px) {
   .navbar_container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     background-color: white;
   }
 
-  .navbar_buttons_container {
+  .navbar_main_container {
     display: grid;
+    grid-template-columns: 1fr 40px;
     grid-template-rows: 1fr 1fr;
     /* width: 100%; */
   }
@@ -79,7 +82,7 @@
   .navbar_links_container {
     grid-row: 2;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: flex-end;
     /* width: 100%; */
     flex-wrap: nowrap;

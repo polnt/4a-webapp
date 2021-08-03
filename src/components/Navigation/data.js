@@ -2,6 +2,7 @@ export const navData = [
   {
     id: "solutions",
     title: "NOS SOLUTIONS",
+    path: "/nos-solutions",
     children: [
       { title: "TPE", path: "/nos-solutions/tpe" },
       { title: "PME", path: "/nos-solutions/pme" },
@@ -12,6 +13,7 @@ export const navData = [
   {
     id: "pay",
     title: "PAIE",
+    path: "/paie",
     children: [
       { title: "Externalisation", path: "/paie/externalisation" },
       { title: "Gestion interne", path: "/paie/gestion-interne" },
@@ -21,6 +23,7 @@ export const navData = [
   {
     id: "hr",
     title: "RH",
+    path: "/rh",
     children: [
       {
         title: "Entrées et sorties des salariés",
@@ -33,6 +36,7 @@ export const navData = [
   {
     id: "advice",
     title: "CONSEIL",
+    path: "/conseil",
     children: [
       { title: "Audit", path: "" },
       { title: "Formation", path: "" },
@@ -43,6 +47,7 @@ export const navData = [
   {
     id: "about",
     title: "QUI SOMMES-NOUS ?",
+    path: "/l'équipe-4A",
     children: [
       { title: "Présentation de l'équipe", path: "/l'équipe-4A" },
       { title: "Nos engagements", path: "/l'équipe-4A" },
@@ -50,6 +55,7 @@ export const navData = [
   },
   {
     id: "FAQ",
+    path: "/FAQ",
     title: "LES QUESTIONS FRÉQUENTES",
     children: [{ title: "FAQs", path: "" }],
   },

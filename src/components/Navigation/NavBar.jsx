@@ -19,25 +19,39 @@ const NavBar = memo(() => {
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
-    <div className="navbar_container">
+    <div
+      className="navbar_container"
+      style={
+        scrollY === 0
+          ? {
+              backgroundColor: "var(--mainOrange)",
+              boxShadow: "none",
+              transition: "background-color 1s ease",
+            }
+          : {}
+      }
+    >
       <NavLink to="/">
         <div
-          className="navbar_logo_container"
+          // className="navbar_logo_container"
           style={
-            scrollY < 40
-              ? { maxWidth: "130px", transition: "max-width 0.5s ease" }
+            scrollY === 0
+              ? {
+                  maxWidth: "130px",
+                  transition: "max-width 0.5s ease",
+                }
               : { maxWidth: "70px", transition: "max-width 0.5s ease" }
           }
         >
           {scrollY < 40 ? <LogoWithPolice /> : <LogoNoPolice />}
         </div>
       </NavLink>
-      <div className="navbar_buttons_container">
+      <div className="navbar_main_container">
         <div
           style={{
             display: "flex",
             justifyContent: "flex-end",
-            alignItems: "flex-start",
+            alignItems: "center",
             flexWrap: "nowrap",
           }}
         >

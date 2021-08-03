@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { useNav } from "../../hooks";
 
@@ -16,13 +16,14 @@ import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
 import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
+  const location = useLocation().pathname;
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
     <div
       className="navbar_container"
       style={
-        scrollY === 0
+        scrollY === 0 && location === "/"
           ? {
               backgroundColor: "var(--mainOrange)",
               boxShadow: "none",
@@ -31,7 +32,17 @@ const NavBar = memo(() => {
           : {}
       }
     >
-      <NavLink to="/">
+      {/* {location === "/" && scrollY === 0 ? (
+        <div style={{ minHeight: "130px" }} />
+      ) : ( */}
+      <NavLink
+        to="/"
+        style={
+          location === "/" && scrollY === 0
+            ? { visibility: "hidden" }
+            : { visibility: "visible" }
+        }
+      >
         <div
           // className="navbar_logo_container"
           style={
@@ -43,9 +54,10 @@ const NavBar = memo(() => {
               : { maxWidth: "70px", transition: "max-width 0.5s ease" }
           }
         >
-          {scrollY < 40 ? <LogoWithPolice /> : <LogoNoPolice />}
+          {scrollY < 1 ? <LogoWithPolice /> : <LogoNoPolice />}
         </div>
       </NavLink>
+      {/* )} */}
       <div className="navbar_main_container">
         <div
           style={{
@@ -60,7 +72,12 @@ const NavBar = memo(() => {
         </div>
         <div className="navbar_links_container">
           {navData.map((item) => (
-            <NavBarBtn item={item} toggle={toggle} setToggle={setToggle} />
+            <NavBarBtn
+              item={item}
+              toggle={toggle}
+              setToggle={setToggle}
+              homeStyle={scrollY === 0 && location === "/"}
+            />
           ))}
         </div>
       </div>

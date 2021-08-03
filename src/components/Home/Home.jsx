@@ -3,6 +3,8 @@ import React from "react";
 import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
+import { LogoWithPolice } from "../../assets/svg";
+
 const Home = () => {
   return (
     <div
@@ -17,7 +19,7 @@ const Home = () => {
         style={{
           backgroundColor: "var(--mainOrange)",
           width: "100%",
-          height: "300px",
+          height: "500px",
         }}
       >
         <div
@@ -28,7 +30,12 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          <h1>HOME</h1>
+          <h1 style={{ visibility: "hidden" }}>
+            BIENVENUE SUR LE SITE WEB DE 4A
+          </h1>
+          <div style={{ maxWidth: "500px" }}>
+            <LogoWithPolice />
+          </div>
         </div>
       </div>
       <div

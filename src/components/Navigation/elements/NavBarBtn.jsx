@@ -4,10 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import OutsideClickWrapper from "../../_reusable/OutsideClickWrapper";
 
-import { AiOutlineArrowRight as RightArrowIcon } from "react-icons/ai";
-import { AiOutlineArrowDown as DownArrowIcon } from "react-icons/ai";
-
-const NavBarBtn = memo(({ item, toggle, setToggle }) => {
+const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
   const handleClick = () => {
     setToggle({ [item.id]: true });
   };
@@ -18,25 +15,27 @@ const NavBarBtn = memo(({ item, toggle, setToggle }) => {
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        marginLeft: "10px",
+        marginLeft: "25px",
       }}
       onMouseLeave={() => setToggle({})}
     >
       <OutsideClickWrapper toggle={() => toggle[item.id] && setToggle({})}>
         <NavLink to={item.path}>
           <div
+            className="navigation_button"
             // type="button"
             // onClick={handleClick}
             onMouseEnter={handleClick}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              border: "none",
-              backgroundColor: "transparent",
-            }}
+            style={
+              homeStyle
+                ? {
+                    color: "white",
+                    transition: "color 0.5s ease",
+                  }
+                : { color: "black", transition: "color 0.5s ease" }
+            }
           >
             {item.title}
-            {toggle[item.id] ? <DownArrowIcon /> : <RightArrowIcon />}
           </div>
         </NavLink>
         <div

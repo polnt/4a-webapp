@@ -74,7 +74,7 @@ const CTA = () => {
         <div
           className="cta_card"
           style={{
-            boxShadow: "1px 1px 1px",
+            boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
           }}
           onTouchStart={() => {
             setToggle({

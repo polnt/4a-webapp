@@ -33,7 +33,7 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          <h1 style={{ visibility: "hidden" }}>
+          <h1 style={{color: "white",  visibility: "hidden", position: "absolute"}}>
             BIENVENUE SUR LE SITE WEB DE 4A
           </h1>
           <div style={{ maxWidth: "500px" }}>
@@ -46,7 +46,7 @@ const Home = () => {
         style={{
           position: "relative",
           backgroundColor: "var(--mainGrey)",
-          // backgroundImage: `url(${BlackLinen})`,
+          backgroundImage: `url(${BlackLinen})`,
           width: "100%",
           height: "200px",
         }}

@@ -23,6 +23,17 @@
   }
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .custom_carousel > div > ol > li {
   background-color: black;
 }
@@ -41,7 +52,7 @@
 }
 
 .inverted_divider {
-  background-image: url(./assets/svg/RadiantCircInvertColor.svg);
+  background-image: url(./assets/svg/RadiantCircInverted.svg);
 }
 
 .custom_btn {

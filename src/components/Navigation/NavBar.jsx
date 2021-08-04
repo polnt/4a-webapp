@@ -78,8 +78,14 @@ const NavBar = memo(() => {
           <ContactBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div> */}
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <div className="navbar_links_container">
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            // alignItems: "center",
+          }}
+        >
+          <ul className="navbar_links_container" style={{ marginBottom: 0 }}>
             {navData.map((item) => (
               <NavBarBtn
                 item={item}
@@ -88,10 +94,10 @@ const NavBar = memo(() => {
                 homeStyle={scrollY === 0 && location === "/"}
               />
             ))}
-          </div>
+          </ul>
           <ContactBtn />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        </div>
+        </nav>
       </div>
       <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
     </div>

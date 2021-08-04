@@ -34,24 +34,24 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div
-      className="App"
-      style={
-        location === "/"
-          ? {
-              backgroundColor: "var(--mainGrey)",
-              backgroundImage: `url(${BlackLinen})`,
-            }
-          : { backgroundColor: "var(--mainPurple)" }
-      }
-    >
+    <div className="App">
       <NavBar />
+      <div
+        style={
+          location === "/"
+            ? {
+                height: "100px",
+                backgroundColor: "var(--mainGrey)",
+                backgroundImage: `url(${BlackLinen})`,
+              }
+            : { height: "100px", backgroundColor: "var(--mainPurple)" }
+        }
+      />
       <div
         style={{
           display: "grid",
           gridTemplateRows: "40px 40px 1fr 40px",
           minHeight: "100vh",
-          paddingTop: "100px",
         }}
       >
         <div

@@ -8,30 +8,33 @@ import { BlackLinen } from "../../assets/textures";
 
 const Footer = () => {
   return (
-    <footer>
-      <div
-        className="inverted_divider"
-        style={{
-          backgroundColor: "white",
-          width: "100%",
-          height: "200px",
-        }}
-      />
+    <footer style={{ marginTop: "20px" }}>
       <div
         style={{
-          backgroundColor: "var(--mainPurple80)",
+          position: "relative",
+          backgroundColor: "var(--mainPurple)",
           backgroundImage: `url(${BlackLinen})`,
           width: "100%",
-          height: "100px",
+          height: "300px",
         }}
-      />
+      >
+        <div
+          className="inverted_divider"
+          style={{
+            position: "absolute",
+            backgroundColor: "transparent",
+            width: "100%",
+            height: "200px",
+          }}
+        />
+      </div>
 
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           gridRowStart: 3,
-          backgroundColor: "var(--mainPurple80)",
+          backgroundColor: "var(--mainPurple)",
           backgroundImage: `url(${BlackLinen})`,
         }}
       >

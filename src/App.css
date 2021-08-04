@@ -49,10 +49,10 @@ ul {
 
 .divider {
   background-image: url(./assets/svg/RadiantCirc.svg);
-}
-
-.inverted_divider {
-  background-image: url(./assets/svg/RadiantCircInverted.svg);
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
 }
 
 .custom_btn {

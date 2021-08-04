@@ -35,9 +35,6 @@ const NavBar = memo(() => {
           : {}
       }
     >
-      {/* {location === "/" && scrollY === 0 ? (
-        <div style={{ minHeight: "130px" }} />
-      ) : ( */}
       <NavLink
         to="/"
         style={
@@ -47,7 +44,6 @@ const NavBar = memo(() => {
         }
       >
         <div
-          // className="navbar_logo_container"
           style={
             scrollY === 0
               ? {
@@ -62,27 +58,18 @@ const NavBar = memo(() => {
                 }
           }
         >
-          {scrollY < 1 ? <LogoWithPolice /> : <LogoNoPolice />}
+          {scrollY < 1 ? (
+            <LogoWithPolice policeColor="black" />
+          ) : (
+            <LogoNoPolice />
+          )}
         </div>
       </NavLink>
-      {/* )} */}
       <div className="navbar_main_container">
-        {/* <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            flexWrap: "nowrap",
-          }}
-        >
-          <ContactBtn />
-          <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        </div> */}
         <nav
           style={{
             display: "flex",
             justifyContent: "flex-end",
-            // alignItems: "center",
           }}
         >
           <ul className="navbar_links_container" style={{ marginBottom: 0 }}>

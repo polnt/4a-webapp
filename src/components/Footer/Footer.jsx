@@ -6,35 +6,23 @@ import { footerData } from "./data";
 import { SiLinkedin as LinkedInLogo } from "react-icons/si";
 import { BlackLinen } from "../../assets/textures";
 
+import "../../css/Footer/Footer.css";
+
 const Footer = () => {
   return (
     <footer style={{ marginTop: "20px" }}>
       <div
+        className="footer_background"
         style={{
-          position: "relative",
-          backgroundColor: "var(--mainPurple)",
           backgroundImage: `url(${BlackLinen})`,
-          width: "100%",
-          height: "300px",
         }}
       >
-        <div
-          className="inverted_divider"
-          style={{
-            position: "absolute",
-            backgroundColor: "transparent",
-            width: "100%",
-            height: "200px",
-          }}
-        />
+        <div className="inverted_divider" />
       </div>
 
       <div
+        className="footer_main_container"
         style={{
-          display: "flex",
-          justifyContent: "center",
-          gridRowStart: 3,
-          backgroundColor: "var(--mainPurple)",
           backgroundImage: `url(${BlackLinen})`,
         }}
       >
@@ -53,16 +41,7 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "var(--mainPurple)",
-          height: "40px",
-          fontSize: "20px",
-        }}
-      >
+      <div className="footer_socials_container">
         <LinkedInLogo />
       </div>
     </footer>

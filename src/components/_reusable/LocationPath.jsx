@@ -16,7 +16,7 @@ const LocationPath = memo(() => {
       } else {
         currentPath += `/${element}`;
         return (
-          <NavLink to={currentPath}>{` >${element
+          <NavLink to={currentPath}>{` / ${element
             .split("")
             .map((e, i) => (i > 0 ? e : e.toUpperCase()))
             .join("")

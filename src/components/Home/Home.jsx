@@ -20,7 +20,6 @@ const Home = () => {
         style={{
           backgroundColor: "var(--mainGrey)",
           backgroundImage: `url(${BlackLinen})`,
-          // backgroundSize: "700px 700px",
           width: "100%",
           height: "500px",
         }}
@@ -33,11 +32,17 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          <h1 style={{color: "white",  visibility: "hidden", position: "absolute"}}>
-            BIENVENUE SUR LE SITE WEB DE 4A
+          <h1
+            style={{
+              color: "white",
+              visibility: "hidden",
+              position: "absolute",
+            }}
+          >
+            Bienvenue sur le site web de la société 4A
           </h1>
           <div style={{ maxWidth: "500px" }}>
-            <LogoWithPolice />
+            <LogoWithPolice policeColor="#ffffff" />
           </div>
         </div>
       </div>
@@ -51,15 +56,7 @@ const Home = () => {
           height: "200px",
         }}
       >
-        <div
-          className="divider"
-          style={{
-            position: "absolute",
-            backgroundColor: "transparent",
-            width: "100%",
-            height: "200px",
-          }}
-        />
+        <div className="divider" />
       </div>
 
       <div

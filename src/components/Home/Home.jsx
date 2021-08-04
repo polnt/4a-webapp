@@ -46,7 +46,7 @@ const Home = () => {
         style={{
           position: "relative",
           backgroundColor: "var(--mainGrey)",
-          backgroundImage: `url(${BlackLinen})`,
+          // backgroundImage: `url(${BlackLinen})`,
           width: "100%",
           height: "200px",
         }}

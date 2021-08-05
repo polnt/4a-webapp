@@ -5,7 +5,7 @@
     viewBox="0 0 1280 140"
     preserveAspectRatio="none"
   >
-    <g fill="white">
+    <g fill="#f9f9f9">
       <path d="M0 140h1280C573.08 140 0 0 0 0z" fill-opacity=".3" />
       <path d="M0 140h1280C573.08 140 0 30 0 30z" fill-opacity=".5" />
       <path d="M0 140h1280C573.08 140 0 60 0 60z" />

@@ -14,7 +14,7 @@ import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
 import GlobalAlert from "./components/_reusable/GlobalAlert";
 
-import { BlackLinen } from "./assets/textures";
+import { BlackLinen, Snow } from "./assets/textures";
 
 import mainBackground from "./assets/img/BG_homepage.png";
 
@@ -38,10 +38,16 @@ const App = () => {
   return (
     <div className="App">
       <div
-        style={{
-          backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
-          backgroundColor: "var(--mainGrey)",
-        }}
+        style={
+          location === "/"
+            ? {
+                backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
+                backgroundColor: "var(--mainGrey)",
+              }
+            : {
+                backgroundColor: "#f9f9f9",
+              }
+        }
       >
         <NavBar />
         <div
@@ -73,7 +79,7 @@ const App = () => {
           <LocationPath />
           <main
             style={{
-              gridRowStart: 3,
+              backgroundColor: "transparent",
             }}
           >
             <Router />

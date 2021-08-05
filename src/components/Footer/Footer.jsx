@@ -5,25 +5,39 @@ import { NavLink } from "react-router-dom";
 import { footerData } from "./data";
 import { SiLinkedin as LinkedInLogo } from "react-icons/si";
 import { BlackLinen } from "../../assets/textures";
+import mainBackground from "../../assets/img/BG_homepage.png";
 
 import "../../css/Footer/Footer.css";
 
 const Footer = () => {
   return (
-    <footer>
-      <div
+    <footer
+      style={{
+        backgroundImage: `url(${BlackLinen}), url(${mainBackground})`,
+        backgroundColor: "var(--mainPurple80)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        height: "400px",
+        position: "relative",
+      }}
+    >
+      {/* <div
         className="footer_background"
         style={{
           backgroundImage: `url(${BlackLinen})`,
         }}
       >
         <div className="inverted_divider" />
-      </div>
-
+      </div> */}
+      <div className="inverted_divider" />
       <div
         className="footer_main_container"
         style={{
-          backgroundImage: `url(${BlackLinen})`,
+          backgroundColor: "transparent",
+          // backgroundImage: `url(${BlackLinen})`,
+          display: "flex",
+          width: "100%",
         }}
       >
         {footerData.map((item) => (
@@ -35,13 +49,20 @@ const Footer = () => {
             }}
           >
             <h4>{item.title}</h4>
-            {item.children?.map((subItem) => (
-              <NavLink to={subItem.path}>{subItem.title} </NavLink>
-            ))}
+            <ul>
+              {item.children?.map((subItem) => (
+                <li>
+                  <NavLink to={subItem.path}>{subItem.title} </NavLink>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
-      <div className="footer_socials_container">
+      <div
+        className="footer_socials_container"
+        style={{ backgroundImage: `url(${BlackLinen})` }}
+      >
         <LinkedInLogo />
       </div>
     </footer>

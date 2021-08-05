@@ -32,7 +32,7 @@ const LocationPath = memo(() => {
           ? {
               backgroundColor: "transparent",
             }
-          : { backgroundColor: "transparent", paddingTop: "10px" }
+          : { backgroundColor: "#f9f9f9", paddingTop: "10px" }
       }
     >
       <div className="content_page" style={{ gridRowStart: 1 }}>

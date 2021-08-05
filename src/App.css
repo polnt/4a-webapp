@@ -34,23 +34,24 @@ ul {
   list-style-type: none;
 }
 
-article {
-  background-color: white;
-}
-
-.custom_carousel > div > ol > li {
-  background-color: black;
-}
-
 .container_page {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
-  background-color: white;
+  background-color: #f9f9f9;
 }
 
 .content_page {
   grid-column-start: 2;
   grid-column-end: 2;
+}
+
+#main_content {
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.custom_carousel > div > ol > li {
+  background-color: black;
 }
 
 .divider {

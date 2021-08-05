@@ -13,8 +13,6 @@ import { navData } from "./data";
 
 import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
 
-import { BlackLinen } from "../../assets/textures";
-
 import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
@@ -27,8 +25,7 @@ const NavBar = memo(() => {
       style={
         scrollY === 0 && location === "/"
           ? {
-              backgroundColor: "var(--mainGrey)",
-              backgroundImage: `url(${BlackLinen})`,
+              backgroundColor: "transparent",
               boxShadow: "none",
               transition: "background-color 1s ease",
             }

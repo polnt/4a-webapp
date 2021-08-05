@@ -1,3 +1,7 @@
+import Calculator from "../../assets/img/calculator.jpg";
+import HR from "../../assets/img/pexels-polina-zimmerman.jpg";
+import Advice from "../../assets/img/pexels-mentatdgt.jpg";
+
 export const navData = [
   {
     id: "solutions",
@@ -14,6 +18,8 @@ export const navData = [
     id: "pay",
     title: "PAIE",
     path: "/paie",
+    backgroundImage: Calculator,
+    size: "cover",
     children: [
       { title: "Externalisation", path: "/paie/externalisation" },
       { title: "Gestion interne", path: "/paie/gestion-interne" },
@@ -24,6 +30,8 @@ export const navData = [
     id: "hr",
     title: "RH",
     path: "/rh",
+    backgroundImage: HR,
+    size: "contain",
     children: [
       {
         title: "Entrées et sorties des salariés",
@@ -37,6 +45,7 @@ export const navData = [
     id: "advice",
     title: "CONSEIL",
     path: "/conseil",
+    backgroundImage: Advice,
     children: [
       { title: "Audit", path: "" },
       { title: "Formation", path: "" },

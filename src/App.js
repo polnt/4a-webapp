@@ -16,6 +16,8 @@ import GlobalAlert from "./components/_reusable/GlobalAlert";
 
 import { BlackLinen } from "./assets/textures";
 
+import mainBackground from "./assets/img/BG_homepage.png";
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -34,47 +36,52 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="App" style={{ color: "var(--mainGrey)" }}>
-      <NavBar />
-      <div
-        style={
-          location === "/"
-            ? {
-                height: "100px",
-                backgroundColor: "var(--mainGrey)",
-                backgroundImage: `url(${BlackLinen})`,
-              }
-            : { height: "100px", backgroundColor: "var(--mainPurple)" }
-        }
-      />
+    <div className="App">
       <div
         style={{
-          display: "grid",
-          gridTemplateRows: "40px 40px 1fr 40px",
-          minHeight: "100vh",
+          backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
+          backgroundColor: "var(--mainGrey)",
         }}
       >
+        <NavBar />
         <div
           style={
             location === "/"
               ? {
-                  backgroundColor: "var(--mainGrey)",
-                  backgroundImage: `url(${BlackLinen})`,
+                  height: "100px",
+                  backgroundColor: "transparent",
                 }
-              : { backgroundColor: "var(--mainPurple)", gridRowStart: 1 }
+              : { height: "100px", backgroundColor: "var(--mainPurple)" }
           }
         />
-        <LocationPath />
-        <main
+        <div
           style={{
-            gridRowStart: 3,
-            backgroundColor: "white",
+            display: "grid",
+            gridTemplateRows: "40px 40px 1fr 40px",
+            minHeight: "100vh",
           }}
         >
-          <Router />
-        </main>
-        <Footer />
+          <div
+            style={
+              location === "/"
+                ? {
+                    backgroundColor: "transparent",
+                  }
+                : { backgroundColor: "var(--mainPurple)", gridRowStart: 1 }
+            }
+          />
+          <LocationPath />
+          <main
+            style={{
+              gridRowStart: 3,
+            }}
+          >
+            <Router />
+          </main>
+          <Footer />
+        </div>
       </div>
+
       {globalAlert && <GlobalAlert />}
       {modal && <Modal />}
     </div>

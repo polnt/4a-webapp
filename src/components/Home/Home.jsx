@@ -4,7 +4,6 @@ import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
 import { LogoWithPolice } from "../../assets/svg";
-import { BlackLinen } from "../../assets/textures";
 
 const Home = () => {
   return (
@@ -18,10 +17,10 @@ const Home = () => {
       <div
         className="container_page"
         style={{
-          backgroundColor: "var(--mainGrey)",
-          backgroundImage: `url(${BlackLinen})`,
+          backgroundColor: "transparent",
           width: "100%",
           height: "500px",
+          position: "relative",
         }}
       >
         <div
@@ -30,6 +29,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            position: "relative",
           }}
         >
           <h1
@@ -45,18 +45,7 @@ const Home = () => {
             <LogoWithPolice policeColor="#ffffff" />
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          position: "relative",
-          backgroundColor: "var(--mainGrey)",
-          backgroundImage: `url(${BlackLinen})`,
-          width: "100%",
-          height: "200px",
-        }}
-      >
         <div className="divider" />
-
         <section
           className="content_page"
           style={{
@@ -64,7 +53,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            top: "50%",
+            top: "80%",
             left: "50%",
             transform: "translate(-50%)",
             maxWidth: "700px",

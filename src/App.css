@@ -1,9 +1,12 @@
 :root {
   --mainPurple: rgba(166, 83, 157, 1);
+  --mainPurple50: rgba(166, 83, 157, 0.5);
   --mainPurple80: rgba(166, 83, 157, 0.8);
   --mainOrange: rgba(255, 190, 113, 1);
+  --mainOrange50: rgba(255, 190, 113, 0.5);
   --mainLightBlue: #8fd5db;
   --mainGrey: rgba(50, 50, 50, 1);
+  --mainGrey80: rgba(50, 50, 50, 0.8);
   --mainCream: #fff7eb;
   --mainFontThin: {
     font-family: RobotoThin;
@@ -31,6 +34,10 @@ ul {
   list-style-type: none;
 }
 
+article {
+  background-color: white;
+}
+
 .custom_carousel > div > ol > li {
   background-color: black;
 }
@@ -38,10 +45,12 @@ ul {
 .container_page {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
+  background-color: white;
 }
 
 .content_page {
   grid-column-start: 2;
+  grid-column-end: 2;
 }
 
 .divider {
@@ -50,6 +59,7 @@ ul {
   background-color: transparent;
   width: 100%;
   height: 200px;
+  bottom: 0;
 }
 
 .custom_btn {

@@ -61,7 +61,7 @@ const CTA = () => {
 
   return (
     <div
-      className={containerStyle}
+      className={`cta_container ${containerStyle}`}
       onMouseLeave={() =>
         setToggle({
           pay: false,
@@ -74,7 +74,11 @@ const CTA = () => {
         <div
           className="cta_card"
           style={{
+            position: "relative",
             boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+            backgroundImage: `linear-gradient(transparent, var(--mainGrey80)), url(${navData[index].backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
           onTouchStart={() => {
             setToggle({
@@ -97,7 +101,15 @@ const CTA = () => {
                 : hidedMenuStyle
             }
           >
-            <h2>{navData[index].title}</h2>
+            <h2
+              style={
+                toggle[navData[index].id]
+                  ? { color: "var(--mainGrey)" }
+                  : { color: "white" }
+              }
+            >
+              {navData[index].title}
+            </h2>
             <ul style={{ ...navLinkMenuStyle, marginBottom: 0 }}>
               {toggle[navData[index].id] &&
                 navData[index].children?.map((item) => (

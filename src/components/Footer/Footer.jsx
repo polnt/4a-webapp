@@ -10,7 +10,7 @@ import "../../css/Footer/Footer.css";
 
 const Footer = () => {
   return (
-    <footer style={{ marginTop: "20px" }}>
+    <footer>
       <div
         className="footer_background"
         style={{

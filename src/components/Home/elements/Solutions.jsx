@@ -25,56 +25,82 @@ const Solutions = () => {
         overflowX: "hidden",
         backgroundColor: "white",
         boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+        minHeight: "250px",
+        padding: "2rem 2rem",
       }}
     >
-      <Container>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "150px",
+          justifyContent: "space-around",
+        }}
+      >
         <h2>Nos solutions pour vous</h2>
-        <div style={{ display: "flex" }}>
+        <div className="solutions_btn_container">
           {solutionsData.map((solution) => (
-            <div>
-              <button type="button" value={solution.id} onClick={handleClick}>
+            <>
+              <button
+                className="custom_btn"
+                style={{
+                  backgroundColor: "var(--mainLightBlue)",
+                }}
+                type="button"
+                value={solution.id}
+                onClick={handleClick}
+              >
                 {solution.buttonLabel}
               </button>
+
               <div
-                className={
+                className="solutions_content"
+                style={
                   selection === solution.id
-                    ? "solutions_show_content"
-                    : "solutions_hidden_content"
+                    ? { visibility: "visible" }
+                    : { visibility: "hidden", left: "900px" }
                 }
               >
                 <h3>{solution.title}</h3>
                 <p>{solution.text}</p>
-                <NavLink style={{ textDecoration: "none" }} to={solution.path}>
-                  <button
-                    type="button"
-                    style={
-                      selection === solution.id
-                        ? { display: "block" }
-                        : { display: "none" }
-                    }
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <NavLink
+                    style={{ textDecoration: "none" }}
+                    to={solution.path}
                   >
-                    En savoir plus
-                  </button>
-                </NavLink>
+                    <button
+                      className="custom_btn"
+                      type="button"
+                      style={{ backgroundColor: "var(--mainOrange)" }}
+                    >
+                      En savoir plus
+                    </button>
+                  </NavLink>
+                </div>
               </div>
-            </div>
+            </>
           ))}
         </div>
-        {selection.length > 0 && (
-          <button
-            type="button"
-            onClick={() => setSelection("")}
-            style={{
-              position: "absolute",
-              top: 5,
-              right: 5,
-              border: "none",
-              backgroundColor: "transparent",
-            }}
-          >
-            <CloseWindowIcon />
-          </button>
-        )}
+
+        <button
+          type="button"
+          onClick={() => setSelection("")}
+          style={
+            selection.length
+              ? {
+                  position: "absolute",
+                  top: 5,
+                  right: 5,
+                  border: "none",
+                  backgroundColor: "transparent",
+                  visibility: "visible",
+                }
+              : { visibility: "hidden", position: "absolute" }
+          }
+        >
+          <CloseWindowIcon />
+        </button>
       </Container>
     </Jumbotron>
   );

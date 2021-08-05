@@ -87,7 +87,7 @@ const CTA = () => {
             })
           }
         >
-          <div
+          <section
             style={
               toggle[navData[index].id]
                 ? {
@@ -98,15 +98,17 @@ const CTA = () => {
             }
           >
             <h2>{navData[index].title}</h2>
-            <div style={navLinkMenuStyle}>
+            <ul style={{ ...navLinkMenuStyle, marginBottom: 0 }}>
               {toggle[navData[index].id] &&
                 navData[index].children?.map((item) => (
-                  <NavLink to={item.path} style={navLinkStyle}>
-                    {item.title}
-                  </NavLink>
+                  <li>
+                    <NavLink to={item.path} style={navLinkStyle}>
+                      {item.title}
+                    </NavLink>
+                  </li>
                 ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         </div>
       ))}
     </div>

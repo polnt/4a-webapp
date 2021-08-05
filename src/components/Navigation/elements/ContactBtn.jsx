@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { SiMinutemailer as ContactIcon } from "react-icons/si";
 
-const ContactBtn = memo(() => {
+const ContactBtn = memo(({ homeStyle }) => {
   return (
     <NavLink
       className="navbar_main_link"
@@ -11,6 +11,7 @@ const ContactBtn = memo(() => {
       style={{
         marginRight: "5px",
         marginTop: "5px",
+        color: homeStyle ? "white" : "black",
       }}
     >
       <ContactIcon className="navbar_icon" />

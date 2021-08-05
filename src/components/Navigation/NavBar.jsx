@@ -22,7 +22,7 @@ const NavBar = memo(() => {
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
-    <div
+    <nav
       className="navbar_container"
       style={
         scrollY === 0 && location === "/"
@@ -66,7 +66,7 @@ const NavBar = memo(() => {
         </div>
       </NavLink>
       <div className="navbar_main_container">
-        <nav
+        <div
           style={{
             display: "flex",
             justifyContent: "flex-end",
@@ -82,12 +82,12 @@ const NavBar = memo(() => {
               />
             ))}
           </ul>
-          <ContactBtn />
+          <ContactBtn homeStyle={scrollY === 0 && location === "/"} />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        </nav>
+        </div>
       </div>
       <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-    </div>
+    </nav>
   );
 });
 

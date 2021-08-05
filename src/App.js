@@ -34,7 +34,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className="App" style={{ color: "var(--mainGrey)" }}>
       <NavBar />
       <div
         style={

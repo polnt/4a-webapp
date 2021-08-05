@@ -7,7 +7,7 @@ import ContactCTA from "../../components/_reusable/ContactCTA";
 const Tpe = () => {
   return (
     <div className="container_page">
-      <div className="content_page">
+      <article className="content_page">
         <h1>TPE</h1>
         <h2>
           Libérez-vous des activités chronophages, centrez-vous sur votre cœur
@@ -48,7 +48,7 @@ const Tpe = () => {
           </li>
         </ul>
         <ContactCTA />
-      </div>
+      </article>
     </div>
   );
 };

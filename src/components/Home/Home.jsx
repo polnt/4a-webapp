@@ -47,7 +47,6 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="container_page"
         style={{
           position: "relative",
           backgroundColor: "var(--mainGrey)",
@@ -57,24 +56,23 @@ const Home = () => {
         }}
       >
         <div className="divider" />
-      </div>
 
-      <div
-        className="container_page"
-        style={{
-          width: "100%",
-        }}
-      >
-        <div
+        <section
           className="content_page"
           style={{
+            position: "absolute",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%)",
+            maxWidth: "700px",
+            width: "100%",
           }}
         >
           <Solutions />
-        </div>
+        </section>
       </div>
       <div
         className="container_page"
@@ -82,16 +80,17 @@ const Home = () => {
           width: "100%",
         }}
       >
-        <div
+        <section
           className="content_page"
           style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            marginTop: "200px",
           }}
         >
           <CTA />
-        </div>
+        </section>
       </div>
     </div>
   );

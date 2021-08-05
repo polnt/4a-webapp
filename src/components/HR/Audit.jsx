@@ -3,7 +3,7 @@ import React from "react";
 const Procedure = () => {
   return (
     <div className="container_page">
-      <div className="content_page">
+      <article className="content_page">
         <h1>AUDIT RH</h1>
         <p>
           Votre budget en matière sociale augmente chaque année, vous souhaitez
@@ -19,7 +19,7 @@ const Procedure = () => {
           trouvées pour répondre à vos besoins et vous accompagnons dans leur
           mise en place selon vos décisions.
         </p>
-      </div>
+      </article>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import { navData } from "../../Navigation/data";
 
+import { BsArrowBarRight as RightArrow } from "react-icons/bs";
+
 import "../../../css/Home/CTA.css";
 
 const CTA = () => {
@@ -18,7 +20,8 @@ const CTA = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    top: 150,
+    justifyContent: "center",
+    top: 350,
     width: "100%",
   };
 
@@ -27,7 +30,7 @@ const CTA = () => {
     left: 0,
     bottom: 0,
     backgroundImage:
-      "linear-gradient(to bottom, rgba(0, 0, 0, 0) 6%, rgba(0, 0, 0, 0.77))",
+      "linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0.77))",
     transition: "top 0.25s ease",
   };
 
@@ -38,8 +41,9 @@ const CTA = () => {
   };
 
   const navLinkStyle = {
-    textDecoration: "none",
-    color: "white",
+    color: "#f9f9f9",
+    display: "flex",
+    alignItems: "center",
   };
 
   useLayoutEffect(() => {
@@ -101,21 +105,14 @@ const CTA = () => {
                 : hidedMenuStyle
             }
           >
-            <h2
-              style={
-                toggle[navData[index].id]
-                  ? { color: "var(--mainGrey)" }
-                  : { color: "white" }
-              }
-            >
-              {navData[index].title}
-            </h2>
+            <h2 style={{ color: "#f9f9f9" }}>{navData[index].title}</h2>
             <ul style={{ ...navLinkMenuStyle, marginBottom: 0 }}>
               {toggle[navData[index].id] &&
                 navData[index].children?.map((item) => (
-                  <li>
+                  <li style={{ padding: "10px 0 10px 0" }}>
                     <NavLink to={item.path} style={navLinkStyle}>
                       {item.title}
+                      <RightArrow style={{ marginLeft: "10px" }} />
                     </NavLink>
                   </li>
                 ))}

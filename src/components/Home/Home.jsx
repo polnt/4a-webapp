@@ -19,7 +19,7 @@ const Home = () => {
         style={{
           backgroundColor: "transparent",
           width: "100%",
-          height: "500px",
+          height: "700px",
           position: "relative",
         }}
       >

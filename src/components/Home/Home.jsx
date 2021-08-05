@@ -53,10 +53,9 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            top: "80%",
+            top: "90%",
             left: "50%",
             transform: "translate(-50%)",
-            maxWidth: "700px",
             width: "100%",
           }}
         >
@@ -75,7 +74,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            marginTop: "200px",
+            marginTop: "250px",
           }}
         >
           <CTA />

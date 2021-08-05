@@ -1,11 +1,26 @@
 .cta_card {
-  height: 200px;
+  height: 400px;
   position: relative;
   border-radius: 0.3rem;
 }
 
+.cta_container {
+  margin-top: 200px;
+}
+
+.cta_card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .cta_container {
+    margin-top: 100px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .cta_container {
+    margin-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -25,5 +40,6 @@
 
   .cta_card:not(:last-child) {
     margin-right: 20px;
+    margin-bottom: 0;
   }
 }

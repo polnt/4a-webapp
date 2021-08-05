@@ -22,20 +22,11 @@ const Footer = () => {
         position: "relative",
       }}
     >
-      {/* <div
-        className="footer_background"
-        style={{
-          backgroundImage: `url(${BlackLinen})`,
-        }}
-      >
-        <div className="inverted_divider" />
-      </div> */}
       <div className="inverted_divider" />
       <div
         className="footer_main_container"
         style={{
           backgroundColor: "transparent",
-          // backgroundImage: `url(${BlackLinen})`,
           display: "flex",
           width: "100%",
         }}

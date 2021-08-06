@@ -7,6 +7,8 @@ import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";
 
+import { useNav } from "./hooks";
+
 import Router from "./components/Router";
 import NavBar from "./components/Navigation/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -14,7 +16,7 @@ import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
 import GlobalAlert from "./components/_reusable/GlobalAlert";
 
-import { BlackLinen, Snow } from "./assets/textures";
+import { BlackLinen } from "./assets/textures";
 
 import mainBackground from "./assets/img/BG_homepage.png";
 
@@ -25,6 +27,7 @@ const App = () => {
   const location = useLocation().pathname;
   const dispatch = useDispatch();
   const { modal, globalAlert } = useSelector((state) => state);
+  const { scrollY } = useNav();
 
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -35,58 +38,43 @@ const App = () => {
     return () => unregisterAuthObserver();
   }, [dispatch]);
 
+  console.log(scrollY);
+
   return (
     <div className="App">
-      <div
-        style={
-          location === "/"
-            ? {
-                backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
-                backgroundColor: "var(--mainGrey)",
-              }
-            : {
-                backgroundColor: "#f9f9f9",
-              }
-        }
+      <NavBar />
+      <main
+        style={{
+          backgroundColor: "transparent",
+          paddingTop: "150px",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <NavBar />
         <div
           style={
             location === "/"
               ? {
-                  height: "100px",
-                  backgroundColor: "transparent",
+                  position: "absolute",
+                  right: 0,
+                  left: 0,
+                  bottom: 0,
+                  top: 0,
+                  zIndex: "-1",
+                  backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
+                  transform: `translate(0, ${scrollY * 0.5}px)`,
+                  transition: "transform 0.1s ease",
+                  backgroundColor: "var(--mainGrey)",
                 }
-              : { height: "100px", backgroundColor: "var(--mainPurple)" }
+              : { backgroundColor: "#f9f9f9" }
           }
         />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateRows: "40px 40px 1fr 40px",
-            minHeight: "100vh",
-          }}
-        >
-          <div
-            style={
-              location === "/"
-                ? {
-                    backgroundColor: "transparent",
-                  }
-                : { backgroundColor: "var(--mainPurple)", gridRowStart: 1 }
-            }
-          />
+        <div style={{ minHeight: "100vh" }}>
           <LocationPath />
-          <main
-            style={{
-              backgroundColor: "transparent",
-            }}
-          >
-            <Router />
-          </main>
-          <Footer />
+          <Router />
         </div>
-      </div>
+        <Footer />
+      </main>
 
       {globalAlert && <GlobalAlert />}
       {modal && <Modal />}

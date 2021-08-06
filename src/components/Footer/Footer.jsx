@@ -13,12 +13,12 @@ const Footer = () => {
   return (
     <footer
       style={{
-        backgroundImage: `url(${BlackLinen}), url(${mainBackground})`,
+        backgroundImage: `url(${BlackLinen})`,
         backgroundColor: "var(--mainPurple80)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
-        height: "400px",
+        // height: "400px",
         position: "relative",
       }}
     >
@@ -29,6 +29,7 @@ const Footer = () => {
           backgroundColor: "transparent",
           display: "flex",
           width: "100%",
+          height: "400px",
         }}
       >
         {footerData.map((item) => (
@@ -52,7 +53,7 @@ const Footer = () => {
       </div>
       <div
         className="footer_socials_container"
-        style={{ backgroundImage: `url(${BlackLinen})` }}
+        // style={{ backgroundImage: `url(${BlackLinen})` }}
       >
         <LinkedInLogo />
       </div>

@@ -91,13 +91,6 @@ ul {
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
 }
 
-/* @media all and (max-width: 30em) {
-  .custom_btn {
-    display: block;
-    margin: 0.4em auto;
-  }
-} */
-
 @media screen and (min-width: 768px) {
   .divider {
     height: 100px;

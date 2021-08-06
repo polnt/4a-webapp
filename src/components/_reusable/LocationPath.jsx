@@ -25,26 +25,40 @@ const LocationPath = memo(() => {
   }, [location]);
 
   return (
-    <div
-      className="container_page"
-      style={
-        location.length < 2
-          ? {
-              backgroundColor: "transparent",
-            }
-          : { backgroundColor: "#f9f9f9" }
-      }
-    >
-      <div className="content_page" style={{ gridRowStart: 1 }}>
-        <span
-          style={
-            location.length < 2 ? { display: "none" } : { display: "block" }
-          }
-        >
-          {handlePath()}
-        </span>
+    <>
+      <div
+        style={
+          location === "/"
+            ? { position: "absolute", visibility: "hidden" }
+            : {
+                position: "relative",
+                height: "200px",
+              }
+        }
+      >
+        <div className="divider" />
       </div>
-    </div>
+      <div
+        className="container_page"
+        style={
+          location.length < 2
+            ? {
+                backgroundColor: "transparent",
+              }
+            : { backgroundColor: "#f9f9f9" }
+        }
+      >
+        <div className="content_page" style={{ gridRowStart: 1 }}>
+          <span
+            style={
+              location.length < 2 ? { display: "none" } : { display: "block" }
+            }
+          >
+            {handlePath()}
+          </span>
+        </div>
+      </div>
+    </>
   );
 });
 

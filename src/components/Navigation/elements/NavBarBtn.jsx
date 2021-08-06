@@ -25,11 +25,7 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
             >
               {item.children?.map((subItem) => (
                 <li>
-                  <NavLink
-                    style={{ textDecoration: "none" }}
-                    to={subItem.path}
-                    onClick={() => setToggle({})}
-                  >
+                  <NavLink to={subItem.path} onClick={() => setToggle({})}>
                     <span style={{ whiteSpace: "nowrap" }}>
                       {subItem.title}
                     </span>
@@ -41,13 +37,11 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
         }
       >
         <NavLink
-          className="navigation_button"
+          className={`navigation_button ${
+            homeStyle ? "white_font" : "black_font"
+          }`}
           to={item.path}
-          style={{
-            textDecoration: "none",
-            color: homeStyle ? "white" : "inherit",
-            transition: "color 0.5s ease",
-          }}
+          style={{ textDecoration: "none" }}
         >
           {item.title}
         </NavLink>

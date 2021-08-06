@@ -34,7 +34,7 @@ const Home = () => {
         >
           <h1
             style={{
-              color: "white",
+              color: "#f9f9f9",
               visibility: "hidden",
               position: "absolute",
             }}
@@ -75,6 +75,8 @@ const Home = () => {
             flexDirection: "column",
             justifyContent: "center",
             marginTop: "250px",
+            transition: "1s all ease",
+            visibility: "visible",
           }}
         >
           <CTA />

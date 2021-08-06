@@ -11,7 +11,7 @@ import MobileNavMenu from "./MobileNavMenu";
 
 import { navData } from "./data";
 
-import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
+import { LogoNoPolice } from "../../assets/svg";
 
 import "../../css/NavBar/NavBar.css";
 
@@ -23,7 +23,7 @@ const NavBar = memo(() => {
     <nav
       className="navbar_container"
       style={
-        scrollY === 0 && location === "/"
+        scrollY === 0
           ? {
               backgroundColor: "transparent",
               boxShadow: "none",
@@ -35,7 +35,7 @@ const NavBar = memo(() => {
       <NavLink
         to="/"
         style={
-          location === "/" && scrollY === 0
+          location === "/"
             ? { visibility: "hidden" }
             : { visibility: "visible" }
         }
@@ -55,11 +55,7 @@ const NavBar = memo(() => {
                 }
           }
         >
-          {scrollY < 1 ? (
-            <LogoWithPolice policeColor="black" />
-          ) : (
-            <LogoNoPolice />
-          )}
+          <LogoNoPolice />
         </div>
       </NavLink>
       <div className="navbar_main_container">
@@ -75,7 +71,7 @@ const NavBar = memo(() => {
                 item={item}
                 toggle={toggle}
                 setToggle={setToggle}
-                homeStyle={scrollY === 0 && location === "/"}
+                homeStyle={scrollY === 0}
               />
             ))}
           </ul>

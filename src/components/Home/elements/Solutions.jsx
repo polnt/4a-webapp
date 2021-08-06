@@ -38,14 +38,27 @@ const Solutions = () => {
           justifyContent: "space-around",
         }}
       >
-        <h2>Nos solutions pour vous</h2>
+        <h2
+          style={{
+            textTransform: "uppercase",
+            font: "var(--ctaFont)",
+            fontSize: "2em",
+          }}
+        >
+          Des solutions adaptées à vos besoins
+        </h2>
+        <p style={{ fontSize: "1.5em" }}>
+          Découvrez les services que nous proposons en fonction de votre besoin
+        </p>
+        <p style={{ fontSize: "1.5em" }}>Vous êtes ?</p>
         <div className="solutions_btn_container">
           {solutionsData.map((solution) => (
             <>
               <button
                 className="custom_btn"
                 style={{
-                  backgroundColor: "var(--mainLightBlue)",
+                  backgroundColor: "var(--mainPurple)",
+                  color: "var(--mainCream)",
                 }}
                 type="button"
                 value={solution.id}

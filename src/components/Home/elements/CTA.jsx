@@ -15,35 +15,10 @@ const CTA = () => {
   });
   const [containerStyle, setContainerStyle] = useState("cta_container");
 
-  const hidedMenuStyle = {
-    position: "absolute",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    top: 350,
-    width: "100%",
-  };
-
   const showMenuStyle = {
     top: 0,
-    left: 0,
-    bottom: 0,
     backgroundImage:
       "linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0.77))",
-    transition: "top 0.25s ease",
-  };
-
-  const navLinkMenuStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "start",
-  };
-
-  const navLinkStyle = {
-    color: "#f9f9f9",
-    display: "flex",
-    alignItems: "center",
   };
 
   useLayoutEffect(() => {
@@ -96,21 +71,19 @@ const CTA = () => {
           }
         >
           <section
-            style={
-              toggle[navData[index].id]
-                ? {
-                    ...hidedMenuStyle,
-                    ...showMenuStyle,
-                  }
-                : hidedMenuStyle
-            }
+            className="cta_menu"
+            style={toggle[navData[index].id] ? showMenuStyle : { top: 350 }}
           >
             <h2 style={{ color: "#f9f9f9" }}>{navData[index].title}</h2>
-            <ul style={{ ...navLinkMenuStyle, marginBottom: 0 }}>
+            <ul className="cta_list">
               {toggle[navData[index].id] &&
                 navData[index].children?.map((item) => (
                   <li style={{ padding: "10px 0 10px 0" }}>
-                    <NavLink to={item.path} style={navLinkStyle}>
+                    <NavLink
+                      to={item.path}
+                      className="cta_navlink"
+                      style={{ color: "#f9f9f9" }}
+                    >
                       {item.title}
                       <RightArrow style={{ marginLeft: "10px" }} />
                     </NavLink>

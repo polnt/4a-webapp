@@ -77,6 +77,12 @@
   font-size: 1.2em;
   font-weight: bold;
   margin: 0 24px;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.navigation_button:hover {
+  color: var(--mainPurple);
 }
 
 .navigation_button_sub_menu {

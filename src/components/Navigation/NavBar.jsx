@@ -75,7 +75,7 @@ const NavBar = memo(() => {
               />
             ))}
           </ul>
-          <ContactBtn homeStyle={scrollY === 0 && location === "/"} />
+          <ContactBtn homeStyle={scrollY === 0} />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
         </div>
       </div>

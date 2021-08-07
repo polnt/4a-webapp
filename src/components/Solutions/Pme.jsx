@@ -6,7 +6,7 @@ import ContactCTA from "../../components/_reusable/ContactCTA";
 
 const Pme = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <article className="content_page">
         <h1>PME</h1>
         <h2>Assurez-vous l’expertise au sein de l’entreprise</h2>

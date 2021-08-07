@@ -58,7 +58,7 @@ const App = () => {
             backgroundColor: "var(--mainGrey)",
           }}
         />
-        <div style={{ minHeight: "100vh" }}>
+        <div className="cover_page">
           <LocationPath />
           <Router />
         </div>

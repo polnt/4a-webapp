@@ -63,9 +63,10 @@ const NavBar = memo(() => {
           style={{
             display: "flex",
             justifyContent: "flex-end",
+            alignItems: "center",
           }}
         >
-          <ul className="navbar_links_container" style={{ marginBottom: 0 }}>
+          <ul className="navbar_links_container">
             {navData.map((item) => (
               <NavBarBtn
                 item={item}

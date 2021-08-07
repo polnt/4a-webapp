@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
-import { initFirebaseApp } from "./firebase";
-
 import { Provider } from "react-redux";
 import { configureAppStore } from "./redux";
 
@@ -13,7 +11,6 @@ import "./index.css";
 
 import reportWebVitals from "./reportWebVitals";
 
-initFirebaseApp();
 const store = configureAppStore();
 
 ReactDOM.render(

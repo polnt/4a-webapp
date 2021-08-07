@@ -2,7 +2,7 @@ import React from "react";
 
 const InternalManagement = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <article className="content_page">
         <h1>GESTION INTERNE</h1>
         <p>

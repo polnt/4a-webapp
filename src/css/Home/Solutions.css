@@ -20,6 +20,16 @@
   flex-direction: column;
 }
 
+.solutions_btn {
+  color: var(--mainCream);
+  background-color: var(--mainPurple);
+}
+
+.solutions_btn:hover {
+  background-color: var(--mainOrange);
+  color: var(--mainGrey);
+}
+
 @media screen and (min-width: 768px) {
   .solutions_btn_container {
     flex-direction: row;

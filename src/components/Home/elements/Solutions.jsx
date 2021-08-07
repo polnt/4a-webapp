@@ -55,11 +55,7 @@ const Solutions = () => {
           {solutionsData.map((solution) => (
             <>
               <button
-                className="custom_btn"
-                style={{
-                  backgroundColor: "var(--mainPurple)",
-                  color: "var(--mainCream)",
-                }}
+                className="custom_btn solutions_btn"
                 type="button"
                 value={solution.id}
                 onClick={handleClick}
@@ -85,7 +81,10 @@ const Solutions = () => {
                     <button
                       className="custom_btn"
                       type="button"
-                      style={{ backgroundColor: "var(--mainOrange)" }}
+                      style={{
+                        backgroundColor: "var(--mainOrange)",
+                        color: "var(--mainGrey)",
+                      }}
                     >
                       En savoir plus
                     </button>

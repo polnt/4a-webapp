@@ -2,7 +2,7 @@ import React from "react";
 
 const Lifetime = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <article className="content_page">
         <h1>LES RESSOURCES HUMAINES</h1>
         <p>

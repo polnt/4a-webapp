@@ -4,7 +4,7 @@ import ContactCTA from "../../components/_reusable/ContactCTA";
 
 const Avocat = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <article className="content_page">
         <h1>AVOCAT spécialisé en droit social</h1>
         <h2>Augmenter votre expertise en technique de paie</h2>

@@ -19,14 +19,16 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
         placement="bottom"
         overlay={
           <Popover id="popover-positioned-bottom">
-            <ul
-              className="navigation_button_sub_menu"
-              style={{ marginBottom: 0 }}
-            >
+            <ul className="navigation_button_sub_menu">
               {item.children?.map((subItem) => (
-                <li>
+                <li style={{ width: "100%" }}>
                   <NavLink to={subItem.path} onClick={() => setToggle({})}>
-                    <span style={{ whiteSpace: "nowrap" }}>
+                    <span
+                      style={{
+                        whiteSpace: "nowrap",
+                        fontSize: "1.3rem",
+                      }}
+                    >
                       {subItem.title}
                     </span>
                   </NavLink>

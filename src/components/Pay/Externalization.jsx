@@ -2,7 +2,7 @@ import React from "react";
 
 const Externalization = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <article className="content_page">
         <h1>GESTION DE LA PAIE EXTERNE</h1>« Retrouvez votre cœur de métier,
         libérez-vous des risques »

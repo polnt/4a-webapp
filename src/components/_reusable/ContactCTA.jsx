@@ -5,7 +5,13 @@ import { NavLink } from "react-router-dom";
 const ContactCTA = () => {
   return (
     <NavLink to="/contact">
-      <button type="button">Demander un devis</button>
+      <button
+        className="custom_btn"
+        style={{ backgroundColor: "var(--mainOrange)" }}
+        type="button"
+      >
+        Demander un devis
+      </button>
     </NavLink>
   );
 };

@@ -6,7 +6,7 @@ import "../../css/Contact/Contact.css";
 
 const Contact = () => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page">
       <div
         className="content_page"
         style={{

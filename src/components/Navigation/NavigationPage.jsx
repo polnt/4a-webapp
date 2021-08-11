@@ -6,7 +6,7 @@ import { navData } from "./data";
 
 const NavigationPage = ({ index }) => {
   return (
-    <div className="container_page">
+    <div className="container_page cover_page" style={{ position: "relative" }}>
       <div
         className="content_page"
         style={{ display: "flex", flexDirection: "column" }}

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { useNav } from "../../hooks";
 
@@ -11,47 +11,77 @@ import MobileNavMenu from "./MobileNavMenu";
 
 import { navData } from "./data";
 
-import { LogoNoPolice, LogoWithPolice } from "../../assets/svg";
+import { LogoNoPolice } from "../../assets/svg";
 
 import "../../css/NavBar/NavBar.css";
 
 const NavBar = memo(() => {
+  const location = useLocation().pathname;
   const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
 
   return (
-    <div className="navbar_container">
-      <NavLink to="/">
+    <nav
+      className="navbar_container"
+      style={
+        scrollY === 0
+          ? {
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              transition: "background-color 1s ease",
+            }
+          : {}
+      }
+    >
+      <NavLink
+        to="/"
+        style={
+          location === "/"
+            ? { visibility: "hidden" }
+            : { visibility: "visible" }
+        }
+      >
         <div
-          className="navbar_logo_container"
           style={
-            scrollY < 40
-              ? { maxWidth: "150px", transition: "max-width 0.5s ease" }
-              : { maxWidth: "70px", transition: "max-width 0.5s ease" }
+            scrollY === 0
+              ? {
+                  minWidth: "70px",
+                  maxWidth: "130px",
+                  transition: "max-width 0.5s ease",
+                }
+              : {
+                  minWidth: "70px",
+                  maxWidth: "70px",
+                  transition: "max-width 0.5s ease",
+                }
           }
         >
-          {scrollY < 40 ? <LogoWithPolice /> : <LogoNoPolice />}
+          <LogoNoPolice />
         </div>
       </NavLink>
-      <div className="navbar_buttons_container">
+      <div className="navbar_main_container">
         <div
           style={{
             display: "flex",
             justifyContent: "flex-end",
-            alignItems: "flex-start",
-            flexWrap: "nowrap",
+            alignItems: "center",
           }}
         >
-          <ContactBtn />
+          <ul className="navbar_links_container">
+            {navData.map((item) => (
+              <NavBarBtn
+                item={item}
+                toggle={toggle}
+                setToggle={setToggle}
+                homeStyle={scrollY === 0}
+              />
+            ))}
+          </ul>
+          <ContactBtn homeStyle={scrollY === 0} />
           <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-        </div>
-        <div className="navbar_links_container">
-          {navData.map((item) => (
-            <NavBarBtn item={item} toggle={toggle} setToggle={setToggle} />
-          ))}
         </div>
       </div>
       <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-    </div>
+    </nav>
   );
 });
 

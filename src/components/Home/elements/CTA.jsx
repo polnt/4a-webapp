@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import { navData } from "../../Navigation/data";
 
+import { BsArrowBarRight as RightArrow } from "react-icons/bs";
+
 import "../../../css/Home/CTA.css";
 
 const CTA = () => {
@@ -13,33 +15,10 @@ const CTA = () => {
   });
   const [containerStyle, setContainerStyle] = useState("cta_container");
 
-  const hidedMenuStyle = {
-    position: "absolute",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    top: 150,
-    width: "100%",
-  };
-
   const showMenuStyle = {
     top: 0,
-    left: 0,
-    bottom: 0,
     backgroundImage:
-      "linear-gradient(to bottom, rgba(0, 0, 0, 0) 6%, rgba(0, 0, 0, 0.77))",
-    transition: "top 0.25s ease",
-  };
-
-  const navLinkMenuStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "start",
-  };
-
-  const navLinkStyle = {
-    textDecoration: "none",
-    color: "white",
+      "linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0.77))",
   };
 
   useLayoutEffect(() => {
@@ -61,7 +40,7 @@ const CTA = () => {
 
   return (
     <div
-      className={containerStyle}
+      className={`cta_container ${containerStyle}`}
       onMouseLeave={() =>
         setToggle({
           pay: false,
@@ -74,7 +53,11 @@ const CTA = () => {
         <div
           className="cta_card"
           style={{
-            boxShadow: "1px 1px 1px",
+            position: "relative",
+            boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+            backgroundImage: `linear-gradient(transparent, var(--mainGrey80)), url(${navData[index].backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
           onTouchStart={() => {
             setToggle({
@@ -87,26 +70,27 @@ const CTA = () => {
             })
           }
         >
-          <div
-            style={
-              toggle[navData[index].id]
-                ? {
-                    ...hidedMenuStyle,
-                    ...showMenuStyle,
-                  }
-                : hidedMenuStyle
-            }
+          <section
+            className="cta_menu"
+            style={toggle[navData[index].id] ? showMenuStyle : { top: 350 }}
           >
-            <h2>{navData[index].title}</h2>
-            <div style={navLinkMenuStyle}>
+            <h2 style={{ color: "#f9f9f9" }}>{navData[index].title}</h2>
+            <ul className="cta_list">
               {toggle[navData[index].id] &&
                 navData[index].children?.map((item) => (
-                  <NavLink to={item.path} style={navLinkStyle}>
-                    {item.title}
-                  </NavLink>
+                  <li style={{ padding: "10px 0 10px 0" }}>
+                    <NavLink
+                      to={item.path}
+                      className="cta_navlink"
+                      style={{ color: "#f9f9f9" }}
+                    >
+                      {item.title}
+                      <RightArrow style={{ marginLeft: "10px" }} />
+                    </NavLink>
+                  </li>
                 ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         </div>
       ))}
     </div>

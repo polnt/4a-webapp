@@ -2,11 +2,11 @@ import React from "react";
 
 const Externalization = () => {
   return (
-    <div className="container_page">
-      <div className="content_page">
-        <h1>GESTION DE LA PAIE EXTERNE</h1>
-        <p>
-          « Retrouvez votre cœur de métier, libérez-vous des risques »
+    <div className="container_page cover_page">
+      <article className="content_page">
+        <h1>GESTION DE LA PAIE EXTERNE</h1>« Retrouvez votre cœur de métier,
+        libérez-vous des risques »
+        <section>
           <h2>Pourquoi choisir l’externalisation :</h2>
           <p>
             Dans un secteur en perpétuel mouvement, externaliser la paie vous
@@ -17,6 +17,8 @@ const Externalization = () => {
             Grâce à une collaboration immédiate, nous nous adaptons à vos
             habitudes de travail sans bouleverser votre quotidien.
           </p>
+        </section>
+        <section>
           <h2>
             Comment fonctionne l’externalisation chez 4A Paie & RH Conseils :
           </h2>
@@ -40,6 +42,8 @@ const Externalization = () => {
             salaires le cas échéant ou tout autre taxe annuelle dont votre
             convention collective vous obligerait).
           </p>
+        </section>
+        <section>
           <h2>La législation :</h2>
           <p>
             Notre réactivité face à l’actualité est le leitmotiv de 4A Paie &
@@ -52,6 +56,8 @@ const Externalization = () => {
             certitude de la justesse de vos bulletins de salaire et de la
             conformité de vos cotisations sociales.
           </p>
+        </section>
+        <section>
           <h2>Notre collaboration :</h2>
           <p>
             Solliciter 4A Paie & Conseils RH pour la gestion des salaires, c’est
@@ -69,6 +75,8 @@ const Externalization = () => {
             Contrairement à un logiciel d’édition de paye en ligne, vous ne
             serez jamais seuls.
           </p>
+        </section>
+        <section>
           <h2>Les avantages de l’externalisation :</h2>
           <p>
             Vous avez l’occasion de vous recentrer pleinement sur votre activité
@@ -85,8 +93,8 @@ const Externalization = () => {
             <li> Sur la veille juridique</li>
             <li> Vous récupérez la TVA sur nos prestations de services.</li>
           </ul>
-        </p>
-      </div>
+        </section>
+      </article>
     </div>
   );
 };

@@ -7,12 +7,18 @@ import "firebase/auth";
 import { useSelector, useDispatch } from "react-redux";
 import { signIn } from "./redux/slices/actions";
 
+import { useNav } from "./hooks";
+
 import Router from "./components/Router";
 import NavBar from "./components/Navigation/NavBar";
 import Footer from "./components/Footer/Footer";
 import LocationPath from "./components/_reusable/LocationPath";
 import Modal from "./components/_reusable/Modal";
 import GlobalAlert from "./components/_reusable/GlobalAlert";
+
+import { BlackLinen } from "./assets/textures";
+
+import mainBackground from "./assets/img/BG_homepage.png";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +27,7 @@ const App = () => {
   // const location = useLocation().pathname;
   const dispatch = useDispatch();
   const { modal, globalAlert } = useSelector((state) => state);
+  const { scrollY } = useNav();
 
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -34,31 +41,30 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <div
+      <main
         style={{
-          display: "grid",
-          gridTemplateRows: "40px 1fr 40px",
-          minHeight: "100vh",
+          backgroundColor: "transparent",
           paddingTop: "150px",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* <div
-          style={
-            location === "/"
-              ? { backgroundImage: `url(${a})`, backgroundColor: "white" }
-              : { backgroundColor: "var(--purple)", gridRowStart: 1 }
-          }
-        /> */}
-        <LocationPath />
-        <main
+        <div
+          className="global_background"
           style={{
-            gridRowStart: 2,
+            backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
+            transform: `translate(0, ${scrollY * 0.5}px)`,
+            transition: "transform 0.1s ease",
+            backgroundColor: "var(--mainGrey)",
           }}
-        >
+        />
+        <div className="cover_page">
+          <LocationPath />
           <Router />
-        </main>
+        </div>
         <Footer />
-      </div>
+      </main>
+
       {globalAlert && <GlobalAlert />}
       {modal && <Modal />}
     </div>

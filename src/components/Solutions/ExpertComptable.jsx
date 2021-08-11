@@ -4,8 +4,8 @@ import ContactCTA from "../../components/_reusable/ContactCTA";
 
 const ExpertComptable = () => {
   return (
-    <div className="container_page">
-      <div className="content_page">
+    <div className="container_page cover_page">
+      <article className="content_page">
         <h1>EXPERT COMPTABLE</h1>
         <h2>Gérer simplement votre pôle social</h2>
         <p>
@@ -32,7 +32,7 @@ const ExpertComptable = () => {
           une totale confidentialité.
         </p>
         <ContactCTA />
-      </div>
+      </article>
     </div>
   );
 };

@@ -2,38 +2,81 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import { footerData } from "./data";
+import { SiLinkedin as LinkedInLogo } from "react-icons/si";
+import { BlackLinen } from "../../assets/textures";
+
+import ContactCTA from "../_reusable/ContactCTA";
+
+import "../../css/Footer/Footer.css";
 
 const Footer = () => {
   return (
-    <div
+    <footer
+      className="footer_container"
       style={{
-        // position: "fixed",
-        // bottom: 0,
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "100px",
-        // paddingTop: "200px",
-        // gridColumnStart: 2,
-        gridRowStart: 3,
-        // width: "100%",
+        backgroundImage: `url(${BlackLinen})`,
       }}
     >
-      {footerData.map((item) => (
+      <div className="inverted_divider" />
+      <div className="footer_main_container">
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            marginRight: "20px",
+            justifyContent: "center",
+            width: "100%",
+            alignItems: "center",
+            height: "100%",
           }}
         >
-          <h4>{item.title}</h4>
-          {item.children?.map((subItem) => (
-            <NavLink to={subItem.path}>{subItem.title} </NavLink>
-          ))}
+          <section
+            className="footer_list"
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            <h4 style={{ fontSize: "2em", textAlign: "center" }}>
+              Nos coordonnées
+            </h4>
+            <span style={{ color: "var(--mainCream)", fontSize: "1.5em" }}>
+              accueil-4A@société4A.com
+            </span>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <ContactCTA />
+            </div>
+          </section>
         </div>
-      ))}
-    </div>
+        <section className="footer_law_container">
+          <h4 style={{ position: "absolute", visibility: "hidden" }}>
+            Informations
+          </h4>
+          <NavLink
+            to="/"
+            style={{
+              color: "var(--mainCream)",
+              fontSize: "1.5em",
+            }}
+          >
+            Mentions légales
+          </NavLink>
+          <NavLink
+            to="/"
+            style={{
+              color: "var(--mainCream)",
+              fontSize: "1.5em",
+            }}
+          >
+            Cookies - Conditions d'utilisation
+          </NavLink>
+        </section>
+      </div>
+      <div className="footer_socials_container">
+        <LinkedInLogo />
+      </div>
+    </footer>
   );
 };
 

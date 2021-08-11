@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import Home from "./Home/Home";
 
@@ -45,6 +45,7 @@ const Router = () => {
       />
       <Route path="/nos-solutions/cabinet-juridique" component={Avocat} />
       <Route
+        exact
         path="/nos-solutions"
         render={() => <NavigationPage index={0} />}
       />
@@ -52,21 +53,23 @@ const Router = () => {
       <Route path="/paie/externalisation" component={Externalization} />
       <Route path="/paie/gestion-interne" component={InternalManagement} />
       <Route path="/paie/audit" component={PayAudit} />
-      <Route path="/paie" render={() => <NavigationPage index={1} />} />
+      <Route exact path="/paie" render={() => <NavigationPage index={1} />} />
 
       <Route path="/rh/vie-du-contrat" component={Lifetime} />
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
-      <Route path="/rh" render={() => <NavigationPage index={2} />} />
+      <Route exact path="/rh" render={() => <NavigationPage index={2} />} />
 
-      <Route path="/l'équipe-4A" component={About} />
-      <Route path="/contact" component={Contact} />
+      <Route exact path="/l'équipe-4A" component={About} />
+      <Route exact path="/contact" component={Contact} />
 
-      <Route path="/espace-non-authorisé" component={PleaseSignIn} />
+      <Route exact path="/espace-non-authorisé" component={PleaseSignIn} />
       <Route
+        exact
         path="/espace-reservé-aux-clients"
         component={CustomerReservedArea}
       />
+      <Redirect to="/" />
     </Switch>
   );
 };

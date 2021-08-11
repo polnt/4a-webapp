@@ -1,9 +1,12 @@
 import React from "react";
 
+import { useNav } from "../../hooks";
+
 import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
 const Home = () => {
+  const { scrollY } = useNav();
   return (
     <div
       style={{
@@ -57,22 +60,36 @@ const Home = () => {
         className="container_page"
         style={{
           width: "100%",
+          paddingTop: "20px",
+          // display: "flex",
+          // alignItems: "center",
         }}
       >
         <section
           className="content_page"
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
             transition: "1s all ease",
             visibility: "visible",
+            width: "100%",
           }}
         >
           <h2 style={{ textAlign: "center" }}>
             Des solutions adaptées à vos besoins
           </h2>
-          <CTA />
+
+          <div
+            className="content_page"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              // alignItems: "center",
+              justifyContent: "center",
+              minHeight: "90vh",
+              width: "100%",
+            }}
+          >
+            <CTA />
+          </div>
         </section>
       </div>
     </div>

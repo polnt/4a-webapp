@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import { useNav } from "../../../hooks";
+
 import { navData } from "../../Navigation/data";
 
 import { BsArrowBarRight as RightArrow } from "react-icons/bs";
@@ -8,6 +10,7 @@ import { BsArrowBarRight as RightArrow } from "react-icons/bs";
 import "../../../css/Home/CTA.css";
 
 const CTA = () => {
+  const { scrollY } = useNav();
   const [toggle, setToggle] = useState({
     pay: false,
     hr: false,
@@ -41,6 +44,11 @@ const CTA = () => {
   return (
     <div
       className={`cta_container ${containerStyle}`}
+      style={
+        scrollY > 250
+          ? { opacity: 1, transition: "all 1000ms ease", transform: "translateY(0%)" }
+          : { opacity: 0, transform: "translateY(30%)" }
+      }
       onMouseLeave={() =>
         setToggle({
           pay: false,

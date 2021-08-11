@@ -15,7 +15,7 @@ const Home = () => {
       }}
     >
       <div
-        className="container_page"
+        // className="container_page"
         style={{
           backgroundColor: "transparent",
           width: "100%",
@@ -24,12 +24,14 @@ const Home = () => {
         }}
       >
         <div
-          className="content_page"
+          // className="content_page"
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             position: "relative",
+            gridColumnStart: "1",
+            gridColumnEnd: "4",
           }}
         >
           <h1
@@ -41,26 +43,22 @@ const Home = () => {
           >
             Bienvenue sur le site web de la société 4A
           </h1>
-          <div style={{ maxWidth: "500px" }}>
+          {/* <div style={{ maxWidth: "500px" }}>
             <LogoWithPolice policeColor="#ffffff" />
-          </div>
+          </div> */}
+          <section
+            // className="content_page"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            <Solutions />
+          </section>
         </div>
-        <div className="divider" />
-        <section
-          className="content_page"
-          style={{
-            position: "absolute",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            top: "90%",
-            left: "50%",
-            transform: "translate(-50%)",
-            width: "100%",
-          }}
-        >
-          <Solutions />
-        </section>
+        <div className="divider" style={{ height: "100px" }} />
       </div>
       <div
         className="container_page"
@@ -68,13 +66,23 @@ const Home = () => {
           width: "100%",
         }}
       >
+        {/* <section
+          className="content_page"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <Solutions />
+        </section> */}
         <section
           className="content_page"
           style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            marginTop: "250px",
             transition: "1s all ease",
             visibility: "visible",
           }}

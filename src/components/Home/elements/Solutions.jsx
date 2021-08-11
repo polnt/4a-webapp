@@ -4,117 +4,55 @@ import { NavLink } from "react-router-dom";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
+import Carousel from "react-bootstrap/Carousel";
 
 import solutionsData from "./solutionsData";
 
 import { VscChromeClose as CloseWindowIcon } from "react-icons/vsc";
+import { IoIosArrowForward as NextIcon } from "react-icons/io";
+import { IoIosArrowBack as PrevIcon } from "react-icons/io";
 
 import "../../../css/Home/Solutions.css";
 
 const Solutions = () => {
-  const [selection, setSelection] = useState("");
+  // const [selection, setSelection] = useState("");
 
-  const handleClick = (event) => {
-    setSelection(event.target.value);
-  };
+  // const handleClick = (event) => {
+  //   setSelection(event.target.value);
+  // };
 
   return (
-    <Jumbotron
-      style={{
-        position: "relative",
-        overflowX: "hidden",
-        backgroundColor: "white",
-        boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-        minHeight: "250px",
-        padding: "2rem 2rem",
-      }}
+    <Carousel
+      prevIcon={<PrevIcon style={{ fontSize: "30px", color: "black" }} />}
+      nextIcon={<NextIcon style={{ fontSize: "30px", color: "black" }} />}
     >
-      <Container
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          minHeight: "150px",
-          justifyContent: "space-around",
-        }}
-      >
-        <h2
+      {solutionsData.map((item) => (
+        <Carousel.Item
           style={{
-            textTransform: "uppercase",
-            font: "var(--ctaFont)",
-            fontSize: "2em",
+            width: "100%",
+            height: "500px",
+            zIndex: 1,
+            backgroundImage: `url(${item.background})`,
+            backgroundSize: "cover",
           }}
         >
-          Des solutions adaptées à vos besoins
-        </h2>
-        <p style={{ fontSize: "1.5em" }}>
-          Découvrez les services que nous proposons en fonction de votre besoin
-        </p>
-        <p style={{ fontSize: "1.5em" }}>Vous êtes ?</p>
-        <div className="solutions_btn_container">
-          {solutionsData.map((solution) => (
-            <>
-              <button
-                className="custom_btn solutions_btn"
-                type="button"
-                value={solution.id}
-                onClick={handleClick}
-              >
-                {solution.buttonLabel}
-              </button>
-
-              <div
-                className="solutions_content"
-                style={
-                  selection === solution.id
-                    ? { visibility: "visible" }
-                    : { visibility: "hidden", left: "900px" }
-                }
-              >
-                <h3>{solution.title}</h3>
-                <p>{solution.text}</p>
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                  <NavLink
-                    style={{ textDecoration: "none" }}
-                    to={solution.path}
-                  >
-                    <button
-                      className="custom_btn"
-                      type="button"
-                      style={{
-                        backgroundColor: "var(--mainOrange)",
-                        color: "var(--mainGrey)",
-                      }}
-                    >
-                      En savoir plus
-                    </button>
-                  </NavLink>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setSelection("")}
-          style={
-            selection.length
-              ? {
-                  position: "absolute",
-                  top: 5,
-                  right: 5,
-                  border: "none",
-                  backgroundColor: "transparent",
-                  visibility: "visible",
-                }
-              : { visibility: "hidden", position: "absolute" }
-          }
-        >
-          <CloseWindowIcon />
-        </button>
-      </Container>
-    </Jumbotron>
+          <Carousel.Caption
+            style={{
+              top: "100px",
+              right: "20px",
+              left: "20px",
+              color: "var(--mainGrey)",
+            }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <button type="button" className="custom_btn">
+              En savoir plus
+            </button>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </Carousel>
   );
 };
 

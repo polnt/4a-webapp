@@ -32,7 +32,7 @@ const LocationPath = memo(() => {
             ? { position: "absolute", visibility: "hidden" }
             : {
                 position: "relative",
-                height: "200px",
+                height: "300px",
               }
         }
       >

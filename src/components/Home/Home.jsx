@@ -3,8 +3,6 @@ import React from "react";
 import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
-import { LogoWithPolice } from "../../assets/svg";
-
 const Home = () => {
   return (
     <div
@@ -15,16 +13,14 @@ const Home = () => {
       }}
     >
       <div
-        // className="container_page"
         style={{
           backgroundColor: "transparent",
           width: "100%",
-          height: "700px",
+          height: "800px",
           position: "relative",
         }}
       >
         <div
-          // className="content_page"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -43,11 +39,8 @@ const Home = () => {
           >
             Bienvenue sur le site web de la société 4A
           </h1>
-          {/* <div style={{ maxWidth: "500px" }}>
-            <LogoWithPolice policeColor="#ffffff" />
-          </div> */}
+
           <section
-            // className="content_page"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -58,7 +51,7 @@ const Home = () => {
             <Solutions />
           </section>
         </div>
-        <div className="divider" style={{ height: "100px" }} />
+        <div className="divider" style={{ zIndex: 2 }} />
       </div>
       <div
         className="container_page"
@@ -66,17 +59,6 @@ const Home = () => {
           width: "100%",
         }}
       >
-        {/* <section
-          className="content_page"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            width: "100%",
-          }}
-        >
-          <Solutions />
-        </section> */}
         <section
           className="content_page"
           style={{
@@ -87,6 +69,7 @@ const Home = () => {
             visibility: "visible",
           }}
         >
+          <h2>Des solutions adaptées à vos besoins</h2>
           <CTA />
         </section>
       </div>

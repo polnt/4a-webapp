@@ -68,13 +68,13 @@ ul {
   min-height: 100vh;
 }
 
-/* #main_content {
-  grid-row-start: 3;
-  grid-row-end: 3;
-} */
-
 .custom_carousel > div > ol > li {
   background-color: black;
+  color: black;
+}
+
+.custom_carousel > ol {
+  bottom: 40px;
 }
 
 .divider {

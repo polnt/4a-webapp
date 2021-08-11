@@ -20,66 +20,64 @@ const Solutions = () => {
       className="custom_carousel"
       prevIcon={<PrevIcon style={{ fontSize: "60px", color: "white" }} />}
       nextIcon={<NextIcon style={{ fontSize: "60px", color: "white" }} />}
+      interval="3000"
     >
-      <Carousel.Item
-        style={{
-          width: "100%",
-          height: "800px",
-          zIndex: 1,
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0.77))",
-        }}
-      >
-        <Carousel.Caption
-          style={{
-            top: "100px",
-            right: "20px",
-            left: "20px",
-            color: "var(--mainGrey)",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <div
+      {[1, ...solutionsData].map((solution) => {
+        return (
+          <Carousel.Item
             style={{
               width: "100%",
-              maxWidth: "500px",
+              height: "800px",
+              zIndex: 1,
+              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0)), url(${solution.background})`,
+              backgroundSize: "cover",
             }}
           >
-            <LogoWithPolice policeColor="white" />
-          </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      {solutionsData.map((solution) => (
-        <Carousel.Item
-          style={{
-            width: "100%",
-            height: "800px",
-            zIndex: 1,
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0)), url(${solution.background})`,
-            backgroundSize: "cover",
-          }}
-        >
-          <Carousel.Caption
-            style={{
-              top: "250px",
-              right: "20px",
-              left: "20px",
-              color: "white",
-            }}
-          >
-            <h3>{solution.title}</h3>
-            <p>{solution.text}</p>
-            <NavLink
-              to={solution.path}
-              className="custom_btn"
-              style={{ textDecoration: "none" }}
-            >
-              En savoir plus
-            </NavLink>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
+            {solution === 1 ? (
+              <Carousel.Caption
+                style={{
+                  top: "100px",
+                  right: "20px",
+                  left: "20px",
+                  color: "var(--mainGrey)",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                  }}
+                >
+                  <LogoWithPolice policeColor="white" />
+                </div>
+              </Carousel.Caption>
+            ) : (
+              <Carousel.Caption
+                style={{
+                  top: "250px",
+                  right: "20px",
+                  left: "20px",
+                  color: "white",
+                }}
+              >
+                <h3>{solution.title}</h3>
+                <p>{solution.text}</p>
+                <NavLink
+                  to={solution.path}
+                  className="custom_btn solutions_btn"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  En savoir plus
+                </NavLink>
+              </Carousel.Caption>
+            )}
+          </Carousel.Item>
+        );
+      })}
     </Carousel>
   );
 };

@@ -69,7 +69,9 @@ const Home = () => {
             visibility: "visible",
           }}
         >
-          <h2>Des solutions adaptées à vos besoins</h2>
+          <h2 style={{ textAlign: "center" }}>
+            Des solutions adaptées à vos besoins
+          </h2>
           <CTA />
         </section>
       </div>

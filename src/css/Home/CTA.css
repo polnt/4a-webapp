@@ -7,6 +7,7 @@
 .cta_container {
   margin-top: 200px;
   transition: all 0.25s ease;
+  min-height: 90vh;
 }
 
 .cta_card:not(:last-child) {

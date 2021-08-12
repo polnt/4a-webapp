@@ -5,7 +5,7 @@ const FilterSelector = ({ selectValues, handleSelect }) => {
     <form className="filter_list_form">
       <select className="filter_list_select" onChange={handleSelect}>
         {selectValues.header.map((e, i) => (
-          <option key={e} value={selectValues.fields[i]}>
+          <option key={`filter_${e}`} value={selectValues.fields[i]}>
             {selectValues.header[i]}
           </option>
         ))}

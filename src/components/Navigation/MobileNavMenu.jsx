@@ -29,6 +29,7 @@ const MobileNavMenu = ({ mobileMenu, setMobileMenu }) => {
         >
           {navData.map((item) => (
             <div
+              key={`mobileNav_${item.id}`}
               className={
                 mobileMenu
                   ? "mobile_nav_menu_links_show"
@@ -61,6 +62,7 @@ const MobileNavMenu = ({ mobileMenu, setMobileMenu }) => {
               >
                 {item.children?.map((subItem) => (
                   <NavLink
+                    key={`mobileNav_${subItem.title}`}
                     to={subItem.path}
                     onClick={() => {
                       setMobileMenu(!mobileMenu);

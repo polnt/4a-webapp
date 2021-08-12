@@ -10,11 +10,11 @@ const LocationPath = memo(() => {
 
     return location.split("/").map((element, index) => {
       if (index === 0) {
-        return <NavLink to="/">Accueil</NavLink>;
+        return <NavLink key="location_1" to="/">Accueil</NavLink>;
       } else {
         currentPath += `/${element}`;
         return (
-          <NavLink to={currentPath}>{` / ${element
+          <NavLink key={`location_${element}`} to={currentPath}>{` / ${element
             .split("")
             .map((e, i) => (i > 0 ? e : e.toUpperCase()))
             .join("")

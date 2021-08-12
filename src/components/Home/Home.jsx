@@ -1,12 +1,9 @@
 import React from "react";
 
-import { useNav } from "../../hooks";
-
 import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
 const Home = () => {
-  const { scrollY } = useNav();
   return (
     <div
       style={{

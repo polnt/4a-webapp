@@ -20,11 +20,12 @@ const Solutions = () => {
       className="custom_carousel"
       prevIcon={<PrevIcon style={{ fontSize: "60px", color: "white" }} />}
       nextIcon={<NextIcon style={{ fontSize: "60px", color: "white" }} />}
-      interval="3000"
+      interval={3000}
     >
-      {[1, ...solutionsData].map((solution) => {
+      {[1, ...solutionsData].map((solution, index) => {
         return (
           <Carousel.Item
+            key={index === 0 ? "solution_1" : `${solution.id}`}
             style={{
               width: "100%",
               height: "800px",

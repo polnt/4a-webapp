@@ -73,6 +73,7 @@ const NavBar = memo(() => {
                 toggle={toggle}
                 setToggle={setToggle}
                 homeStyle={scrollY === 0}
+                key={`nav_${item.id}`}
               />
             ))}
           </ul>

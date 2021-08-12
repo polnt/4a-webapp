@@ -16,7 +16,7 @@ import GlobalAlert from "./components/_reusable/GlobalAlert";
 
 import { BlackLinen } from "./assets/textures";
 
-import mainBackground from "./assets/img/BG_homepage.png";
+import mainBackground from "./assets/img/BG_homepagev2.png";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";

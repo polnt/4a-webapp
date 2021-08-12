@@ -60,6 +60,7 @@ const CTA = () => {
       {[1, 2, 3].map((index) => (
         <div
           className="cta_card"
+          key={`cta_${index}`}
           style={{
             position: "relative",
             boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",

@@ -46,7 +46,7 @@ ul {
 .global_background {
   position: absolute;
   right: 0;
-  left: 0;
+  left: -400px;
   bottom: 0;
   top: 0;
   z-index: -1;
@@ -113,15 +113,24 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
+  .global_background {
+    left: -300px;
+  }
+
   .divider {
     height: 100px;
   }
+
   .inverted_divider {
     height: 100px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .global_background {
+    left: 0;
+  }
+
   .container_page {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;

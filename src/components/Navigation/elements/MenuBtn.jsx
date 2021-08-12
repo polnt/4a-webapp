@@ -12,7 +12,9 @@ const MenuBtn = memo(({ toggleMobileMenu }) => {
           zIndex: "200",
         }}
         type="button"
-        onClick={() => toggleMobileMenu()}
+        onClick={() => {
+          toggleMobileMenu();
+        }}
       >
         <MenuIcon className="navbar_icon" />
       </button>

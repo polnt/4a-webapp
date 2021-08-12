@@ -25,7 +25,11 @@ const MobileNavMenu = ({ mobileMenu, toggleMobileMenu }) => {
     mobileMenu ? disableBodyScroll(target) : enableBodyScroll(target);
 
     return () => clearAllBodyScrollLocks();
-  }, [mobileMenu]);
+  }, [mobileMenu, target]);
+
+  useEffect(() => {
+    !mobileMenu && setToggle({});
+  }, [mobileMenu, setToggle]);
 
   return (
     <div
@@ -52,14 +56,6 @@ const MobileNavMenu = ({ mobileMenu, toggleMobileMenu }) => {
               >
                 <button
                   className="mobile_nav_main_link"
-                  // style={{
-                  //   backgroundColor: "transparent",
-                  //   border: "none",
-                  //   whiteSpace: "nowrap",
-                  //   display: "flex",
-                  //   justifyContent: "space-between",
-                  //   width: "100%",
-                  // }}
                   type="button"
                   onClick={() => setToggle({ [item.id]: !toggle[item.id] })}
                 >

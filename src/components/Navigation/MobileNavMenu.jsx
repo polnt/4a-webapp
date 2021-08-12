@@ -1,21 +1,34 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 import { useNav } from "../../hooks";
 
 import { navData } from "./data";
 
-const MobileNavMenu = ({ mobileMenu, setMobileMenu }) => {
+const MobileNavMenu = ({ mobileMenu, toggleMobileMenu }) => {
   const { toggle, setToggle } = useNav();
+  const [target, setTarget] = useState(null);
+
+  useEffect(() => {
+    setTarget(document.getElementById("target"));
+  }, []);
+
+  useEffect(() => {
+    mobileMenu ? disableBodyScroll(target) : enableBodyScroll(target);
+
+    return () => clearAllBodyScrollLocks();
+  }, [mobileMenu]);
 
   return (
     <div
-      className={
-        mobileMenu
-          ? "mobile_nav_menu_container_show"
-          : "mobile_nav_menu_container_hidden"
-      }
+      className="mobile_nav_menu_container"
+      id="target"
+      style={mobileMenu ? { top: "100px" } : { top: "-2000px" }}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
@@ -65,7 +78,7 @@ const MobileNavMenu = ({ mobileMenu, setMobileMenu }) => {
                     key={`mobileNav_${subItem.title}`}
                     to={subItem.path}
                     onClick={() => {
-                      setMobileMenu(!mobileMenu);
+                      toggleMobileMenu();
                       setToggle({});
                     }}
                   >

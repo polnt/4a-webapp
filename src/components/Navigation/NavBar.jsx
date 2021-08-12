@@ -15,42 +15,43 @@ import { LogoNoPolice } from "../../assets/svg";
 
 import "../../css/NavBar/NavBar.css";
 
-const NavBar = memo(() => {
+const NavBar = memo(({ mobileMenu, toggleMobileMenu }) => {
   const location = useLocation().pathname;
-  const { toggle, setToggle, scrollY, mobileMenu, setMobileMenu } = useNav();
+  const { toggle, setToggle, scrollY } = useNav();
 
   return (
     <nav
       className="navbar_container"
       style={
-        scrollY === 0
-          ? {
-              backgroundColor: "transparent",
-              boxShadow: "none",
+        scrollY !== 0 && !mobileMenu
+          ? {}
+          : {
+              backgroundColor: scrollY === 0 ? "transparent" : "white",
+              boxShadow:
+                scrollY === 0 ? "none" : "0 3px 10px rgb(0 0 0 0 / 0.2)",
               transition: "background-color 1s ease",
             }
-          : {}
       }
     >
       <NavLink
         to="/"
         style={
           location === "/"
-            ? { visibility: "hidden" }
+            ? { visibility: mobileMenu ? "visible" : "hidden" }
             : { visibility: "visible" }
         }
       >
         <div
           style={
-            scrollY === 0
+            scrollY !== 0 && !mobileMenu
               ? {
                   minWidth: "70px",
-                  maxWidth: "130px",
+                  maxWidth: "70px",
                   transition: "max-width 0.5s ease",
                 }
               : {
                   minWidth: "70px",
-                  maxWidth: "70px",
+                  maxWidth: "130px",
                   transition: "max-width 0.5s ease",
                 }
           }
@@ -78,10 +79,16 @@ const NavBar = memo(() => {
             ))}
           </ul>
           <ContactBtn homeStyle={scrollY === 0} />
-          <MenuBtn mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+          <MenuBtn
+            mobileMenu={mobileMenu}
+            toggleMobileMenu={toggleMobileMenu}
+          />
         </div>
       </div>
-      <MobileNavMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+      <MobileNavMenu
+        mobileMenu={mobileMenu}
+        toggleMobileMenu={toggleMobileMenu}
+      />
     </nav>
   );
 });

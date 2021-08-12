@@ -24,7 +24,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   const dispatch = useDispatch();
   const { modal, globalAlert } = useSelector((state) => state);
-  const { scrollY } = useNav();
+  const { scrollY, mobileMenu, setMobileMenu } = useNav();
 
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -36,8 +36,19 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <NavBar />
+    <div
+      className="App"
+      style={
+        {}
+        // mobileMenu
+        //   ? { height: `calc(100vh + ${+scrollY})`, overflowY: "hidden" }
+        //   : {}
+      }
+    >
+      <NavBar
+        mobileMenu={mobileMenu}
+        toggleMobileMenu={() => setMobileMenu(!mobileMenu)}
+      />
       <main
         style={{
           backgroundColor: "transparent",

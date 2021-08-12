@@ -27,6 +27,18 @@
   margin-right: 5px;
 }
 
+.mobile_nav_menu_container {
+  position: absolute;
+  /* top: -200px; */
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #f2f4f5;
+  transition: top 1s ease;
+  min-height: 100vh;
+  box-shadow: 3px 3px 10px rgb(0 0 0 0);
+}
+
 .mobile_nav_menu_container_hidden {
   position: absolute;
   top: 0;

@@ -2,7 +2,7 @@ import React, { memo } from "react";
 
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 
-const MenuBtn = memo(({ mobileMenu, setMobileMenu }) => {
+const MenuBtn = memo(({ toggleMobileMenu }) => {
   return (
     <div className="navbar_menu">
       <button
@@ -12,12 +12,9 @@ const MenuBtn = memo(({ mobileMenu, setMobileMenu }) => {
           zIndex: "200",
         }}
         type="button"
-        onClick={() => setMobileMenu(!mobileMenu)}
+        onClick={() => toggleMobileMenu()}
       >
-        <MenuIcon
-          className="navbar_icon"
-          // style={mobileMenu ? { color: "white" } : { color: "black" }}
-        />
+        <MenuIcon className="navbar_icon" />
       </button>
     </div>
   );

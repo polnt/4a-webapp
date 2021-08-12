@@ -29,7 +29,6 @@
 
 .mobile_nav_menu_container {
   position: absolute;
-  /* top: -200px; */
   left: 0;
   right: 0;
   z-index: 3;
@@ -39,28 +38,22 @@
   box-shadow: 3px 3px 10px rgb(0 0 0 0);
 }
 
-.mobile_nav_menu_container_hidden {
-  position: absolute;
-  top: 0;
-  left: 1500px;
-  right: 0;
-  z-index: 3;
-  background-color: white;
-  transition: left 1s ease;
+.mobile_nav_main_link {
+  background-color: transparent;
+  border: none;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* margin: 20px 20px 0 20px; */
 }
 
-.mobile_nav_menu_container_show {
-  position: absolute;
-  top: 0;
-  left: 0px;
-  right: 0;
-  z-index: 3;
+.mobile_nav_submenu {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  transition: left 1s ease;
-}
-
-.mobile_nav_menu_links_hidden > button {
-  display: none;
+  padding: 15px 15px 15px 15px;
 }
 
 .navbar_icon {

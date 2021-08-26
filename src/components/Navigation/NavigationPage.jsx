@@ -11,7 +11,7 @@ const NavigationPage = ({ index }) => {
         className="content_page"
         style={{ display: "flex", flexDirection: "column" }}
       >
-        {navData[index]?.children.map((item) => (
+        {navData[index]?.children?.map((item) => (
           <NavLink to={item.path}>{item.title}</NavLink>
         ))}
       </div>

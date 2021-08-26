@@ -26,6 +26,9 @@ import About from "./About/About";
 // CONTACT
 import Contact from "./Contact/Contact";
 
+// FAQ
+import FAQ from "./FAQ/FAQ";
+
 // ALERTS
 import PleaseSignIn from "./_reusable/alerts/PleaseSignIn";
 import CustomerReservedArea from "./_reusable/alerts/CustomerReservedArea";
@@ -47,21 +50,22 @@ const Router = () => {
       <Route
         exact
         path="/nos-solutions"
-        render={() => <NavigationPage index={0} />}
+        render={() => <NavigationPage index={1} />}
       />
 
       <Route path="/paie/externalisation" component={Externalization} />
       <Route path="/paie/gestion-interne" component={InternalManagement} />
       <Route path="/paie/audit" component={PayAudit} />
-      <Route exact path="/paie" render={() => <NavigationPage index={1} />} />
+      <Route exact path="/paie" render={() => <NavigationPage index={2} />} />
 
       <Route path="/rh/vie-du-contrat" component={Lifetime} />
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
-      <Route exact path="/rh" render={() => <NavigationPage index={2} />} />
+      <Route exact path="/rh" render={() => <NavigationPage index={3} />} />
 
       <Route exact path="/l'équipe-4A" component={About} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/faq" component={FAQ} />
 
       <Route exact path="/espace-non-authorisé" component={PleaseSignIn} />
       <Route

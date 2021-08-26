@@ -69,7 +69,7 @@ const CTA = () => {
           })
         }
       >
-        {[1, 2, 3].map((index) => (
+        {[2, 3, 4].map((index) => (
           <div
             className="cta_card_container"
             key={`cta_${index}`}

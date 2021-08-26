@@ -3,6 +3,7 @@ import HR from "../../assets/img/pexels-polina-zimmerman.jpg";
 import Advice from "../../assets/img/pexels-mentatdgt.jpg";
 
 export const navData = [
+  { id: "home", title: "ACCUEIL", path: "/" },
   {
     id: "solutions",
     title: "NOS SOLUTIONS",
@@ -64,8 +65,7 @@ export const navData = [
   },
   {
     id: "FAQ",
-    path: "/FAQ",
+    path: "/faq",
     title: "LES QUESTIONS FRÉQUENTES",
-    children: [{ title: "FAQs", path: "" }],
   },
 ];

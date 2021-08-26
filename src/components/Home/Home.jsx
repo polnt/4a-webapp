@@ -3,6 +3,8 @@ import React from "react";
 import Solutions from "./elements/Solutions";
 import CTA from "./elements/CTA";
 
+import { GrValidate as ValidIcon } from "react-icons/gr";
+
 const Home = () => {
   return (
     <div
@@ -68,9 +70,20 @@ const Home = () => {
             transition: "1s all ease",
             visibility: "visible",
             width: "100%",
+            // display: "flex",
+            // flexDirection: "column",
+            // // justifyContent: "center",
+            // alignItems: "center",
           }}
         >
-          <h2 style={{ textAlign: "center" }}>
+          <h2
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <ValidIcon style={{ marginRight: "10px" }} />
             Des solutions adaptées à vos besoins
           </h2>
 

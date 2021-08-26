@@ -21,6 +21,7 @@ const Solutions = () => {
       prevIcon={<PrevIcon style={{ fontSize: "60px", color: "white" }} />}
       nextIcon={<NextIcon style={{ fontSize: "60px", color: "white" }} />}
       interval={3000}
+      style={{ backgroundOrigin: "border-box" }}
     >
       {[1, ...solutionsData].map((solution, index) => {
         return (
@@ -32,6 +33,8 @@ const Solutions = () => {
               zIndex: 1,
               backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.77) 6%, rgba(0, 0, 0, 0)), url(${solution.background})`,
               backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: solution.backgroundPosition || "center",
             }}
           >
             {solution === 1 ? (
@@ -61,10 +64,11 @@ const Solutions = () => {
                   right: "20px",
                   left: "20px",
                   color: "white",
+                  padding: "0px 150px 0px 150px",
                 }}
               >
-                <h3>{solution.title}</h3>
-                <p>{solution.text}</p>
+                <h3 style={{ fontSize: "3em" }}>{solution.title}</h3>
+                <p style={{ fontSize: "2em" }}>{solution.text}</p>
                 <NavLink
                   to={solution.path}
                   className="custom_btn solutions_btn"

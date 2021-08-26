@@ -43,65 +43,83 @@ const CTA = () => {
 
   return (
     <div
-      className={`cta_container ${containerStyle}`}
       style={
         scrollY > 250
-          ? { opacity: 1, transition: "all 1000ms ease", transform: "translateY(0%)" }
+          ? {
+              opacity: 1,
+              transition: "all 1000ms ease",
+              transform: "translateY(0%)",
+              // display: "flex",
+              // flexDirection: "column",
+            }
           : { opacity: 0, transform: "translateY(30%)" }
       }
-      onMouseLeave={() =>
-        setToggle({
-          pay: false,
-          hr: false,
-          advice: false,
-        })
-      }
     >
-      {[1, 2, 3].map((index) => (
-        <div
-          className="cta_card"
-          key={`cta_${index}`}
-          style={{
-            position: "relative",
-            boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-            backgroundImage: `linear-gradient(transparent, var(--mainGrey80)), url(${navData[index].backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-          onTouchStart={() => {
-            setToggle({
-              [navData[index].id]: true,
-            });
-          }}
-          onMouseEnter={() =>
-            setToggle({
-              [navData[index].id]: true,
-            })
-          }
-        >
-          <section
-            className="cta_menu"
-            style={toggle[navData[index].id] ? showMenuStyle : { top: 350 }}
+      <h3 style={{ textAlign: "center", marginBottom: "150px" }}>
+        Vous souhaitez une expertise, un conseil, une formation ou un simple
+        accompagnement?
+      </h3>
+      <div
+        className={`cta_container ${containerStyle}`}
+        onMouseLeave={() =>
+          setToggle({
+            pay: false,
+            hr: false,
+            advice: false,
+          })
+        }
+      >
+        {[1, 2, 3].map((index) => (
+          <div
+            className="cta_card_container"
+            key={`cta_${index}`}
+            style={{ backgroundOrigin: "border-box" }}
           >
-            <h2 style={{ color: "#f9f9f9" }}>{navData[index].title}</h2>
-            <ul className="cta_list">
-              {toggle[navData[index].id] &&
-                navData[index].children?.map((item) => (
-                  <li style={{ padding: "10px 0 10px 0" }}>
-                    <NavLink
-                      to={item.path}
-                      className="cta_navlink"
-                      style={{ color: "#f9f9f9" }}
-                    >
-                      {item.title}
-                      <RightArrow style={{ marginLeft: "10px" }} />
-                    </NavLink>
-                  </li>
-                ))}
-            </ul>
-          </section>
-        </div>
-      ))}
+            <div
+              className="cta_card"
+              style={{
+                boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+                backgroundImage: `linear-gradient(transparent, var(--mainGrey80)), url(${navData[index].backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              onTouchStart={() => {
+                setToggle({
+                  [navData[index].id]: true,
+                });
+              }}
+              onMouseEnter={() =>
+                setToggle({
+                  [navData[index].id]: true,
+                })
+              }
+            >
+              <section
+                className="cta_menu"
+                style={toggle[navData[index].id] ? showMenuStyle : { top: 350 }}
+              >
+                <h4 style={{ color: "#f9f9f9" }}>{navData[index].title}</h4>
+                <ul className="cta_list">
+                  {toggle[navData[index].id] &&
+                    navData[index].children?.map((item) => (
+                      <li style={{ padding: "10px 0 10px 0" }}>
+                        <NavLink
+                          to={item.path}
+                          className="cta_navlink"
+                          style={{ color: "#f9f9f9" }}
+                        >
+                          {item.title}
+                          <RightArrow style={{ marginLeft: "10px" }} />
+                        </NavLink>
+                      </li>
+                    ))}
+                </ul>
+              </section>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

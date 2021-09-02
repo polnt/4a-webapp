@@ -3,7 +3,7 @@ import React from "react";
 import { faqData } from "./faqData";
 
 import { IoIosArrowForward as RightArrow } from "react-icons/io";
-import { IoIosArrowDown as DownArrow } from "react-icons/io";
+// import { IoIosArrowDown as DownArrow } from "react-icons/io";
 
 const FAQ = () => {
   return (

@@ -1,4 +1,3 @@
-import Calculator from "../../../assets/img/calculator.jpg";
 import CoWomen from "../../../assets/img/pexels-cowomen.jpg";
 import Expert from "../../../assets/img/expert.jpg";
 import Partnership from "../../../assets/img/partnership.png";

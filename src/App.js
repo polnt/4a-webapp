@@ -18,6 +18,8 @@ import { BlackLinen } from "./assets/textures";
 
 import mainBackground from "./assets/img/BG_homepagev2.png";
 
+import Access from "./components/temp/Access";
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -25,6 +27,7 @@ const App = () => {
   const dispatch = useDispatch();
   const { modal, globalAlert } = useSelector((state) => state);
   const { scrollY, mobileMenu, setMobileMenu } = useNav();
+  const key = sessionStorage.getItem("password");
 
   useEffect(() => {
     const unregisterAuthObserver = firebase
@@ -35,6 +38,9 @@ const App = () => {
     return () => unregisterAuthObserver();
   }, [dispatch]);
 
+  if (!key) {
+    return <Access />;
+  }
   return (
     <div
       className="App"

@@ -21,7 +21,10 @@ const Access = () => {
   return (
     <div
       className="container_page"
-      style={{ height: "100vh", backgroundImage: `url(${mainBackground})` }}
+      style={{
+        height: "100vh",
+        backgroundImage: `url(${mainBackground})`,
+      }}
     >
       <div
         className="content_page"
@@ -38,6 +41,7 @@ const Access = () => {
             boxShadow:
               "inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12)",
             padding: "20px 20px 20px 20px",
+            backgroundColor: "#f9f9f9",
           }}
         >
           <LogoNoPolice />

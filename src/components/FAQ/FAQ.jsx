@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { faqData } from "./faqData";
 
 import { IoIosArrowForward as RightArrow } from "react-icons/io";
-// import { IoIosArrowDown as DownArrow } from "react-icons/io";
+import { IoIosArrowDown as DownArrow } from "react-icons/io";
+import { FaBalanceScale as JusticeBalance } from "react-icons/fa";
+import { BsExclamationTriangle as ExclamationTriangle } from "react-icons/bs";
 
 const FAQ = () => {
+  const [showQuote, setShowQuote] = useState({});
+
+  const handleClick = (event) => {
+    showQuote === +event.currentTarget.value
+      ? setShowQuote({})
+      : setShowQuote(+event.currentTarget.value);
+  };
+
   return (
     <div className="container_page cover_page">
       <article className="content_page">
@@ -26,20 +36,72 @@ const FAQ = () => {
           }}
         >
           {faqData.map((item) => (
-            <button
-              style={{
-                display: "flex",
-                justifyContent: "flex-start",
-                background: "none",
-                marginBottom: "2px",
-                alignItems: "center",
-                border: "none",
-                padding: "10px 5px 10px 5px",
-              }}
-            >
-              <RightArrow />
-              <span>{item.quote}</span>
-            </button>
+            <>
+              <button
+                type="button"
+                value={item.id}
+                onClick={handleClick}
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  background: "none",
+                  marginBottom: "2px",
+                  alignItems: "center",
+                  border: "none",
+                  padding: "10px 5px 10px 5px",
+                }}
+              >
+                {showQuote === item.id ? <DownArrow /> : <RightArrow />}
+                <span>{item.quote}</span>
+              </button>
+              {showQuote === item.id && (
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  {item.law && (
+                    <div style={{ display: "flex" }}>
+                      <JusticeBalance
+                        size={60}
+                        style={{
+                          float: "left",
+                          marginRight: "10px",
+                          minWidth: "60px",
+                        }}
+                      />
+                      <p>{item.law}</p>
+                    </div>
+                  )}
+                  {item.caution && (
+                    <div style={{ display: "flex" }}>
+                      <ExclamationTriangle
+                        size={60}
+                        style={{
+                          float: "left",
+                          marginRight: "10px",
+                          minWidth: "60px",
+                        }}
+                      />
+                      <p>{item?.caution}</p>
+                    </div>
+                  )}
+                  {item.content.map((element) => (
+                    <>
+                      {typeof element === "string" ? (
+                        <p>{element}</p>
+                      ) : (
+                        <div>
+                          <p>{element.title}</p>
+                          <ul>
+                            {element.list?.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                          <p>{element.content}</p>
+                        </div>
+                      )}
+                    </>
+                  ))}
+                </div>
+              )}
+            </>
           ))}
         </section>
       </article>

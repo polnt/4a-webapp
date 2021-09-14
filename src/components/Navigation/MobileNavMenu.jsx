@@ -52,25 +52,40 @@ const MobileNavMenu = ({ mobileMenu, toggleMobileMenu }) => {
                 key={`mobileNav_${item.id}`}
                 style={{
                   margin: "20px 20px 0 20px",
+                  border: "1px solid black",
                 }}
               >
-                <button
-                  className="mobile_nav_main_link"
-                  type="button"
-                  onClick={() => setToggle({ [item.id]: !toggle[item.id] })}
-                >
-                  {item.title}
-                  {toggle[item.id] ? (
-                    <UpArrow style={{ fontSize: 40 }} />
-                  ) : (
-                    <DownArrow style={{ fontSize: 40 }} />
-                  )}
-                </button>
+                {item.children ? (
+                  <button
+                    className="mobile_nav_main_link"
+                    type="button"
+                    onClick={() => setToggle({ [item.id]: !toggle[item.id] })}
+                    style={{ minHeight: "40px" }}
+                  >
+                    {item.title}
+                    {toggle[item.id]
+                      ? item.children && <UpArrow style={{ fontSize: 40 }} />
+                      : item.children && <DownArrow style={{ fontSize: 40 }} />}
+                  </button>
+                ) : (
+                  <NavLink
+                    to={item.path}
+                    style={{
+                      minHeight: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      marginLeft: "6px",
+                    }}
+                    onClick={() => toggleMobileMenu()}
+                  >
+                    {item.title}
+                  </NavLink>
+                )}
               </div>
               <div
                 className="mobile_nav_submenu"
                 style={
-                  toggle[item.id]
+                  toggle[item.id] && item.children
                     ? { visibility: "visible" }
                     : {
                         position: "absolute",

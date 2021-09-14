@@ -36,7 +36,7 @@ const FAQ = () => {
           }}
         >
           {faqData.map((item) => (
-            <>
+            <div style={{ border: "1px solid black", borderRadius: "0.3em" }}>
               <button
                 type="button"
                 value={item.id}
@@ -52,10 +52,16 @@ const FAQ = () => {
                 }}
               >
                 {showQuote === item.id ? <DownArrow /> : <RightArrow />}
-                <span>{item.quote}</span>
+                <span className="faq_quote">{item.quote}</span>
               </button>
               {showQuote === item.id && (
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginLeft: "30px",
+                  }}
+                >
                   {item.law && (
                     <div style={{ display: "flex" }}>
                       <JusticeBalance
@@ -89,7 +95,12 @@ const FAQ = () => {
                       ) : (
                         <div>
                           <p>{element.title}</p>
-                          <ul>
+                          <ul
+                            style={{
+                              listStyleType: "disc",
+                              marginLeft: "30px",
+                            }}
+                          >
                             {element.list?.map((item) => (
                               <li>{item}</li>
                             ))}
@@ -101,7 +112,7 @@ const FAQ = () => {
                   ))}
                 </div>
               )}
-            </>
+            </div>
           ))}
         </section>
       </article>

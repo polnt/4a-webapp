@@ -112,6 +112,10 @@ ul {
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
 }
 
+.faq_quote:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 768px) {
   .global_background {
     left: -300px;

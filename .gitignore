@@ -24,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 firestore.rules
-firestore.indexes.json
+; firestore.indexes.json
 storage.rules
-.firebase
-firestore-debug.log
+; .firebase
+; firestore-debug.log

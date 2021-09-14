@@ -16,7 +16,7 @@ const MenuBtn = memo(({ toggleMobileMenu }) => {
           toggleMobileMenu();
         }}
       >
-        <MenuIcon className="navbar_icon" />
+        <MenuIcon className="navbar_icon" style={{ color: "white" }} />
       </button>
     </div>
   );

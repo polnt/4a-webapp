@@ -53,6 +53,7 @@ const MobileNavMenu = ({ mobileMenu, toggleMobileMenu }) => {
                 style={{
                   margin: "20px 20px 0 20px",
                   border: "1px solid black",
+                  borderRadius: "0.3em",
                 }}
               >
                 {item.children ? (

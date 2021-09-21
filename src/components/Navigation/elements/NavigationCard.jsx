@@ -7,7 +7,7 @@ const NavigationCard = ({ path, title }) => {
     <NavLink
       to={path}
       style={{
-        border: "1px solid black",
+        boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
         borderRadius: "0.3em",
         width: "300px",
         height: "300px",

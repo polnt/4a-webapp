@@ -67,8 +67,15 @@ const Solutions = () => {
                   padding: "0px 150px 0px 150px",
                 }}
               >
-                <h3 style={{ fontSize: "3em" }}>{solution.title}</h3>
-                <p style={{ fontSize: "2em" }}>{solution.text}</p>
+                <div
+                  style={{
+                    backgroundColor: "rgb(0, 0, 0, 0.5)",
+                    borderRadius: "0.3em",
+                  }}
+                >
+                  <h3 style={{ fontSize: "3em" }}>{solution.title}</h3>
+                  <p style={{ fontSize: "2em" }}>{solution.text}</p>
+                </div>
                 <NavLink
                   to={solution.path}
                   className="custom_btn solutions_btn"

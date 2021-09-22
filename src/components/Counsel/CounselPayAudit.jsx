@@ -29,7 +29,13 @@ const PayAudit = () => {
         </section>
         <section>
           <h2>Les bénéfices de l’audit de paie:</h2>
-          <ul style={{ listStyleType: "disc", marginLeft: "20px" }}>
+          <ul
+            style={{
+              listStyleType: "disc",
+              marginLeft: "20px",
+              marginBottom: "20px",
+            }}
+          >
             <li>
               Évaluer les risques de non-conformité à la législation sociale ou
               aux conventions collectives applicables
@@ -50,9 +56,25 @@ const PayAudit = () => {
           <h2>Comment se déroule un audit PAIE ?</h2>
           <div>
             <p>Il y a 3 phases dans l’audit de Paie:</p>
-            <ul style={{ listStyleType: "disc", marginLeft: "20px" }}>
-              <li>La phase préparatoire durant laquelle nous allons:</li>
-              <ul style={{ listStyleType: "circle", marginLeft: "20px" }}>
+            <ul
+              style={{
+                listStyleType: "disc",
+                marginLeft: "20px",
+                marginBottom: "20px",
+              }}
+            >
+              <li>
+                La{" "}
+                <span style={{ fontWeight: "bold" }}>phase préparatoire</span>{" "}
+                durant laquelle nous allons:
+              </li>
+              <ul
+                style={{
+                  listStyleType: "circle",
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                }}
+              >
                 <li>
                   Collecter les documents et les informations en lien avec
                   l’activité de l’entreprise, sa structure et la réalisation de
@@ -66,14 +88,30 @@ const PayAudit = () => {
                   paie.
                 </li>
               </ul>
-              <li>La phase de réalisation permettra:</li>
-              <ul style={{ listStyleType: "circle", marginLeft: "20px" }}>
+              <li>
+                La{" "}
+                <span style={{ fontWeight: "bold" }}>phase de réalisation</span>{" "}
+                permettra:
+              </li>
+              <ul
+                style={{
+                  listStyleType: "circle",
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                }}
+              >
                 <li>
                   D’étudier les documents récoltés de manière approfondie afin
                   de mettre en évidence les écarts entre les calculs réalisés et
                   les textes légaux:
                 </li>
-                <ul style={{ listStyleType: "circle", marginLeft: "20px" }}>
+                <ul
+                  style={{
+                    listStyleType: "disc",
+                    marginLeft: "20px",
+                    marginBottom: "20px",
+                  }}
+                >
                   <li>DPAE et Contrat de travail de chaque salarié</li>
                   <li>
                     Vérification des salaires bruts (Heures supplémentaires,
@@ -91,7 +129,11 @@ const PayAudit = () => {
                   <li>Vérification de la conformité de l’OD de paie</li>
                 </ul>
               </ul>
-              <li>La phase de restitution:</li>
+              <li>
+                La{" "}
+                <span style={{ fontWeight: "bold" }}>phase de restitution</span>
+                :
+              </li>
               <p>
                 Elle se déroule au sein de l’entreprise et permet de présenter à
                 la direction et au personnel concerné les anomalies mises en

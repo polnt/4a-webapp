@@ -45,7 +45,7 @@ export const navData = [
   {
     id: "counsel",
     title: "CONSEIL",
-    path: "/conseil",
+    path: "/conseil-et-accompagnement",
     backgroundImage: Counsel,
     children: [
       { title: "Audit de paie", path: "/conseil-et-accompagnement/audit-paie" },

@@ -52,7 +52,10 @@ const RhAudit = () => {
               marginBottom: "20px",
             }}
           >
-            <li>La phase préparatoire durant laquelle nous allons:</li>
+            <li>
+              La <span style={{ fontWeight: "bold" }}>phase préparatoire </span>{" "}
+              durant laquelle nous allons:
+            </li>
             <ul
               style={{
                 listStyleType: "circle",
@@ -77,8 +80,9 @@ const RhAudit = () => {
               </li>
             </ul>
             <li>
-              La phase de réalisation se déroulera au sein de l’entreprise afin
-              de:
+              La{" "}
+              <span style={{ fontWeight: "bold" }}>phase de réalisation </span>{" "}
+              se déroulera au sein de l’entreprise afin de:
             </li>
             <ul
               style={{
@@ -117,29 +121,34 @@ const RhAudit = () => {
                 </li>
               </ul>
             </ul>
-            <span>Exemples de points abordés :</span>
-            <ul
-              style={{
-                listStyleType: "disc",
-                marginLeft: "20px",
-                marginBottom: "20px",
-              }}
-            >
-              <li>Obligations d’affichage</li>
-              <li>Vérification contrats de travail + DPAE</li>
-              <li>Égalité homme femme</li>
-              <li>
-                Vérifier formation ou augmentation de salaire ou évolution
-                professionnelle
-              </li>
-              <li>Respect quota travailleur handicapé</li>
-              <li>Sécurité, hygiène et conditions de travail</li>
-              <li>
-                Communication avec les représentants du personnel et l’ensemble
-                des salariés
-              </li>
-            </ul>
-            <li>La phase de restitution</li>
+            <div style={{ marginLeft: "20px" }}>
+              <span>Exemples de points abordés :</span>
+              <ul
+                style={{
+                  listStyleType: "disc",
+                  marginLeft: "40px",
+                  marginBottom: "20px",
+                }}
+              >
+                <li>Obligations d’affichage</li>
+                <li>Vérification contrats de travail + DPAE</li>
+                <li>Égalité homme femme</li>
+                <li>
+                  Vérifier formation ou augmentation de salaire ou évolution
+                  professionnelle
+                </li>
+                <li>Respect quota travailleur handicapé</li>
+                <li>Sécurité, hygiène et conditions de travail</li>
+                <li>
+                  Communication avec les représentants du personnel et
+                  l’ensemble des salariés
+                </li>
+              </ul>
+            </div>
+            <li>
+              La{" "}
+              <span style={{ fontWeight: "bold" }}> phase de restitution</span>:
+            </li>
             <p>
               L’audit s’achève par la rédaction d’un rapport de synthèse qui
               rappelle la situation et les améliorations à apporter. Ce rapport

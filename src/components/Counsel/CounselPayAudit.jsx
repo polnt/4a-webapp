@@ -49,7 +49,7 @@ const PayAudit = () => {
         <section>
           <h2>Comment se déroule un audit PAIE ?</h2>
           <div>
-            <p>Il y a 4 phases dans l’audit de Paie:</p>
+            <p>Il y a 3 phases dans l’audit de Paie:</p>
             <ul style={{ listStyleType: "disc", marginLeft: "20px" }}>
               <li>La phase préparatoire durant laquelle nous allons:</li>
               <ul style={{ listStyleType: "circle", marginLeft: "20px" }}>

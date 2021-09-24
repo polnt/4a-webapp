@@ -9,10 +9,10 @@ const Tpe = () => {
     <div className="container_page cover_page">
       <article className="content_page">
         <h1>TPE</h1>
-        <h2>
-          Libérez-vous des activités chronophages, centrez-vous sur votre cœur
-          de métier
-        </h2>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
+          « Libérez-vous des activités chronophages, centrez-vous sur votre cœur
+          de métier »
+        </p>
         <p>
           Vous êtes une TPE (définition) et vous avez choisi votre cœur
           d’expertise pour vous développer. En France, la législation française

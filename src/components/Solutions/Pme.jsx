@@ -9,7 +9,9 @@ const Pme = () => {
     <div className="container_page cover_page">
       <article className="content_page">
         <h1>PME</h1>
-        <h2>Assurez-vous l’expertise au sein de l’entreprise</h2>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
+          « Assurez-vous l’expertise au sein de l’entreprise »
+        </p>
         <p>
           Vous êtes une PME (définition), votre entreprise encore à taille
           humaine nécessite surement un salarié dédié tout ou partie de son

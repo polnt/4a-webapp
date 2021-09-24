@@ -4,8 +4,10 @@ const Externalization = () => {
   return (
     <div className="container_page cover_page">
       <article className="content_page">
-        <h1>GESTION DE LA PAIE EXTERNE</h1>« Retrouvez votre cœur de métier,
-        libérez-vous des risques »
+        <h1>GESTION DE LA PAIE EXTERNE</h1>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
+          « Retrouvez votre cœur de métier, libérez-vous des risques »
+        </p>
         <section>
           <h2>Pourquoi choisir l’externalisation :</h2>
           <p>

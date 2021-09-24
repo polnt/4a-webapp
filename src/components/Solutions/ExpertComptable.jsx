@@ -7,7 +7,9 @@ const ExpertComptable = () => {
     <div className="container_page cover_page">
       <article className="content_page">
         <h1>EXPERT COMPTABLE</h1>
-        <h2>Gérer simplement votre pôle social</h2>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
+          « Gérer simplement votre pôle social »
+        </p>
         <p>
           La gestion du social est de plus en plus complexe, la législation
           évolue très rapidement et il devient difficile de dédier le temps

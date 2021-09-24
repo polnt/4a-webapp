@@ -28,7 +28,7 @@ const Audit = () => {
         </p>
         <section>
           <h2>Les bénéfices de l’audit</h2>
-          <ul>
+          <ul style={{ listStyleType: "disc", marginLeft: "20px" }}>
             <li>
               Évaluer les risques de non-conformité à la législation sociale aux
               conventions collectives applicables

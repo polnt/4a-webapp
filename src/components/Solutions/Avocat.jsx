@@ -7,7 +7,9 @@ const Avocat = () => {
     <div className="container_page cover_page">
       <article className="content_page">
         <h1>AVOCAT spécialisé en droit social</h1>
-        <h2>Augmenter votre expertise en technique de paie</h2>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
+          « Augmenter votre expertise en technique de paie »
+        </p>
         <p>
           Vous êtes spécialiste du droit social et vous maitrisez les différents
           aspects de la gestion du personnel. Nous vous proposons la possibilité

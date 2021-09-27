@@ -1,6 +1,6 @@
 import Calculator from "../../assets/img/calculator.jpg";
 import HR from "../../assets/img/pexels-polina-zimmerman.jpg";
-import Advice from "../../assets/img/pexels-mentatdgt.jpg";
+import Counsel from "../../assets/img/pexels-mentatdgt.jpg";
 
 export const navData = [
   { id: "home", title: "ACCUEIL", path: "/" },
@@ -43,15 +43,15 @@ export const navData = [
     ],
   },
   {
-    id: "advice",
+    id: "counsel",
     title: "CONSEIL",
-    path: "/conseil",
-    backgroundImage: Advice,
+    path: "/conseil-et-accompagnement",
+    backgroundImage: Counsel,
     children: [
-      { title: "Audit", path: "" },
-      { title: "Formation", path: "" },
-      { title: "Contrôle URSSAF", path: "" },
-      // { title: "Gestion entreprise", path: "" },
+      { title: "Audit de paie", path: "/conseil-et-accompagnement/audit-paie" },
+      { title: "Audit RH", path: "/conseil-et-accompagnement/audit-rh" },
+      { title: "Formation", path: "/conseil-et-accompagnement/formation" },
+      { title: "Contrôle URSSAF", path: "/conseil-et-accompagnement/URSSAF" },
     ],
   },
   {

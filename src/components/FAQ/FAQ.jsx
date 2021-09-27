@@ -36,7 +36,13 @@ const FAQ = () => {
           }}
         >
           {faqData.map((item) => (
-            <div style={{ border: "1px solid black", borderRadius: "0.3em" }}>
+            <div
+              style={{
+                boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+                borderRadius: "0.3em",
+                marginBottom: "5px",
+              }}
+            >
               <button
                 type="button"
                 value={item.id}

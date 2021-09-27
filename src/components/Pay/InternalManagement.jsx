@@ -5,7 +5,7 @@ const InternalManagement = () => {
     <div className="container_page cover_page">
       <article className="content_page">
         <h1>GESTION INTERNE</h1>
-        <p>
+        <p style={{ fontSize: "2em", fontStyle: "italic" }}>
           « Apporter un soutien à votre collaborateur en charge de la gestion du
           personnel »
         </p>
@@ -36,53 +36,61 @@ const InternalManagement = () => {
         </section>
         <section>
           <h2>Notre collaboration</h2>
-          <section>
-            <h3>Accompagnement de votre personnel :</h3>
-            <p>
-              Nous accompagnons votre salarié sur une thématique précise selon
-              le temps nécessaire et acceptable sans gêner l’organisation
-              interne, nous nous déplaçons sur site.
-            </p>
-            <p>
-              Nous sommes à vos côtés en cas de besoin, de conseils afin de
-              sécuriser une procédure ou une période de bulletins ou de charges
-              sociales.
-            </p>
-          </section>
-          <section>
-            <h3>Formation de votre personnel :</h3>
-            <p>
-              Besoin d’une montée en compétence en interne ? Nous assurons la
-              formation de vos collaborateurs.
-            </p>
-            <p>
-              Nous venons dans votre entreprise, à leurs côtés pour travailler
-              sur des dossiers en cours, sur une thématique particulière, cela
-              peut être 2h, une demi-journée voire une journée en fonction de
-              leurs besoins (congés payés, maladie, heures supplémentaires et
-              complémentaires…)
-            </p>
-          </section>
+          <ul style={{ listStyleType: "disc", marginLeft: "40px" }}>
+            <section>
+              <li>
+                <h3>Accompagnement de votre personnel :</h3>
+              </li>
+              <p>
+                Nous accompagnons votre salarié sur une thématique précise selon
+                le temps nécessaire et acceptable sans gêner l’organisation
+                interne, nous nous déplaçons sur site.
+              </p>
+              <p>
+                Nous sommes à vos côtés en cas de besoin, de conseils afin de
+                sécuriser une procédure ou une période de bulletins ou de
+                charges sociales.
+              </p>
+            </section>
+            <section>
+              <li>
+                <h3>Formation de votre personnel :</h3>
+              </li>
+              <p>
+                Besoin d’une montée en compétence en interne ? Nous assurons la
+                formation de vos collaborateurs.
+              </p>
+              <p>
+                Nous venons dans votre entreprise, à leurs côtés pour travailler
+                sur des dossiers en cours, sur une thématique particulière, cela
+                peut être 2h, une demi-journée voire une journée en fonction de
+                leurs besoins (congés payés, maladie, heures supplémentaires et
+                complémentaires…)
+              </p>
+            </section>
+            <section>
+              <li>
+                <h3>Vérification et contrôle périodique :</h3>
+              </li>
+              <p>
+                Vous avez des interrogations concernant vos bulletins ou charges
+                sociales, nous pouvons vous aider à comprendre et à vérifier
+                l’exactitude des éléments transmis.
+              </p>
+              <p>
+                Vous avez eu des difficultés à recruter le profil recherché en
+                matière sociale, vous souhaitez garantir la justesse des
+                données, nous venons périodiquement ou ponctuellement selon
+                votre souhait vérifier la conformité des déclarations.
+              </p>
+            </section>
+          </ul>
         </section>
         <section>
-          <h3>Vérification et contrôle périodique :</h3>
-          <p>
-            Vous avez des interrogations concernant vos bulletins ou charges
-            sociales, nous pouvons vous aider à comprendre et à vérifier
-            l’exactitude des éléments transmis.
-          </p>
-          <p>
-            Vous avez eu des difficultés à recruter le profil recherché en
-            matière sociale, vous souhaitez garantir la justesse des données,
-            nous venons périodiquement ou ponctuellement selon votre souhait
-            vérifier la conformité des déclarations.
-          </p>
-        </section>
-        <section>
-          <h3>
+          <h2>
             Les avantages d’un accompagnement personnalisé en cas de gestion
             interne
-          </h3>
+          </h2>
           <p>
             Vous conservez votre contrôle sur votre service Paie RH tout en
             améliorant votre expertise et assurer la justesse de vos paies et

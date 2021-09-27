@@ -20,6 +20,12 @@ import Lifetime from "./HR/Lifetime";
 import Procedure from "./HR/Procedure";
 import HrAudit from "./HR/Audit";
 
+//COUNSEL
+import CounselPayAudit from "./Counsel/CounselPayAudit";
+import CounselRhAudit from "./Counsel/CounselRhAudit";
+import TrainingCourse from "./Counsel/TrainingCourse";
+import URSSAF from "./Counsel/URSSAF";
+
 // ABOUT
 import About from "./About/About";
 
@@ -62,6 +68,25 @@ const Router = () => {
       <Route path="/rh/procedures" component={Procedure} />
       <Route path="/rh/audit" component={HrAudit} />
       <Route exact path="/rh" render={() => <NavigationPage index={3} />} />
+
+      <Route
+        path="/conseil-et-accompagnement/audit-paie"
+        component={CounselPayAudit}
+      />
+      <Route
+        path="/conseil-et-accompagnement/audit-rh"
+        component={CounselRhAudit}
+      />
+      <Route
+        path="/conseil-et-accompagnement/formation"
+        component={TrainingCourse}
+      />
+      <Route path="/conseil-et-accompagnement/URSSAF" component={URSSAF} />
+      <Route
+        exact
+        path="/conseil-et-accompagnement"
+        render={() => <NavigationPage index={4} />}
+      />
 
       <Route exact path="/l'équipe-4A" component={About} />
       <Route exact path="/contact" component={Contact} />

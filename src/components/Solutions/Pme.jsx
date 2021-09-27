@@ -32,13 +32,16 @@ const Pme = () => {
             simple de l’
             <NavLink to="/paie/externalisation">externaliser</NavLink>.
           </li>
+          <li>L’évolution de la législation</li>
           <li>
-            L’évolution de la législation <NavLink to="/">Formation </NavLink>
-            spécifique sur des points particulier, mise à jour des dernières
+            <NavLink to="/conseil-et-accompagnement/formation">
+              Formation{" "}
+            </NavLink>
+            spécifique sur des points particuliers, mise à jour des dernières
             évolutions
           </li>
           <li>
-            <NavLink to="/">Contrôle trimestriel</NavLink>
+            <NavLink to="/conseil-et-accompagnement/URSSAF">Contrôle trimestriel</NavLink>
           </li>
         </ul>
         <p>

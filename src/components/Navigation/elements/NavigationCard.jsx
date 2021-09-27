@@ -15,6 +15,10 @@ const NavigationCard = ({ path, title }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "var(--mainPurple)",
+        // textDecoration: "none",
+        color: "white",
+        fontWeight: "bold",
       }}
     >
       {title}

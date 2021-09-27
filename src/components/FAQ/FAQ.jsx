@@ -58,7 +58,9 @@ const FAQ = () => {
                 }}
               >
                 {showQuote === item.id ? <DownArrow /> : <RightArrow />}
-                <span className="faq_quote">{item.quote}</span>
+                <span className="faq_quote" style={{ fontWeight: "bold" }}>
+                  {item.quote}
+                </span>
               </button>
               {showQuote === item.id && (
                 <div

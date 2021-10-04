@@ -65,6 +65,10 @@ ul {
   text-align: justify;
 }
 
+.content_page > section > h2 {
+  color: var(--secOrange);
+}
+
 .cover_page {
   min-height: 100vh;
 }

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
 
@@ -6,6 +6,12 @@ import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
+  const [navbarButtonColor, setNavbarButtonColor] = useState("");
+
+  useEffect(() => {
+    homeStyle ? setNavbarButtonColor("white") : setNavbarButtonColor("black");
+  }, [homeStyle]);
+
   const handleClick = () => {
     setToggle({ [item.id]: true });
   };
@@ -19,24 +25,31 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
         placement="bottom"
         overlay={
           item.children ? (
-            <Popover id="popover-positioned-bottom">
+            <Popover
+              id="popover-positioned-bottom"
+              style={{
+                maxWidth: "100%",
+                backgroundColor: "var(--mainGrey80)",
+                padding: "15px 15px 15px 15px",
+              }}
+            >
               <ul
                 className="navigation_button_sub_menu"
-                style={{ padding: "20px 45px 20px 20px" }}
+                style={{ backgroundColor: "transparent" }}
               >
                 {item.children?.map((subItem) => (
                   <li key={`nav_${subItem.title}`}>
-                    <NavLink to={subItem.path} onClick={() => setToggle({})}>
-                      <span
-                        style={{
-                          whiteSpace: "nowrap",
-                          fontSize: "1.3rem",
-                          color: "var(--mainPurple)",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {subItem.title}
-                      </span>
+                    <NavLink
+                      to={subItem.path}
+                      onClick={() => setToggle({})}
+                      style={{
+                        whiteSpace: "nowrap",
+                        fontSize: "1.3rem",
+                        color: "white",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {subItem.title}
                     </NavLink>
                   </li>
                 ))}
@@ -52,7 +65,7 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
             homeStyle ? "white_font" : "black_font"
           }`}
           to={item.path}
-          style={{ textDecoration: "none" }}
+          style={{ color: navbarButtonColor }}
         >
           {item.title}
         </NavLink>

@@ -10,15 +10,31 @@ const LocationPath = memo(() => {
 
     return location.split("/").map((element, index) => {
       if (index === 0) {
-        return <NavLink key="location_1" to="/">Accueil</NavLink>;
+        return (
+          <NavLink
+            key="location_1"
+            to="/"
+            style={{ color: "var(--mainGrey80)" }}
+          >
+            Accueil
+          </NavLink>
+        );
       } else {
         currentPath += `/${element}`;
         return (
-          <NavLink key={`location_${element}`} to={currentPath}>{` / ${element
-            .split("")
-            .map((e, i) => (i > 0 ? e : e.toUpperCase()))
-            .join("")
-            .replaceAll("-", " ")}`}</NavLink>
+          <span>
+            {" "}
+            /{" "}
+            <NavLink
+              key={`location_${element}`}
+              to={currentPath}
+              style={{ color: "var(--mainGrey80)" }}
+            >{`${element
+              .split("")
+              .map((e, i) => (i > 0 ? e : e.toUpperCase()))
+              .join("")
+              .replaceAll("-", " ")}`}</NavLink>
+          </span>
         );
       }
     });

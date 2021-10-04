@@ -1,14 +1,14 @@
 :root {
-  --mainPurple: rgba(166, 83, 157, 1);
-  --mainPurple50: rgba(166, 83, 157, 0.5);
+  --mainPurple: rgb(166, 83, 157);
+  --mainPurple50: rgba(166, 83, 157, 0.502);
   --mainPurple80: rgba(166, 83, 157, 0.8);
   --mainOrange: rgba(255, 190, 113, 1);
-  --secOrange: #e1532e;
+  --secOrange: rgb(225, 83, 46);
   --mainOrange50: rgba(255, 190, 113, 0.5);
-  --mainLightBlue: #8fd5db;
+  --mainLightBlue: rgb(143, 213, 219);
   --mainGrey: rgba(50, 50, 50, 1);
   --mainGrey80: rgba(50, 50, 50, 0.8);
-  --mainCream: #fff7eb;
+  --mainCream: rgb(255, 247, 235);
   --mainFontThin: {
     font-family: RobotoThin;
     src: url("./assets/fonts/Roboto-Thin.ttf");

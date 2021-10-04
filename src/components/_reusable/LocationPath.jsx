@@ -14,7 +14,7 @@ const LocationPath = memo(() => {
           <NavLink
             key="location_1"
             to="/"
-            style={{ color: "var(--mainGrey80)" }}
+            style={{ color: "var(--mainPurple)" }}
           >
             Accueil
           </NavLink>
@@ -22,13 +22,13 @@ const LocationPath = memo(() => {
       } else {
         currentPath += `/${element}`;
         return (
-          <span>
+          <span style={{ color: "var(--mainPurple)" }}>
             {" "}
             /{" "}
             <NavLink
               key={`location_${element}`}
               to={currentPath}
-              style={{ color: "var(--mainGrey80)" }}
+              style={{ color: "var(--mainPurple)" }}
             >{`${element
               .split("")
               .map((e, i) => (i > 0 ? e : e.toUpperCase()))

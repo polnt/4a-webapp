@@ -11,9 +11,11 @@ import {
   PAS,
   TrialPeriod,
   URSSAF,
+  TPE,
+  PME,
+  Expert,
+  Lawyer,
 } from "../../assets/img/navPage";
-
-import PayAudit2 from "../../assets/img/navPage/PayAudit.jpg";
 
 export const navData = [
   { id: "home", title: "ACCUEIL", path: "/" },
@@ -22,10 +24,18 @@ export const navData = [
     title: "NOS SOLUTIONS",
     path: "/nos-solutions",
     children: [
-      { title: "TPE", path: "/nos-solutions/tpe" },
-      { title: "PME", path: "/nos-solutions/pme" },
-      { title: "Cabinet comptable", path: "/nos-solutions/expert-comptable" },
-      { title: "Cabinet juridique", path: "/nos-solutions/cabinet-juridique" },
+      { title: "TPE", path: "/nos-solutions/tpe", image: TPE },
+      { title: "PME", path: "/nos-solutions/pme", image: PME },
+      {
+        title: "Cabinet comptable",
+        path: "/nos-solutions/expert-comptable",
+        image: Expert,
+      },
+      {
+        title: "Cabinet juridique",
+        path: "/nos-solutions/cabinet-juridique",
+        image: Lawyer,
+      },
     ],
   },
   {
@@ -35,7 +45,11 @@ export const navData = [
     backgroundImage: Calculator,
     size: "cover",
     children: [
-      { title: "Externalisation", path: "/paie/externalisation" },
+      {
+        title: "Externalisation",
+        path: "/paie/externalisation",
+        image: Calculator,
+      },
       {
         title: "Gestion interne",
         path: "/paie/gestion-interne",
@@ -54,6 +68,7 @@ export const navData = [
       {
         title: "Gestion Interne",
         path: "/rh/gestion-interne-rh",
+        image: InternalHr,
       },
       { title: "Audit RH", path: "/rh/audit", image: HrAudit },
     ],
@@ -64,8 +79,16 @@ export const navData = [
     path: "/conseil-et-accompagnement",
     backgroundImage: Counsel,
     children: [
-      { title: "Audit de paie", path: "/conseil-et-accompagnement/audit-paie" },
-      { title: "Audit RH", path: "/conseil-et-accompagnement/audit-rh" },
+      {
+        title: "Audit de paie",
+        path: "/conseil-et-accompagnement/audit-paie",
+        image: PayAudit,
+      },
+      {
+        title: "Audit RH",
+        path: "/conseil-et-accompagnement/audit-rh",
+        image: HrAudit,
+      },
       {
         title: "Formation",
         path: "/conseil-et-accompagnement/formation",

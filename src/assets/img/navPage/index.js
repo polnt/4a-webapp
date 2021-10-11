@@ -7,6 +7,10 @@ import HS from "./HS.jpg";
 import PAS from "./PAS.jpg";
 import TrialPeriod from "./Période essai.jpg";
 import URSSAF from "./URSSAF.jpg";
+import TPE from "../tpe.jpg";
+import PME from "../tpepme.jpg";
+import Expert from "../expert.jpg";
+import Lawyer from "../partnership.png";
 
 export {
   PayAudit,
@@ -18,4 +22,8 @@ export {
   PAS,
   TrialPeriod,
   URSSAF,
+  TPE,
+  PME,
+  Expert,
+  Lawyer,
 };

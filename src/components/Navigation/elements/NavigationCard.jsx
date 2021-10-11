@@ -2,8 +2,6 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import PayAudit2 from "../../../assets/img/navPage/PayAudit.jpg";
-
 const NavigationCard = ({ path, title, image }) => {
   return (
     <NavLink
@@ -16,9 +14,12 @@ const NavigationCard = ({ path, title, image }) => {
         marginBottom: "20px",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "var(--mainPurple)",
-        backgroundImage: `url(${image})`,
+        alignItems: "flex-end",
+        // backgroundColor: "var(--mainPurple)",
+        backgroundImage: `linear-gradient(transparent, var(--mainGrey80)), url(${image})`,
+        backgroundSize: "100% 300px",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
         // textDecoration: "none",
         color: "white",
         fontWeight: "bold",

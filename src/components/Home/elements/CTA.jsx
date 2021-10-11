@@ -14,7 +14,7 @@ const CTA = () => {
   const [toggle, setToggle] = useState({
     pay: false,
     hr: false,
-    advice: false,
+    counsel: false,
   });
   const [containerStyle, setContainerStyle] = useState("cta_container");
 
@@ -32,7 +32,7 @@ const CTA = () => {
       case toggle.hr:
         setContainerStyle("cta_container_focus_second");
         break;
-      case toggle.advice:
+      case toggle.counsel:
         setContainerStyle("cta_container_focus_third");
         break;
       default:
@@ -40,6 +40,8 @@ const CTA = () => {
         break;
     }
   }, [toggle]);
+
+  console.log(toggle);
 
   return (
     <div

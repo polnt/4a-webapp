@@ -68,6 +68,7 @@ const FAQ = () => {
                     display: "flex",
                     flexDirection: "column",
                     marginLeft: "30px",
+                    marginRight: "30px",
                   }}
                 >
                   {item.law && (

@@ -2,6 +2,7 @@
   --mainPurple: rgb(166, 83, 157);
   --mainPurple50: rgba(166, 83, 157, 0.502);
   --mainPurple80: rgba(166, 83, 157, 0.8);
+  --secPurple: rgb(102, 30, 94);
   --mainOrange: rgba(255, 190, 113, 1);
   --secOrange: rgb(225, 83, 46);
   --mainOrange50: rgba(255, 190, 113, 0.5);
@@ -66,7 +67,7 @@ ul {
 }
 
 .content_page > section > h2 {
-  color: var(--secOrange);
+  color: var(--secPurple);
 }
 
 .cover_page {
@@ -85,18 +86,20 @@ ul {
 .divider {
   background-image: url(./assets/svg/RadiantCirc.svg);
   position: absolute;
+  background-size: 100% 50px;
   background-color: transparent;
   width: 100%;
   bottom: 0;
-  height: 50px;
+  min-height: 50px;
 }
 
 .inverted_divider {
   background-image: url(./assets/svg/RadiantCircInverted.svg);
   position: absolute;
+  background-size: 100% 50px;
   background-color: transparent;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   top: 0;
 }
 
@@ -127,11 +130,13 @@ ul {
   }
 
   .divider {
-    height: 100px;
+    background-size: 100% 100px;
+    min-height: 100px;
   }
 
   .inverted_divider {
-    height: 100px;
+    background-size: 100% 100px;
+    min-height: 100px;
   }
 }
 
@@ -146,10 +151,12 @@ ul {
   }
 
   .divider {
-    height: 200px;
+    background-size: 100% 200px;
+    min-height: 200px;
   }
 
   .inverted_divider {
-    height: 200px;
+    background-size: 100% 200px;
+    min-height: 200px;
   }
 }

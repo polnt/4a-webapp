@@ -91,9 +91,11 @@ const PayAudit = () => {
               <li>
                 La{" "}
                 <span style={{ fontWeight: "bold" }}>phase de réalisation</span>{" "}
-                permettra:
+                permettra d’étudier les documents récoltés de manière
+                approfondie afin de mettre en évidence les écarts entre les
+                calculs réalisés et les textes légaux:
               </li>
-              <ul
+              {/* <ul
                 style={{
                   listStyleType: "circle",
                   marginLeft: "20px",
@@ -104,31 +106,31 @@ const PayAudit = () => {
                   D’étudier les documents récoltés de manière approfondie afin
                   de mettre en évidence les écarts entre les calculs réalisés et
                   les textes légaux:
+                </li> */}
+              <ul
+                style={{
+                  listStyleType: "circle",
+                  marginLeft: "20px",
+                  marginBottom: "20px",
+                }}
+              >
+                <li>DPAE et Contrat de travail de chaque salarié</li>
+                <li>
+                  Vérification des salaires bruts (Heures supplémentaires,
+                  éléments fixes ou variables en lien avec la convention
+                  collective…)
                 </li>
-                <ul
-                  style={{
-                    listStyleType: "disc",
-                    marginLeft: "20px",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <li>DPAE et Contrat de travail de chaque salarié</li>
-                  <li>
-                    Vérification des salaires bruts (Heures supplémentaires,
-                    éléments fixes ou variables en lien avec la convention
-                    collective…)
-                  </li>
-                  <li>
-                    Vérifications des bases de cotisations et des montants
-                    versés aux organismes
-                  </li>
-                  <li>Vérification des allègements de cotisations</li>
-                  <li>
-                    Vérification des règlements (montants, déclarations, délai)
-                  </li>
-                  <li>Vérification de la conformité de l’OD de paie</li>
-                </ul>
+                <li>
+                  Vérifications des bases de cotisations et des montants versés
+                  aux organismes
+                </li>
+                <li>Vérification des allègements de cotisations</li>
+                <li>
+                  Vérification des règlements (montants, déclarations, délai)
+                </li>
+                <li>Vérification de la conformité de l’OD de paie</li>
               </ul>
+              {/* </ul> */}
               <li>
                 La{" "}
                 <span style={{ fontWeight: "bold" }}>phase de restitution</span>

@@ -2,7 +2,9 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-const NavigationCard = ({ path, title }) => {
+import PayAudit2 from "../../../assets/img/navPage/PayAudit.jpg";
+
+const NavigationCard = ({ path, title, image }) => {
   return (
     <NavLink
       to={path}
@@ -16,6 +18,7 @@ const NavigationCard = ({ path, title }) => {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "var(--mainPurple)",
+        backgroundImage: `url(${image})`,
         // textDecoration: "none",
         color: "white",
         fontWeight: "bold",

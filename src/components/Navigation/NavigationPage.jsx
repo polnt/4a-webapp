@@ -23,7 +23,11 @@ const NavigationPage = ({ index }) => {
           }}
         >
           {navData[index]?.children?.map((item) => (
-            <NavigationCard path={item.path} title={item.title} />
+            <NavigationCard
+              path={item.path}
+              title={item.title}
+              image={item?.image}
+            />
           ))}
         </div>
       </div>

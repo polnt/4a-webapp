@@ -1,6 +1,19 @@
 import Calculator from "../../assets/img/calculator.jpg";
 import HR from "../../assets/img/pexels-polina-zimmerman.jpg";
 import Counsel from "../../assets/img/pexels-mentatdgt.jpg";
+import {
+  PayAudit,
+  HrAudit,
+  Formation,
+  InternalPay,
+  InternalHr,
+  HS,
+  PAS,
+  TrialPeriod,
+  URSSAF,
+} from "../../assets/img/navPage";
+
+import PayAudit2 from "../../assets/img/navPage/PayAudit.jpg";
 
 export const navData = [
   { id: "home", title: "ACCUEIL", path: "/" },
@@ -23,8 +36,12 @@ export const navData = [
     size: "cover",
     children: [
       { title: "Externalisation", path: "/paie/externalisation" },
-      { title: "Gestion interne", path: "/paie/gestion-interne" },
-      { title: "Audit de paie", path: "/paie/audit" },
+      {
+        title: "Gestion interne",
+        path: "/paie/gestion-interne",
+        image: InternalPay,
+      },
+      { title: "Audit de paie", path: "/paie/audit", image: PayAudit },
     ],
   },
   {
@@ -35,11 +52,10 @@ export const navData = [
     size: "contain",
     children: [
       {
-        title: "Entrées et sorties des salariés",
-        path: "/rh/vie-du-contrat",
+        title: "Gestion Interne",
+        path: "/rh/gestion-interne-rh",
       },
-      { title: "Les procédures", path: "/rh/procedures" },
-      { title: "Audit RH", path: "/rh/audit" },
+      { title: "Audit RH", path: "/rh/audit", image: HrAudit },
     ],
   },
   {
@@ -50,8 +66,16 @@ export const navData = [
     children: [
       { title: "Audit de paie", path: "/conseil-et-accompagnement/audit-paie" },
       { title: "Audit RH", path: "/conseil-et-accompagnement/audit-rh" },
-      { title: "Formation", path: "/conseil-et-accompagnement/formation" },
-      { title: "Contrôle URSSAF", path: "/conseil-et-accompagnement/URSSAF" },
+      {
+        title: "Formation",
+        path: "/conseil-et-accompagnement/formation",
+        image: Formation,
+      },
+      {
+        title: "Contrôle URSSAF",
+        path: "/conseil-et-accompagnement/URSSAF",
+        image: URSSAF,
+      },
     ],
   },
   {

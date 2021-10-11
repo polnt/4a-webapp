@@ -16,8 +16,7 @@ import InternalManagement from "./Pay/InternalManagement";
 import PayAudit from "./Pay/Audit";
 
 // HR
-import Lifetime from "./HR/Lifetime";
-import Procedure from "./HR/Procedure";
+import HrInternalManagement from "./HR/HrInternalManagement";
 import HrAudit from "./HR/Audit";
 
 //COUNSEL
@@ -64,8 +63,7 @@ const Router = () => {
       <Route path="/paie/audit" component={PayAudit} />
       <Route exact path="/paie" render={() => <NavigationPage index={2} />} />
 
-      <Route path="/rh/vie-du-contrat" component={Lifetime} />
-      <Route path="/rh/procedures" component={Procedure} />
+      <Route path="/rh/gestion-interne-rh" component={HrInternalManagement} />
       <Route path="/rh/audit" component={HrAudit} />
       <Route exact path="/rh" render={() => <NavigationPage index={3} />} />
 

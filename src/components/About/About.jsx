@@ -92,8 +92,8 @@ const About = () => {
             </p>
             <li>Adapter</li>
             <p>
-              Nous entendons souvent dire que le social coûte cher, nous volions
-              pour nos services des tarifs attractifs afin de vous permettre de
+              Nous entendons souvent dire que le social coûte cher, nous voulons
+              des tarifs attractifs pour nos services afin de vous permettre de
               rentabiliser et d’adapter votre budget social.
             </p>
             <li>Actualiser</li>

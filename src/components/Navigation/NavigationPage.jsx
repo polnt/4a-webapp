@@ -26,7 +26,7 @@ const NavigationPage = ({ index }) => {
             <NavigationCard
               path={item.path}
               title={item.title}
-              image={item?.image}
+              image={item.image}
             />
           ))}
         </div>

@@ -1,3 +1,12 @@
+import {
+  PaidVacation,
+  Overtime,
+  Tax,
+  Sickness,
+  PAS,
+  TrialPeriod,
+} from "../../assets/img/FAQ";
+
 export const faqData = [
   {
     id: 0,
@@ -10,6 +19,8 @@ export const faqData = [
       "Le premier jour qui est considéré comme congés payés, indépendamment de si le décompte se fait en jours ouvrés ou ouvrables, est le premier jour d’absence où le salarié aurait dû reprendre son poste s’il n’était pas en vacances.",
       "A partir de ce moment, chaque jour est un congé payé, sauf les dimanches en jours ouvrables et sauf les dimanches et le deuxième jour de repos en jours ouvrés jusqu’à la veille de sa reprise.",
     ],
+    image: PaidVacation,
+    alt: "congés payés",
   },
   {
     id: 1,
@@ -19,6 +30,8 @@ export const faqData = [
       "Au début c’était simple : la rémunération déclarée auprès des impôts correspond au salaire brut soumis à cotisations moins les cotisations salariales (cotisations déduites du salaire brut), ce qui devrait correspondre au net à payer.",
       "Toutefois la loi vient insérer un certain nombre d’exceptions : les cotisations que l’on déduit sont celles considérées comme déductibles. Aujourd’hui, dans le cas général, une partie de la CSG/CRDS est non déductible à hauteur de 2.9%. De plus, la part patronale de la mutuelle (ou frais de santé payé par l’employeur) est soumise à l’impôt sur le revenu. Dans la mesure où la loi prévoit des limites aux exonérations : prévoyance, retraites supplémentaires, voire certains revenus non soumis aux cotisations comme certaines indemnités de départ qui peuvent aussi être soumis à l’impôt sur le revenu.",
     ],
+    image: Tax,
+    alt: "impôts",
   },
   {
     id: 2,
@@ -29,6 +42,8 @@ export const faqData = [
       "Si la convention collective est moins favorable vous devez appliquer la loi.",
       "En tout état de cause, vous devez transmettre sans délai, les informations relatives à l’arrêt maladie du salarié à votre gestionnaire de paie qui établira l’attestation de salaire pour l’indemnisation de la CPAM et vous indiquera la durée et le taux de l’indemnisation en fonction de l’ancienneté de celui-ci.",
     ],
+    image: Sickness,
+    alt: "maladie",
   },
   {
     id: 3,
@@ -37,6 +52,8 @@ export const faqData = [
       "L’employeur n’a pas la main sur le taux appliqué dans le bulletin de salaire. Si le salarié n’est pas d’accord sur le taux il faut qu’il prenne contact avec son service des impôts.",
       "Comment ça marche : Chaque mois, l’employeur réalise une DSN, fichier dans lequel les informations relatives au salarié présent dans l’entreprise sont transmis aux organismes dont la DGFiP. Par retour de fichier la Direction générale des finances publiques qui détient le taux effectif de la dernière déclaration sur les revenus du salarié, indique le taux à appliquer avec une référence qui permet d’éviter les manipulations frauduleuses. Ce taux sera inséré dès le mois suivant. Dans le cas d’une nouvelle embauche, l’employeur a l’obligation d’appliquer le taux neutre du barème de la DGFIP.",
     ],
+    image: PAS,
+    alt: "PAS",
   },
   {
     id: 4,
@@ -48,6 +65,8 @@ export const faqData = [
       "On parle d’heures complémentaires pour les salariés à temps partiel. Ceux sont les heures réalisées au-delà du temps contractuel (temps noté sur son contrat) du salarié, sans jamais atteindre la durée légale du travail.",
       "La majoration a appliquer dépend de règles différentes et de votre convention collective.",
     ],
+    image: Overtime,
+    alt: "heures supplémentaires et complémentaires",
   },
   {
     id: 5,
@@ -73,5 +92,7 @@ export const faqData = [
           "La période d’essai ne peut pas excéder une durée calculée à raison d’un jour par semaine, dans la limite de 2 semaines si la durée du contrat à durée déterminée ne dépasse pas 6 mois et de 1 mois, dans les autres cas.",
       },
     ],
+    image: TrialPeriod,
+    alt: "période d'essai",
   },
 ];

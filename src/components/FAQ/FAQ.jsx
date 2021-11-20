@@ -71,12 +71,28 @@ const FAQ = () => {
                     marginRight: "30px",
                   }}
                 >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      // maxWidth: "400px",
+                      // minWidth: "100px",
+                    }}
+                  >
+                    {item.image && (
+                      <img
+                        src={item.image}
+                        style={{ maxWidth: "100%" }}
+                        alt={item.alt}
+                      />
+                    )}
+                  </div>
                   {item.law && (
                     <div style={{ display: "flex" }}>
                       <JusticeBalance
                         size={60}
                         style={{
-                          float: "left",
+                          // float: "left",
                           marginRight: "10px",
                           minWidth: "60px",
                         }}

@@ -5,8 +5,12 @@ import { NavLink } from "react-router-dom";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
+import { IoIosArrowForward as RightArrow } from "react-icons/io";
+import { IoIosArrowDown as DownArrow } from "react-icons/io";
+
 const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
   const [navbarButtonColor, setNavbarButtonColor] = useState("");
+  const [arrowIcon, setArrowIcon] = useState(<RightArrow />);
 
   useEffect(() => {
     homeStyle ? setNavbarButtonColor("white") : setNavbarButtonColor("black");
@@ -67,7 +71,13 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
           to={item.path}
           style={{ color: navbarButtonColor }}
         >
-          {item.title}
+          <div
+            style={{ display: "flex", alignItems: "center" }}
+            onMouseEnter={() => setArrowIcon(<DownArrow />)}
+            onMouseLeave={() => setArrowIcon(<RightArrow />)}
+          >
+            {item.title} {item.children && arrowIcon}
+          </div>
         </NavLink>
       </OverlayTrigger>
     </li>

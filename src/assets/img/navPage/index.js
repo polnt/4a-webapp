@@ -5,7 +5,7 @@ import InternalPay from "./GestionInternePaie.jpg";
 import InternalHr from "./GestionInterneRH.jpg";
 import HS from "./HS.jpg";
 import PAS from "./PAS.jpg";
-import TrialPeriod from "./Période essai.jpg";
+import TrialPeriod from "./PériodeEssai.jpg";
 import URSSAF from "./URSSAF.jpg";
 import TPE from "../tpe.jpg";
 import PME from "../tpepme.jpg";

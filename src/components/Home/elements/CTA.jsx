@@ -41,8 +41,6 @@ const CTA = () => {
     }
   }, [toggle]);
 
-  console.log(toggle);
-
   return (
     <div
       style={

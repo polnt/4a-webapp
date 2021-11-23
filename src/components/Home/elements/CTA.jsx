@@ -43,10 +43,10 @@ const CTA = () => {
   }, [toggle]);
 
   useEffect(() => {
-    if (scrollY > 250) {
+    if (scrollY > 250 && !isScrolled) {
       setIsScrolled(true);
     }
-  });
+  }, [scrollY, isScrolled]);
 
   return (
     <div

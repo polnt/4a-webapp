@@ -121,7 +121,7 @@ const RhAudit = () => {
                 </li>
               </ul>
             </ul>
-            <div style={{ marginLeft: "20px" }}>
+            <div style={{ marginLeft: "10px" }}>
               <span>Exemples de points abordés :</span>
               <ul
                 style={{

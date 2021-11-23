@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { useNav } from "../../../hooks";
@@ -11,6 +11,7 @@ import "../../../css/Home/CTA.css";
 
 const CTA = () => {
   const { scrollY } = useNav();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [toggle, setToggle] = useState({
     pay: false,
     hr: false,
@@ -41,10 +42,16 @@ const CTA = () => {
     }
   }, [toggle]);
 
+  useEffect(() => {
+    if (scrollY > 250) {
+      setIsScrolled(true);
+    }
+  });
+
   return (
     <div
       style={
-        scrollY > 250
+        isScrolled
           ? {
               opacity: 1,
               transition: "all 1000ms ease",

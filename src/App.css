@@ -83,6 +83,16 @@ ul {
   bottom: 40px;
 }
 
+.custom_link {
+  color: var(--secPurple);
+  text-decoration: underline;
+}
+
+.custom_link:hover {
+  color: var(--secPurple);
+  font-weight: bold;
+}
+
 .divider {
   background-image: url(./assets/svg/RadiantCirc.svg);
   position: absolute;

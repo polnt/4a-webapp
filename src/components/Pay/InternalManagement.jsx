@@ -4,14 +4,14 @@ const InternalManagement = () => {
   return (
     <div className="container_page cover_page">
       <article className="content_page">
-        <h1>GESTION INTERNE</h1>
+        <h1>GESTION DE LA PAIE INTERNE</h1>
         <p style={{ fontSize: "2em", fontStyle: "italic" }}>
           « Apporter un soutien à votre collaborateur en charge de la gestion du
           personnel »
         </p>
         <section>
           <h2>
-            Pourquoi choisir l’accompagnement de 4A Paie RH Conseils pour votre
+            Pourquoi choisir l’accompagnement de 4A Paie & RH Conseils pour votre
             gestion interne?
           </h2>
           <p>

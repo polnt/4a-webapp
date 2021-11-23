@@ -20,42 +20,50 @@ const Pme = () => {
           maintienne un bon niveau de connaissance en matière sociale, nous vous
           proposons différentes solutions:
         </p>
-        <ul>
-          <li>
-            <NavLink to="/">Accompagnement </NavLink>de votre personnel dédié à
-            la paie ou aux RH
+        <ul
+          style={{
+            listStyleType: "disc",
+            marginLeft: "20px",
+          }}
+        >
+          <div style={{ marginBottom: "20px" }}>
+            <li>
+              <NavLink className="custom_link" to="/">
+                Accompagnement{" "}
+              </NavLink>
+              de votre personnel dédié à la paie ou aux RH
+            </li>
+            <span>
+              Vous souhaitez conserver votre partie RH, afin d’être au plus près
+              du besoin de vos salariés et avoir un interlocuteur au sein même
+              de votre entreprise, l’élaboration de la paie est chronophage et
+              il est simple de l’
+              <NavLink className="custom_link" to="/paie/externalisation">
+                externaliser
+              </NavLink>
+              .
+            </span>
+          </div>
+          <li style={{ marginBottom: "20px" }}>
+            L’évolution de la législation peut nécessiter de suivre une{" "}
+            <NavLink
+              className="custom_link"
+              to="/conseil-et-accompagnement/formation"
+            >
+              formation
+            </NavLink>{" "}
+            spécifique pour connaître les dernières évolutions, ou assurer le
+            bon traitement de points particuliers (réduction générale,
+            vérification des bases de cotisations…).
           </li>
-          <li>
-            Vous souhaitez conserver votre partie RH, afin d’être au plus près
-            du besoin de vos salariés et avoir un interlocuteur au sein même de
-            votre entreprise, l’élaboration de la paie est chronophage et il est
-            simple de l’
-            <NavLink to="/paie/externalisation">externaliser</NavLink>.
-          </li>
-          <li>L’évolution de la législation</li>
-          <li>
-            <NavLink to="/conseil-et-accompagnement/formation">
-              Formation{" "}
-            </NavLink>
-            spécifique sur des points particuliers, mise à jour des dernières
-            évolutions
-          </li>
-          <li>
-            <NavLink to="/conseil-et-accompagnement/URSSAF">Contrôle trimestriel</NavLink>
+          <li style={{ marginBottom: "20px" }}>
+            Le contrôle trimestriel vous permettra de vérifier de façon
+            périodique que les déclarations réalisées en fonction des bulletins
+            de salaire sont conformes à la réglementation. Ce contrôle permet de
+            procéder aux rectifications en cours d’année et de ce fait d’assurer
+            la justesse de vos calculs.
           </li>
         </ul>
-        <p>
-          TOP des 6 difficultés rencontrées la troisième : complexité des
-          réglementations
-        </p>
-        <p>
-          <a
-            href="http://corporate.europages.fr/actualites/3-pme-europeennes-top-6-des-difficultes-rencontrees/
-"
-          >
-            http://corporate.europages.fr/actualites/3-pme-europeennes-top-6-des-difficultes-rencontrees/
-          </a>
-        </p>
         <ContactCTA />
       </article>
     </div>

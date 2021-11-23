@@ -34,17 +34,24 @@ const Tpe = () => {
           législation.
         </p>
         <p>
-          L’<NavLink to="/paie/externalisation">externalisation</NavLink> est
-          une excellente solution pour remédier à ces risques
+          L’
+          <NavLink className="custom_link" to="/paie/externalisation">
+            externalisation
+          </NavLink>{" "}
+          est une excellente solution pour remédier à ces risques
         </p>
         <p>Découvrez nos autres solutions:</p>
 
         <ul>
           <li>
-            <NavLink to="/paie/gestion-interne">Gestion Interne</NavLink>
+            <NavLink className="custom_link" to="/paie/gestion-interne">
+              Gestion Interne
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/paie/audit">Audit de paie</NavLink>
+            <NavLink className="custom_link" to="/paie/audit">
+              Audit de paie
+            </NavLink>
           </li>
         </ul>
         <ContactCTA />

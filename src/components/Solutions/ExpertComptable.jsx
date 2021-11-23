@@ -18,20 +18,48 @@ const ExpertComptable = () => {
           aujourd’hui est de plus en plus difficile.
         </p>
         <p>
-          Votre Pôle social est peu développé: sous-traiter la paie et/ou RH en
-          restant l'interlocuteur de votre client.
+          <span
+            style={{
+              display: "flex",
+              color: "var(--secPurple)",
+              fontWeight: "bold",
+            }}
+          >
+            Votre pôle social est peu développé ?
+          </span>
+          Vous pouvez nous confier la partie paie et/ou RH en restant
+          l'interlocuteur de votre client.
         </p>
         <p>
-          Vous n’avez pas de pôle social: il vous semble difficile de le
-          développer ou trop risqué, vous rencontrez des difficultés de
-          recrutement, proposez une offre complète pour vos clients en
-          établissant un partenariat avec 4A Paie et RH Conseils.
+          <span
+            style={{
+              display: "flex",
+              color: "var(--secPurple)",
+              fontWeight: "bold",
+            }}
+          >
+            Vous n’avez pas de pôle social ?
+          </span>
+          Il vous semble difficile de le développer ou trop risqué, vous
+          rencontrez des difficultés de recrutement ? Proposez une offre
+          complète pour vos clients en établissant un partenariat avec 4A Paie
+          et RH Conseils.
         </p>
         <p>
-          Pôle social développé en souffrance : actuellement nous cherchons une
-          solution viable, pour l’instant possible si vous avez Silae. Ou
-          prendre la main sur votre logiciel de paie en SAAS. Nous vous assurons
-          une totale confidentialité.
+          <span
+            style={{
+              display: "flex",
+              color: "var(--secPurple)",
+              fontWeight: "bold",
+            }}
+          >
+            Votre pôle social est en souffrance ?
+          </span>{" "}
+          Selon le logiciel avec lequel vous travaillez, nous pouvons prendre la
+          main en SAAS afin de pallier temporairement à l’absence d’un de vos
+          collaborateurs ou un surcroît de nouveaux clients le temps pour vous
+          de réorganiser votre service . Nous vous assurons une totale
+          confidentialité.
         </p>
         <ContactCTA />
       </article>

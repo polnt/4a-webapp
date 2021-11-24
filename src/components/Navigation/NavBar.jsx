@@ -36,7 +36,7 @@ const NavBar = memo(({ mobileMenu, toggleMobileMenu }) => {
       <NavLink
         to="/"
         style={
-          location === "/"
+          location === "/" && scrollY === 0
             ? { visibility: mobileMenu ? "visible" : "hidden" }
             : { visibility: "visible" }
         }
@@ -82,6 +82,7 @@ const NavBar = memo(({ mobileMenu, toggleMobileMenu }) => {
           <MenuBtn
             mobileMenu={mobileMenu}
             toggleMobileMenu={toggleMobileMenu}
+            homeStyle={scrollY === 0}
           />
         </div>
       </div>

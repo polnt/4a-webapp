@@ -21,7 +21,11 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
   };
 
   return (
-    <li onMouseEnter={handleClick} onMouseLeave={() => setToggle({})}>
+    <li
+      style={{ fontFamily: "RobotoRegular" }}
+      onMouseEnter={handleClick}
+      onMouseLeave={() => setToggle({})}
+    >
       <OverlayTrigger
         show={!!toggle[item.id]}
         // trigger={["hover", "focus"]}
@@ -50,7 +54,6 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
                         whiteSpace: "nowrap",
                         fontSize: "1.3rem",
                         color: "white",
-                        fontWeight: "bold",
                       }}
                     >
                       {subItem.title}

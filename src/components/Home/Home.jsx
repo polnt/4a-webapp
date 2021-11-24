@@ -1,7 +1,8 @@
 import React from "react";
 
-import Solutions from "./elements/Solutions";
+import SolutionsCarousel from "./elements/SolutionsCarousel";
 import CTA from "./elements/CTA";
+import Solutions from "./elements/Solutions";
 
 import { GrValidate as ValidIcon } from "react-icons/gr";
 
@@ -50,26 +51,28 @@ const Home = () => {
               width: "100%",
             }}
           >
-            <Solutions />
+            <SolutionsCarousel />
           </section>
         </div>
         <div className="divider" style={{ zIndex: 2 }} />
       </div>
       <div
-        className="container_page"
+        // className="container_page"
         style={{
           width: "100%",
-          paddingTop: "20px",
+          // paddingTop: "20px",
           // display: "flex",
           // alignItems: "center",
         }}
       >
         <section
-          className="content_page"
+          // className="content_page"
           style={{
-            transition: "1s all ease",
-            visibility: "visible",
-            width: "100%",
+            backgroundColor: "#f9f9f9",
+
+            // transition: "1s all ease",
+            // visibility: "visible",
+            // width: "100%",
             // display: "flex",
             // flexDirection: "column",
             // // justifyContent: "center",
@@ -81,24 +84,47 @@ const Home = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              textTransform: "uppercase",
+              fontFamily: "RobotoRegular",
             }}
           >
             <ValidIcon style={{ marginRight: "10px" }} />
             Des solutions adaptées à vos besoins
           </h2>
+          <div className="container_page">
+            <div
+              className="content_page"
+              style={{
+                display: "flex",
+                // flexDirection: "column",
+                // alignItems: "center",
+                // justifyContent: "center",
+                // minHeight: "90vh",
+                width: "100%",
+              }}
+            >
+              <CTA />
+            </div>
+          </div>
 
           <div
-            className="content_page"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              // alignItems: "center",
-              justifyContent: "center",
-              minHeight: "90vh",
-              width: "100%",
-            }}
+            className="container_page"
+            style={
+              {
+                // backgroundColor: "green",
+              }
+            }
           >
-            <CTA />
+            <div
+              className="content_page"
+              style={{
+                display: "flex",
+                // backgroundColor: "red",
+                // width: "100%",
+              }}
+            >
+              <Solutions />
+            </div>
           </div>
         </section>
       </div>

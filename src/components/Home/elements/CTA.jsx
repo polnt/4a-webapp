@@ -49,23 +49,30 @@ const CTA = () => {
   }, [scrollY, isScrolled]);
 
   return (
-    <div
+    <section
       style={
         isScrolled
           ? {
               opacity: 1,
               transition: "all 1000ms ease",
               transform: "translateY(0%)",
-              // display: "flex",
-              // flexDirection: "column",
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "50px",
             }
           : { opacity: 0, transform: "translateY(30%)" }
       }
     >
-      <h3 style={{ textAlign: "center", marginBottom: "150px" }}>
+      <h3
+        style={{
+          textAlign: "center",
+          textTransform: "uppercase",
+        }}
+      >
         Vous souhaitez une expertise, un conseil, une formation ou un simple
         accompagnement?
       </h3>
+
       <div
         className={`cta_container ${containerStyle}`}
         onMouseLeave={() =>
@@ -127,7 +134,7 @@ const CTA = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

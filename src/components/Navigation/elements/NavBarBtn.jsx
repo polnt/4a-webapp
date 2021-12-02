@@ -68,9 +68,7 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
         }
       >
         <NavLink
-          className={`navigation_button ${
-            homeStyle ? "white_font" : "black_font"
-          }`}
+          className="navigation_button"
           to={item.path}
           style={{ color: navbarButtonColor }}
         >

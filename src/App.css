@@ -58,15 +58,6 @@ ul {
   min-height: 100vh;
 }
 
-.custom_carousel > div > ol > li {
-  background-color: black;
-  color: black;
-}
-
-.custom_carousel > ol {
-  bottom: 40px;
-}
-
 .custom_link {
   color: var(--secPurple);
   text-decoration: underline;

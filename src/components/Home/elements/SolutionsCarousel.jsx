@@ -12,18 +12,18 @@ import { LogoWithPolice } from "../../../assets/svg";
 import { IoIosArrowForward as NextIcon } from "react-icons/io";
 import { IoIosArrowBack as PrevIcon } from "react-icons/io";
 
-import "../../../css/Home/Solutions.css";
+import "../../../css/Home/SolutionsCarousel.css";
 
 const Solutions = () => {
   return (
     <Carousel
-      className="custom_carousel"
+      className="solutions_carousel"
       prevIcon={<PrevIcon style={{ fontSize: "60px", color: "white" }} />}
       nextIcon={<NextIcon style={{ fontSize: "60px", color: "white" }} />}
       interval={3000}
       style={{ backgroundOrigin: "border-box" }}
     >
-      {[1, ...solutionsData].map((solution, index) => {
+      {[{}, ...solutionsData].map((solution, index) => {
         return (
           <Carousel.Item
             key={index === 0 ? "solution_1" : `${solution.id}`}
@@ -37,7 +37,7 @@ const Solutions = () => {
               backgroundPosition: solution.backgroundPosition || "center",
             }}
           >
-            {solution === 1 ? (
+            {index === 0 ? (
               <Carousel.Caption
                 style={{
                   top: "100px",
@@ -59,13 +59,14 @@ const Solutions = () => {
               </Carousel.Caption>
             ) : (
               <Carousel.Caption
-                style={{
-                  top: "250px",
-                  right: "20px",
-                  left: "20px",
-                  color: "white",
-                  padding: "0px 150px 0px 150px",
-                }}
+                className="solutions_carousel_caption"
+                // style={{
+                //   top: "250px",
+                //   right: "20px",
+                //   left: "20px",
+                //   color: "white",
+                //   padding: "0px 150px 0px 150px",
+                // }}
               >
                 <div
                   style={{
@@ -74,7 +75,12 @@ const Solutions = () => {
                   }}
                 >
                   <h3 style={{ fontSize: "3em" }}>{solution.title}</h3>
-                  <p style={{ fontSize: "2em" }}>{solution.text}</p>
+                  <p
+                    className="solutions_carousel_text"
+                    style={{ fontSize: "2em" }}
+                  >
+                    {solution.text}
+                  </p>
                 </div>
                 <NavLink
                   to={solution.path}

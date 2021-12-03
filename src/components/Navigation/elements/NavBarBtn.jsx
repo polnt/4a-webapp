@@ -16,15 +16,17 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
     homeStyle ? setNavbarButtonColor("white") : setNavbarButtonColor("black");
   }, [homeStyle]);
 
-  const handleClick = () => {
-    setToggle({ [item.id]: true });
-  };
-
   return (
     <li
       style={{ fontFamily: "RobotoRegular" }}
-      onMouseEnter={handleClick}
-      onMouseLeave={() => setToggle({})}
+      onMouseEnter={() => {
+        setToggle({ [item.id]: true });
+        setArrowIcon(<DownArrow />);
+      }}
+      onMouseLeave={() => {
+        setToggle({});
+        setArrowIcon(<RightArrow />);
+      }}
     >
       <OverlayTrigger
         show={!!toggle[item.id]}
@@ -72,11 +74,7 @@ const NavBarBtn = memo(({ item, toggle, setToggle, homeStyle }) => {
           to={item.path}
           style={{ color: navbarButtonColor }}
         >
-          <div
-            style={{ display: "flex", alignItems: "center" }}
-            onMouseEnter={() => setArrowIcon(<DownArrow />)}
-            onMouseLeave={() => setArrowIcon(<RightArrow />)}
-          >
+          <div style={{ display: "flex", alignItems: "center" }}>
             {item.title} {item.children && arrowIcon}
           </div>
         </NavLink>

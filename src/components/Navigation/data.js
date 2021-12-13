@@ -101,10 +101,10 @@ export const navData = [
   {
     id: "about",
     title: "QUI SOMMES-NOUS ?",
-    path: "/l'équipe-4A",
+    path: "/qui-sommes-nous",
     children: [
-      { title: "Présentation de l'équipe", path: "/l'équipe-4A" },
-      { title: "Nos engagements", path: "/l'équipe-4A" },
+      { title: "Nos valeurs", path: "/qui-sommes-nous/les-valeurs-4A" },
+      { title: "Notre équipe", path: "/qui-sommes-nous/l'équipe-4A" },
     ],
   },
   {

@@ -14,7 +14,7 @@ const Footer = () => {
     <footer
       className="footer_container"
       style={{
-        backgroundImage: `url(${BlackLinen})`,
+        // backgroundImage: `url(${BlackLinen})`,
       }}
     >
       <div className="inverted_divider" />

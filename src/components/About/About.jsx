@@ -4,27 +4,35 @@ const About = () => {
   return (
     <div className="container_page cover_page">
       <article className="content_page">
-        <h1>QUI SOMMES-NOUS ?</h1>
-        <p>
-          4A Paie & Conseils RH c’est la rencontre de 2 professionnelles de la
-          paie et du RH.
-        </p>
-        <p>
-          L’envie de mettre en commun nos différentes expertises pour un même
-          objectif : « sécuriser le social de votre entreprise ».
-        </p>
-        <p>
-          Répondre aux demandes des entreprises en apportant une offre experte
-          et complète en matière de gestion du personnel.
-        </p>
-        <p>
-          Tant d’un point de vue de la technicité de paie (réalisation des
-          bulletins et de l’ensemble des déclarations liés au contrat de
-          travail), de la gestion RH (relation avec les représentants du
-          personnel, gestion des embauches et sortie…), ou du point de vue
-          juridique (droit du travail, convention collectives, jurisprudences,
-          cours de cassations...)
-        </p>
+        <h1 style={{ textTransform: "uppercase" }}>Pourquoi choisir 4A ?</h1>
+        <section>
+          <h2>NOTRE ENGAGEMENT</h2>
+          <ul>
+            <li>Accompagner</li>
+            <p>
+              Chaque entreprise est unique, nous sommes à votre écoute pour
+              répondre spécifiquement à vos besoins et vous accompagner dans
+              votre stratégie sociale.
+            </p>
+            <li>Associer</li>
+            <p>
+              Travaillerons ensemble comme de vrais partenaires, notre
+              implication à vos côtés sera totale !
+            </p>
+            <li>Adapter</li>
+            <p>
+              Nous entendons souvent dire que le social coûte cher, nous voulons
+              des tarifs attractifs pour nos services afin de vous permettre de
+              rentabiliser et d’adapter votre budget social.
+            </p>
+            <li>Actualiser</li>
+            <p>
+              Le métier de la paie et des ressources humaines est en constante
+              évolution et demande un professionnalisme et une grande expérience
+              que nous mettons à votre disposition !
+            </p>
+          </ul>
+        </section>
         <section>
           <h2>NOTRE PHILOSOPHIE</h2>
           <p>
@@ -75,34 +83,6 @@ const About = () => {
             Confiez-nous la gestion de votre personnel, nous serons à vos côtés
             !
           </p>
-        </section>
-        <section>
-          <h2>NOTRE ENGAGEMENT</h2>
-          <ul>
-            <li>Accompagner</li>
-            <p>
-              Chaque entreprise est unique, nous sommes à votre écoute pour
-              répondre spécifiquement à vos besoins et vous accompagner dans
-              votre stratégie sociale.
-            </p>
-            <li>Associer</li>
-            <p>
-              Travaillerons ensemble comme de vrais partenaires, notre
-              implication à vos côtés sera totale !
-            </p>
-            <li>Adapter</li>
-            <p>
-              Nous entendons souvent dire que le social coûte cher, nous voulons
-              des tarifs attractifs pour nos services afin de vous permettre de
-              rentabiliser et d’adapter votre budget social.
-            </p>
-            <li>Actualiser</li>
-            <p>
-              Le métier de la paie et des ressources humaines est en constante
-              évolution et demande un professionnalisme et une grande expérience
-              que nous mettons à votre disposition !
-            </p>
-          </ul>
         </section>
       </article>
     </div>

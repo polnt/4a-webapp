@@ -17,6 +17,7 @@ import GlobalAlert from "./components/_reusable/GlobalAlert";
 import { BlackLinen } from "./assets/textures";
 
 import mainBackground from "./assets/img/BG_homepagev2.png";
+import secBackground from "./assets/img/111-PortraitMS-CPhilippon.jpg";
 
 import Access from "./components/temp/Access";
 
@@ -65,7 +66,8 @@ const App = () => {
         <div
           className="global_background"
           style={{
-            backgroundImage: `url(${mainBackground}), url(${BlackLinen})`,
+            backgroundImage: `url(${secBackground}), url(${BlackLinen})`,
+            backgroundSize: "contain",
             transform: `translate(0, ${scrollY * 0.5}px)`,
             transition: "transform 0.1s ease",
             backgroundColor: "var(--mainGrey)",

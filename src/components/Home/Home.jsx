@@ -107,19 +107,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div
-            className="container_page"
-            style={
-              {
-                // backgroundColor: "green",
-              }
-            }
-          >
+          <div className="container_page">
             <div
               className="content_page"
               style={{
                 display: "flex",
-                // backgroundColor: "red",
                 // width: "100%",
               }}
             >

@@ -27,6 +27,7 @@ import URSSAF from "./Counsel/URSSAF";
 
 // ABOUT
 import About from "./About/About";
+import Team from "./About/Team";
 
 // CONTACT
 import Contact from "./Contact/Contact";
@@ -86,7 +87,14 @@ const Router = () => {
         render={() => <NavigationPage index={4} />}
       />
 
-      <Route exact path="/l'équipe-4A" component={About} />
+      <Route path="/qui-sommes-nous/les-valeurs-4A" component={About} />
+      <Route path="/qui-sommes-nous/l'équipe-4A" component={Team} />
+      <Route
+        exact
+        path="/qui-sommes-nous"
+        render={() => <NavigationPage index={5} />}
+      />
+
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/faq" component={FAQ} />
 
